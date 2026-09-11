@@ -1,5 +1,6 @@
 {
   "_id": "SKF2meZxi8YfmkN8",
+  "_key": "!actors!SKF2meZxi8YfmkN8",
   "name": "Personagem (SD Nativo)",
   "type": "_template",
   "img": "icons/svg/book.svg",
@@ -2931,7 +2932,7 @@
       }
     },
     "activeEffects": {},
-    "templateSystemUniqueVersion": "1789139493000"
+    "templateSystemUniqueVersion": "1789139840147"
   },
   "items": [],
   "effects": [],

@@ -19,6 +19,10 @@ OUT = os.path.join(RAIZ, "sw-spacedragon-nativo.zip")
 # O Foundry espera esses itens na RAIZ do zip.
 ITENS = ["module.json", "packs", "lang", "LICENSE", "template-sdn.json"]
 
+# Lixo de runtime do LevelDB: nao deve viajar no pacote. O LOCK atrapalha, e os
+# LOG so contam o que aconteceu na maquina que compilou.
+IGNORAR = {"LOCK", "LOG", "LOG.old"}
+
 
 def main():
     manifesto = os.path.join(SRC, "module.json")
@@ -40,6 +44,8 @@ def main():
             else:
                 for dirpath, _, arquivos in os.walk(caminho):
                     for a in arquivos:
+                        if a in IGNORAR:
+                            continue
                         cheio = os.path.join(dirpath, a)
                         arc = os.path.relpath(cheio, SRC).replace(os.sep, "/")
                         z.write(cheio, arc)

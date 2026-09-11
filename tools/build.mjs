@@ -29,9 +29,9 @@ async function carregarCli() {
   for (const c of candidatos) {
     try {
       const mod = await import(c.startsWith('@') ? c : 'file:///' + c.replace(/\\/g, '/'));
-      if (mod.compilePack) {
+      if (mod.compilePack && mod.extractPack) {
         if (!c.startsWith('@')) console.log('  (usando o CLI do repo irmão)');
-        return mod.compilePack;
+        return [mod.compilePack, mod.extractPack];
       }
     } catch { /* tenta o próximo */ }
   }
@@ -77,8 +77,10 @@ function outrosDeslocamentos(mov) {
 
 function criaturaDoc(c) {
   const nome = c.apelido ? `${c.nome} (${c.apelido})` : c.nome;
+  const _id = id16('criatura:' + c.nome);
   return {
-    _id: id16('criatura:' + c.nome),
+    _id,
+    _key: `!actors!${_id}`,
     name: nome,
     type: 'character',
     img: 'icons/svg/mystery-man.svg',
@@ -120,8 +122,11 @@ function fichasDoc() {
     throw new Error('faltando modulo/template-sdn.json — rode node tools/gerar-template.mjs');
   }
   const exp = JSON.parse(fs.readFileSync(p, 'utf8'));
-  return exp.actors.map((a) => ({
-    _id: id16('ficha:' + a.name),
+  return exp.actors.map((a) => {
+    const _id = id16('ficha:' + a.name);
+    return {
+    _id,
+    _key: `!actors!${_id}`,
     name: a.name,
     type: '_template',
     img: 'icons/svg/book.svg',
@@ -132,7 +137,8 @@ function fichasDoc() {
     sort: 0,
     ownership: { default: 0 },
     flags: { [ID]: { fonte: 'gerador', versao: 1 } },
-  }));
+    };
+  });
 }
 
 // ── escrita e compilação ────────────────────────────────────────────────────
@@ -150,7 +156,7 @@ function escreverFonte(pack, docs) {
   return docs.length;
 }
 
-const compilePack = await carregarCli();
+const [compilePack, extractPack] = await carregarCli();
 fs.mkdirSync(PACKS, { recursive: true });
 
 const tarefas = [
@@ -163,7 +169,20 @@ for (const [pack, docs] of tarefas) {
   const destino = path.join(PACKS, pack);
   fs.rmSync(destino, { recursive: true, force: true });
   await compilePack(path.join(SRC, pack), destino, { log: false });
-  console.log(`  ok ${pack.padEnd(16)} ${String(n).padStart(3)} documentos`);
+
+  // O CLI PULA EM SILENCIO todo documento sem _key. Conferir que o que entrou
+  // foi mesmo o que saiu, senao o compendio instala vazio no Foundry.
+  const conferencia = path.join(RAIZ, '_scratch', 'conferir-' + pack);
+  fs.rmSync(conferencia, { recursive: true, force: true });
+  await extractPack(destino, conferencia, { log: false });
+  const gravados = fs.existsSync(conferencia) ? fs.readdirSync(conferencia).length : 0;
+  fs.rmSync(conferencia, { recursive: true, force: true });
+  if (gravados !== n) {
+    console.error(`  ERRO ${pack}: escrevi ${n} documentos e o pack tem ${gravados}.`);
+    console.error('       Falta _key ("!actors!<id>") nos documentos?');
+    process.exit(1);
+  }
+  console.log(`  ok ${pack.padEnd(16)} ${String(n).padStart(3)} documentos (conferidos no pack)`);
 }
 
 // ids únicos entre todos os packs

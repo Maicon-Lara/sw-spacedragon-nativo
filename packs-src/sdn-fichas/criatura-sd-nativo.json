@@ -1,5 +1,6 @@
 {
   "_id": "OQmrE4Cfcs2rUeiz",
+  "_key": "!actors!OQmrE4Cfcs2rUeiz",
   "name": "Criatura (SD Nativo)",
   "type": "_template",
   "img": "icons/svg/book.svg",
@@ -842,7 +843,7 @@
       }
     },
     "activeEffects": {},
-    "templateSystemUniqueVersion": "1789139493002"
+    "templateSystemUniqueVersion": "1789139840148"
   },
   "items": [],
   "effects": [],
