@@ -2018,7 +2018,7 @@
                           "flow": null,
                           "align": null,
                           "type": "panel",
-                          "visibilityFormula": "pc_classe == 'classe_veterano'"
+                          "visibilityFormula": "pc_classe == 'classe_veterano' ? 1 : 0"
                         },
                         {
                           "contents": [
@@ -2313,7 +2313,7 @@
                           "flow": null,
                           "align": null,
                           "type": "panel",
-                          "visibilityFormula": "pc_classe == 'classe_operativo'"
+                          "visibilityFormula": "pc_classe == 'classe_operativo' ? 1 : 0"
                         },
                         {
                           "contents": [
@@ -2430,7 +2430,7 @@
                           "flow": null,
                           "align": null,
                           "type": "panel",
-                          "visibilityFormula": "pc_classe == 'classe_tecnico'"
+                          "visibilityFormula": "pc_classe == 'classe_tecnico' ? 1 : 0"
                         },
                         {
                           "contents": [
@@ -2628,7 +2628,7 @@
                           "flow": null,
                           "align": null,
                           "type": "panel",
-                          "visibilityFormula": "pc_classe == 'classe_sensivel'"
+                          "visibilityFormula": "pc_classe == 'classe_sensivel' ? 1 : 0"
                         }
                       ],
                       "key": "pnl_classe",
@@ -2728,7 +2728,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789141640008"
+        "templateSystemUniqueVersion": "1789141913315"
       }
     },
     {
@@ -3573,7 +3573,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789141640009"
+        "templateSystemUniqueVersion": "1789141913316"
       }
     }
   ],

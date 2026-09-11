@@ -254,7 +254,10 @@ function talento(key, nome, comAjusteDes = true) {
   ], { flow: 'horizontal' });
 }
 
-const vis = (c) => `pc_classe == '${c}'`;
+// A visibilidade e avaliada como `!!formula.result`. Se a engine devolver a STRING
+// "false", `!!"false"` e VERDADEIRO e o painel aparece sempre. Por isso o ternario:
+// o resultado tem de ser o NUMERO 1 ou 0.
+const vis = (c) => `pc_classe == '${c}' ? 1 : 0`;
 
 const abaClasse = aba('tab_classe', 'Classe', [
   painel('pnl_classe', [
