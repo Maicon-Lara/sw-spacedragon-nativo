@@ -14,6 +14,6 @@
     "tudo": "npm run dados && npm run template && npm run verificar && npm run build && npm run zip"
   },
   "devDependencies": {
-    "@foundryvtt/foundryvtt-cli": "^3.0.3"
+    "@foundryvtt/foundryvtt-cli": "^3.0.4"
   }
 }
