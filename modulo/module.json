@@ -2,7 +2,7 @@
   "id": "sw-spacedragon-nativo",
   "title": "Star Wars — Space Dragon (Nativo)",
   "description": "Star Wars rodando no Space Dragon nativo: fichas de personagem e criatura para o Custom System Builder, mais compêndios de espécies, classes, poderes da Força, aparatos, equipamento, naves e bestiário. Níveis 1–20, CP, uma única JP, talentos em d%, Alcance da Força em porcentagem e a Ordem de Ação em que o menor resultado age primeiro. Obra de fã, não oficial e sem fins lucrativos.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "compatibility": {
     "minimum": "13",
     "verified": "14"
@@ -19,7 +19,7 @@
         "type": "system",
         "manifest": "https://gitlab.com/custom-system-builder/custom-system-builder/-/raw/main/system.json",
         "compatibility": {
-          "minimum": "6.0.0",
+          "minimum": "5.2.1",
           "verified": "6.0.2"
         }
       }
