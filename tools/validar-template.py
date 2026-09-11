@@ -28,6 +28,13 @@ REF_URL = ("https://gitlab.com/custom-system-builder/custom-system-builder/-/raw
 # Campos que guardam um valor digitado ou calculado, e portanto definem uma prop.
 CAMPOS = ("numberField", "textField", "textArea", "select", "checkbox", "label")
 
+# Chaves validas segundo o CODIGO-FONTE do CSB que a ficha de referencia nao usa.
+# A referencia e uma amostra, nao a especificacao: se o componente aceita a chave no
+# fonte, ela vale. Conferidas em src/module/sheets/components/Panel.ts.
+EXTRAS_OK = {
+    "panel": {"title", "titleStyle", "collapsible", "defaultCollapsed", "verticalAlign"},
+}
+
 # Nomes que aparecem em formula sem ser prop da ficha.
 INTERNAS = {"roll", "alvo", "aj", "total", "item"}
 FUNCOES = {"floor", "ceil", "round", "abs", "min", "max"}
@@ -104,7 +111,7 @@ def main():
             problemas.append("tipo de componente %r nao existe na referencia" % tipo)
             print("  !! %-14s tipo desconhecido" % tipo)
             continue
-        permitidas = set()
+        permitidas = set(EXTRAS_OK.get(tipo, set()))
         for c in cref[tipo]:
             permitidas |= set(c.keys())
         obrigatorias = set(cref[tipo][0].keys())

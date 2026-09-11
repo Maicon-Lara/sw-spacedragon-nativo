@@ -20,11 +20,17 @@ const base = (extra = {}) => ({
   visibilityFormula: null, ...extra,
 });
 
-const painel = (key, contents, extra = {}) => ({
-  contents, key, cssClass: null, role: 0, permission: 0, tooltip: null,
-  flow: extra.flow ?? null, align: extra.align ?? null, type: 'panel',
-  visibilityFormula: extra.visibilityFormula ?? null,
-});
+const painel = (key, contents, extra = {}) => {
+  const p = {
+    contents, key, cssClass: null, role: 0, permission: 0, tooltip: null,
+    flow: extra.flow ?? null, align: extra.align ?? null, type: 'panel',
+    visibilityFormula: extra.visibilityFormula ?? null,
+  };
+  // titulo, grade e recolhimento sao nativos do Panel do CSB
+  if (extra.title) { p.title = extra.title; p.titleStyle = extra.titleStyle ?? 'title'; }
+  if (extra.collapsible) { p.collapsible = true; p.defaultCollapsed = !!extra.recolhido; }
+  return p;
+};
 
 const aba = (key, name, contents, extra = {}) =>
   base({ key, cssClass: null, contents, name, type: 'tab', ...extra });
@@ -66,7 +72,7 @@ const rotulo = (value, extra = {}) => base({
   tooltip: extra.tooltip ?? '', cssClass: extra.cssClass ?? '',
 });
 
-const titulo = (txt) => rotulo(txt, { style: 'title', size: 'full-size' });
+const titulo = (txt) => rotulo(txt, { style: 'bold', size: 'full-size' });
 
 /** Emite a consulta de uma tabela do livro como cadeia de ternários. */
 const lookup = (tabela, coluna, prop) => T.ternario(tabela, coluna, prop);
@@ -119,11 +125,12 @@ const DERIVADOS = [
   ['der_com_idiomas', 'Idiomas adicionais', T.T1_6, 3, 'pc_com', ''],
 ];
 
-function linhaDerivada([key, label, tabela, coluna, prop, sufixo]) {
-  return painel(`pnl_${key}`, [
-    rotulo(`${label}: `, { size: 'medium' }),
-    rotulo('${' + lookup(tabela, coluna, prop) + '}$', { key, suffix: sufixo, size: 'x-small' }),
-  ], { flow: 'horizontal' });
+/** Cada derivado ocupa duas celulas da grade: o rotulo e o valor. */
+function celulasDerivadas([key, label, tabela, coluna, prop, sufixo]) {
+  return [
+    rotulo(`${label}:`, { size: 'medium', style: 'bold' }),
+    rotulo('${' + lookup(tabela, coluna, prop) + '}$', { key, suffix: sufixo, size: 'm-small' }),
+  ];
 }
 
 // ── aba: Atributos ──────────────────────────────────────────────────────────
@@ -131,12 +138,12 @@ const abaAtributos = aba('tab_atributos', 'Atributos', [
   painel('pnl_atributos', [
     titulo('Atributos — 1d20, passa com resultado ≤ o valor'),
     painel('pnl_atr_linha', ATRIBUTOS.map(blocoAtributo), { flow: 'horizontal' }),
-    titulo('Derivados das tabelas do livro'),
-    ...DERIVADOS.map(linhaDerivada),
+    painel('pnl_derivados', DERIVADOS.flatMap(celulasDerivadas),
+           { flow: 'grid-4', title: 'Derivados das tabelas do livro' }),
     rotulo(
       'O Crédito Tecnológico é um número só: chance de sabotar máquinas, uso de ' +
       'aparatos ofensivos pelo Caçador e desconto do Técnico em qualquer compra.',
-      { size: 'full-size', style: 'info' }),
+      { size: 'full-size', style: 'subtitle' }),
     painel('pnl_ler', [
       rotulo('Idiomas que lê e escreve: ', { size: 'medium' }),
       rotulo('${floor(pc_com / 6)}$', { key: 'der_ler_escrever' }),
@@ -182,7 +189,7 @@ const abaCombate = aba('tab_combate', 'Combate', [
     rotulo(
       'O modificador de Destreza entra INTEIRO — o Space Dragon não tem teto de ' +
       'Destreza por armadura. O bônus de nível vem da Tabela 4-1 e não é cumulativo.',
-      { size: 'full-size', style: 'info' }),
+      { size: 'full-size', style: 'subtitle' }),
 
     titulo('Pontos de Vida'),
     painel('pnl_pv', [
@@ -197,14 +204,14 @@ const abaCombate = aba('tab_combate', 'Combate', [
       num('pc_jp', 'JP (alvo)', { defaultValue: 15, minVal: 1 }),
     ], { flow: 'horizontal' }),
     rotulo('Uma JP só, e ela DESCE com o nível. Rola-se 1d20 + ajuste e o total ' +
-           'precisa IGUALAR OU SUPERAR o valor.', { size: 'full-size', style: 'info' }),
+           'precisa IGUALAR OU SUPERAR o valor.', { size: 'full-size', style: 'subtitle' }),
     ...JPS.map(blocoJP),
 
     titulo('Ordem de Ação — o MENOR resultado age PRIMEIRO'),
     rotulo('Atacar: role o dado de dano da arma. Aparato ou poder: use o NT ou a ' +
            'Grandeza. Movimentação dupla e outras ações: 10 − ajuste de Destreza. ' +
            'Empates são simultâneos. A rodada dura o maior resultado × 2 segundos.',
-           { size: 'full-size', style: 'info' }),
+           { size: 'full-size', style: 'subtitle' }),
     painel('pnl_ordem', [
       rotulo('Outras ações: ', { size: 'medium' }),
       rotulo('${10 - (' + lookup(T.T1_2, 1, 'pc_des') + ')}$', { key: 'pc_ordem_outras' }),
@@ -271,7 +278,7 @@ const abaClasse = aba('tab_classe', 'Classe', [
       num('pc_atq_furtivo', 'Ataque Furtivo (×)', { defaultValue: 2, minVal: 2, maxVal: 5 }),
       rotulo('Sabotagem é a ÚNICA % que o Crédito Tecnológico modifica. Não existem ' +
              'talentos separados de "Arrombar" nem de "Esconder".',
-             { size: 'full-size', style: 'info' }),
+             { size: 'full-size', style: 'subtitle' }),
     ], { visibilityFormula: vis('classe_operativo') }),
 
     // Técnico
@@ -281,7 +288,7 @@ const abaClasse = aba('tab_classe', 'Classe', [
       num('pc_nt_max', 'NT máximo', { defaultValue: 1, minVal: 1, maxVal: 10 }),
       rotulo('O NT sobe um passo a cada DOIS níveis, chegando a 10 no 19º. Ele limita ' +
              'o que o Técnico CRIA, não o que pode usar.',
-             { size: 'full-size', style: 'info' }),
+             { size: 'full-size', style: 'subtitle' }),
     ], { visibilityFormula: vis('classe_tecnico') }),
 
     // Sensível à Força
@@ -300,7 +307,7 @@ const abaClasse = aba('tab_classe', 'Classe', [
       rotulo('Usar um poder desconta % igual à Grandeza dele, MESMO se falhar ou for ' +
              'anulado. Zera com 8 h de descanso. Nunca passe do máximo: tentar é risco ' +
              'de morte. Manifestar cobra −4 no CP, e exige concentração — mas não fala ' +
-             'nem gesto.', { size: 'full-size', style: 'info' }),
+             'nem gesto.', { size: 'full-size', style: 'subtitle' }),
       rotulo('Poder desconhecido', {
         key: 'roll_poder_desconhecido',
         style: 'button',
@@ -332,10 +339,12 @@ const cabecalho = painel('custom_header', [
     num('pc_xp', 'XP', { defaultValue: 0, allowRelative: true, showControls: false }),
   ], { flow: 'horizontal' }),
   painel('pnl_mov', [
-    rotulo('Movimento: ', { size: 'medium' }),
-    rotulo('${10 - pc_mov_penalidade}$', { key: 'pc_mov', suffix: ' m' }),
-    num('pc_mov_penalidade', 'Penalidade (veste, carga, gravidade, terreno)',
-        { defaultValue: 0, minVal: 0 }),
+    rotulo('Movimento:', { size: 'm-small', style: 'bold' }),
+    rotulo('${10 - pc_mov_penalidade}$', { key: 'pc_mov', suffix: ' m', size: 'm-small' }),
+    num('pc_mov_penalidade', 'Penalidade', {
+      defaultValue: 0, minVal: 0, size: 'm-small',
+      tooltip: 'Soma das penalidades de veste, carga, gravidade e terreno',
+    }),
   ], { flow: 'horizontal' }),
 ], { flow: 'vertical' });
 
@@ -349,7 +358,7 @@ const fichaPC = {
     body: painel('custom_body', [
       abas([abaAtributos, abaCombate, abaClasse, abaNotas]),
     ]),
-    display: { width: '860', height: '820', fix_size: false, pp_width: '64', pp_height: '64' },
+    display: { width: '1020', height: '840', fix_size: false, pp_width: '64', pp_height: '64' },
     attributeBar: {
       PV: { value: '${pc_pv_atual}$', max: '${pc_pv_max}$' },
       Alcance: { value: '${pc_alcance_max - pc_alcance_gasto}$', max: '${pc_alcance_max}$' },
@@ -390,7 +399,7 @@ const fichaCriatura = {
           { flow: 'horizontal' }),
         rotulo('Intelecto 0 é irracional e imune a poderes mentais. Ciência 0 é ' +
                'totalmente primitivo. Comunicação 0 não se comunica de forma alguma.',
-               { size: 'full-size', style: 'info' }),
+               { size: 'full-size', style: 'subtitle' }),
 
         titulo('Defesa e vida'),
         painel('pnl_cr_def', [
@@ -411,7 +420,7 @@ const fichaCriatura = {
         ], { flow: 'horizontal' }),
         rotulo('A JP é um valor único e já engloba JPR, JPF e JPM — não se aplica ' +
                'modificador nenhum. O CP já inclui a proteção natural.',
-               { size: 'full-size', style: 'info' }),
+               { size: 'full-size', style: 'subtitle' }),
 
         titulo('Resistências'),
         painel('pnl_cr_res', [
@@ -421,7 +430,7 @@ const fichaCriatura = {
         ], { flow: 'horizontal' }),
         rotulo('RM: a cada poder dirigido à criatura, role d%. Abaixo da RM, aquele ' +
                'poder NUNCA MAIS a afeta — e o Alcance do Sensível é gasto igual.',
-               { size: 'full-size', style: 'info' }),
+               { size: 'full-size', style: 'subtitle' }),
 
         titulo('Moral, movimento e prêmios'),
         painel('pnl_cr_moral', [
@@ -439,7 +448,7 @@ const fichaCriatura = {
         ], { flow: 'horizontal' }),
         rotulo('Moral 0% sempre foge; 100% nunca desiste. Robôs de mente simples vêm ' +
                'com 100% e só saem de combate por Desativação — a exceção é o ' +
-               'Metahumano, com 80%.', { size: 'full-size', style: 'info' }),
+               'Metahumano, com 80%.', { size: 'full-size', style: 'subtitle' }),
         painel('pnl_cr_premios', [
           num('cr_xp', 'XP', { defaultValue: 0 }),
           texto('cr_habitat', 'Habitat'),
@@ -450,7 +459,7 @@ const fichaCriatura = {
         titulo('Ataques'),
         area('cr_ataques', 'Ataques'),
         rotulo('O dado de dano do ataque é TAMBÉM a Ordem de Ação da criatura, e o ' +
-               'menor resultado age primeiro.', { size: 'full-size', style: 'info' }),
+               'menor resultado age primeiro.', { size: 'full-size', style: 'subtitle' }),
         area('cr_descricao', 'Descrição e poderes'),
       ]),
     ]),
