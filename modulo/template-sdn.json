@@ -2218,38 +2218,51 @@
                               "visibilityFormula": null
                             },
                             {
-                              "key": "pc_percepcao",
-                              "cssClass": "",
-                              "role": "0",
-                              "permission": "0",
-                              "tooltip": "",
-                              "visibilityFormula": null,
-                              "label": "Percepção (faixa em 1d6)",
-                              "defaultValue": "2",
-                              "size": "m-small",
-                              "allowDecimal": false,
-                              "minVal": "1",
-                              "maxVal": "5",
-                              "allowRelative": false,
-                              "showControls": true,
-                              "type": "numberField"
-                            },
-                            {
-                              "key": "pc_atq_furtivo",
-                              "cssClass": "",
-                              "role": "0",
-                              "permission": "0",
-                              "tooltip": "",
-                              "visibilityFormula": null,
-                              "label": "Ataque Furtivo (×)",
-                              "defaultValue": "2",
-                              "size": "m-small",
-                              "allowDecimal": false,
-                              "minVal": "2",
-                              "maxVal": "5",
-                              "allowRelative": false,
-                              "showControls": true,
-                              "type": "numberField"
+                              "contents": [
+                                {
+                                  "key": "pc_percepcao",
+                                  "cssClass": "",
+                                  "role": "0",
+                                  "permission": "0",
+                                  "tooltip": "Rola 1d6 e compara com a faixa do nível",
+                                  "visibilityFormula": null,
+                                  "label": "Percepção",
+                                  "defaultValue": "2",
+                                  "size": "m-small",
+                                  "allowDecimal": false,
+                                  "minVal": "1",
+                                  "maxVal": "5",
+                                  "allowRelative": false,
+                                  "showControls": true,
+                                  "type": "numberField"
+                                },
+                                {
+                                  "key": "pc_atq_furtivo",
+                                  "cssClass": "",
+                                  "role": "0",
+                                  "permission": "0",
+                                  "tooltip": "Multiplicador de dano depois de uma Furtividade bem-sucedida",
+                                  "visibilityFormula": null,
+                                  "label": "Atq. Furtivo ×",
+                                  "defaultValue": "2",
+                                  "size": "m-small",
+                                  "allowDecimal": false,
+                                  "minVal": "2",
+                                  "maxVal": "5",
+                                  "allowRelative": false,
+                                  "showControls": true,
+                                  "type": "numberField"
+                                }
+                              ],
+                              "key": "pnl_op_extra",
+                              "cssClass": null,
+                              "role": 0,
+                              "permission": 0,
+                              "tooltip": null,
+                              "flow": "horizontal",
+                              "align": null,
+                              "type": "panel",
+                              "visibilityFormula": null
                             },
                             {
                               "key": "",
@@ -2668,7 +2681,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789141975581"
+        "templateSystemUniqueVersion": "1789142047624"
       }
     },
     {
@@ -3513,7 +3526,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789141975582"
+        "templateSystemUniqueVersion": "1789142047625"
       }
     }
   ],

@@ -132,7 +132,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "title",
+              "style": "bold",
               "type": "label"
             },
             {
@@ -266,7 +266,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "info",
+              "style": "label",
               "type": "label"
             },
             {
@@ -285,7 +285,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "title",
+              "style": "bold",
               "type": "label"
             },
             {
@@ -451,7 +451,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "info",
+              "style": "label",
               "type": "label"
             },
             {
@@ -470,7 +470,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "title",
+              "style": "bold",
               "type": "label"
             },
             {
@@ -550,7 +550,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "info",
+              "style": "label",
               "type": "label"
             },
             {
@@ -569,7 +569,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "title",
+              "style": "bold",
               "type": "label"
             },
             {
@@ -668,7 +668,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "info",
+              "style": "label",
               "type": "label"
             },
             {
@@ -759,7 +759,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "title",
+              "style": "bold",
               "type": "label"
             },
             {
@@ -791,7 +791,7 @@
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "info",
+              "style": "label",
               "type": "label"
             },
             {
@@ -843,7 +843,7 @@
       }
     },
     "activeEffects": {},
-    "templateSystemUniqueVersion": "1789139840148"
+    "templateSystemUniqueVersion": "1789142047625"
   },
   "items": [],
   "effects": [],

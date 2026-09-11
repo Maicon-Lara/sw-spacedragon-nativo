@@ -284,8 +284,16 @@ const abaClasse = aba('tab_classe', 'Classe', [
       talento('pc_escalar', 'Escalar', false),
       talento('pc_furtividade', 'Furtividade (esconder e silenciar)'),
       talento('pc_furtar', 'Furtar'),
-      num('pc_percepcao', 'Percepção (faixa em 1d6)', { defaultValue: 2, minVal: 1, maxVal: 5 }),
-      num('pc_atq_furtivo', 'Ataque Furtivo (×)', { defaultValue: 2, minVal: 2, maxVal: 5 }),
+      painel('pnl_op_extra', [
+        num('pc_percepcao', 'Percepção', {
+          defaultValue: 2, minVal: 1, maxVal: 5, size: 'm-small',
+          tooltip: 'Rola 1d6 e compara com a faixa do nível',
+        }),
+        num('pc_atq_furtivo', 'Atq. Furtivo ×', {
+          defaultValue: 2, minVal: 2, maxVal: 5, size: 'm-small',
+          tooltip: 'Multiplicador de dano depois de uma Furtividade bem-sucedida',
+        }),
+      ], { flow: 'horizontal' }),
       rotulo('Sabotagem é a ÚNICA % que o Crédito Tecnológico modifica. Não existem ' +
              'talentos separados de "Arrombar" nem de "Esconder".',
              { size: 'full-size', style: 'label' }),

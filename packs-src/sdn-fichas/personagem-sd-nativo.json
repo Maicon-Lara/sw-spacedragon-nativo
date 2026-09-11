@@ -80,14 +80,14 @@
               "visibilityFormula": null,
               "label": null,
               "defaultValue": null,
-              "size": "medium",
+              "size": "m-small",
               "icon": "",
-              "value": "Movimento: ",
+              "value": "Movimento:",
               "prefix": "",
               "suffix": "",
               "rollMessage": "",
               "altRollMessage": "",
-              "style": "label",
+              "style": "bold",
               "type": "label"
             },
             {
@@ -99,7 +99,7 @@
               "visibilityFormula": null,
               "label": null,
               "defaultValue": null,
-              "size": "x-small",
+              "size": "m-small",
               "icon": "",
               "value": "${10 - pc_mov_penalidade}$",
               "prefix": "",
@@ -114,9 +114,9 @@
               "cssClass": "",
               "role": "0",
               "permission": "0",
-              "tooltip": "",
+              "tooltip": "Soma das penalidades de veste, carga, gravidade e terreno",
               "visibilityFormula": null,
-              "label": "Penalidade (veste, carga, gravidade, terreno)",
+              "label": "Penalidade",
               "defaultValue": "0",
               "size": "m-small",
               "allowDecimal": false,
@@ -184,7 +184,7 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "title",
+                      "style": "bold",
                       "type": "label"
                     },
                     {
@@ -495,25 +495,6 @@
                       "visibilityFormula": null
                     },
                     {
-                      "key": "",
-                      "cssClass": "",
-                      "role": "0",
-                      "permission": "0",
-                      "tooltip": "",
-                      "visibilityFormula": null,
-                      "label": null,
-                      "defaultValue": null,
-                      "size": "full-size",
-                      "icon": "",
-                      "value": "Derivados das tabelas do livro",
-                      "prefix": "",
-                      "suffix": "",
-                      "rollMessage": "",
-                      "altRollMessage": "",
-                      "style": "title",
-                      "type": "label"
-                    },
-                    {
                       "contents": [
                         {
                           "key": "",
@@ -526,12 +507,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Ataque/Dano CaC: ",
+                          "value": "Ataque/Dano CaC:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -543,7 +524,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_for <= 1 ? -5 : pc_for <= 3 ? -4 : pc_for <= 5 ? -3 : pc_for <= 7 ? -2 : pc_for <= 9 ? -1 : pc_for <= 11 ? 0 : pc_for <= 13 ? 1 : pc_for <= 15 ? 2 : pc_for <= 17 ? 3 : pc_for <= 19 ? 4 : pc_for <= 21 ? 5 : pc_for <= 23 ? 6 : pc_for <= 25 ? 7 : pc_for <= 27 ? 8 : 9}$",
                           "prefix": "",
@@ -552,20 +533,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_for_ataque",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -577,12 +545,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Subjugar: ",
+                          "value": "Subjugar:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -594,7 +562,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_for <= 1 ? -25 : pc_for <= 3 ? -20 : pc_for <= 5 ? -15 : pc_for <= 7 ? -10 : pc_for <= 9 ? -5 : pc_for <= 11 ? 0 : pc_for <= 13 ? 5 : pc_for <= 15 ? 10 : pc_for <= 17 ? 15 : pc_for <= 19 ? 20 : pc_for <= 21 ? 25 : pc_for <= 23 ? 30 : pc_for <= 25 ? 35 : pc_for <= 27 ? 40 : 45}$",
                           "prefix": "",
@@ -603,20 +571,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_for_subjugar",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -628,12 +583,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Carga leve: ",
+                          "value": "Carga leve:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -645,7 +600,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_for <= 1 ? 1 : pc_for <= 3 ? 3 : pc_for <= 5 ? 5 : pc_for <= 7 ? 12 : pc_for <= 9 ? 15 : pc_for <= 11 ? 19 : pc_for <= 13 ? 25 : pc_for <= 15 ? 33 : pc_for <= 17 ? 43 : pc_for <= 19 ? 58 : pc_for <= 21 ? 75 : pc_for <= 23 ? 100 : pc_for <= 25 ? 135 : pc_for <= 27 ? 175 : 235}$",
                           "prefix": "",
@@ -654,20 +609,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_carga_leve",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -679,12 +621,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Carga média: ",
+                          "value": "Carga média:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -696,7 +638,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_for <= 1 ? 2 : pc_for <= 3 ? 5 : pc_for <= 5 ? 8 : pc_for <= 7 ? 15 : pc_for <= 9 ? 25 : pc_for <= 11 ? 30 : pc_for <= 13 ? 40 : pc_for <= 15 ? 50 : pc_for <= 17 ? 70 : pc_for <= 19 ? 90 : pc_for <= 21 ? 120 : pc_for <= 23 ? 150 : pc_for <= 25 ? 200 : pc_for <= 27 ? 250 : 350}$",
                           "prefix": "",
@@ -705,20 +647,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_carga_media",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -730,12 +659,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Carga pesada: ",
+                          "value": "Carga pesada:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -747,7 +676,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_for <= 1 ? 5 : pc_for <= 3 ? 15 : pc_for <= 5 ? 25 : pc_for <= 7 ? 35 : pc_for <= 9 ? 45 : pc_for <= 11 ? 58 : pc_for <= 13 ? 75 : pc_for <= 15 ? 100 : pc_for <= 17 ? 130 : pc_for <= 19 ? 175 : pc_for <= 21 ? 230 : pc_for <= 23 ? 300 : pc_for <= 25 ? 400 : pc_for <= 27 ? 520 : 700}$",
                           "prefix": "",
@@ -756,20 +685,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_carga_pesada",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -781,12 +697,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Ataque à distância e JPR: ",
+                          "value": "Ataque à distância e JPR:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -798,7 +714,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_des <= 1 ? -5 : pc_des <= 3 ? -4 : pc_des <= 5 ? -3 : pc_des <= 7 ? -2 : pc_des <= 9 ? -1 : pc_des <= 11 ? 0 : pc_des <= 13 ? 1 : pc_des <= 15 ? 2 : pc_des <= 17 ? 3 : pc_des <= 19 ? 4 : pc_des <= 21 ? 5 : pc_des <= 23 ? 6 : pc_des <= 25 ? 7 : pc_des <= 27 ? 8 : 9}$",
                           "prefix": "",
@@ -807,20 +723,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_des_ataque",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -832,12 +735,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Ajuste nos talentos: ",
+                          "value": "Ajuste nos talentos:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -849,7 +752,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_des <= 1 ? -25 : pc_des <= 3 ? -20 : pc_des <= 5 ? -15 : pc_des <= 7 ? -10 : pc_des <= 9 ? -5 : pc_des <= 11 ? 0 : pc_des <= 13 ? 5 : pc_des <= 15 ? 10 : pc_des <= 17 ? 15 : pc_des <= 19 ? 20 : pc_des <= 21 ? 25 : pc_des <= 23 ? 30 : pc_des <= 25 ? 35 : pc_des <= 27 ? 40 : 45}$",
                           "prefix": "",
@@ -858,20 +761,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_des_talentos",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -883,12 +773,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "PV e JPF: ",
+                          "value": "PV e JPF:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -900,7 +790,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_con <= 1 ? -5 : pc_con <= 3 ? -4 : pc_con <= 5 ? -3 : pc_con <= 7 ? -2 : pc_con <= 9 ? -1 : pc_con <= 11 ? 0 : pc_con <= 13 ? 1 : pc_con <= 15 ? 2 : pc_con <= 17 ? 3 : pc_con <= 19 ? 4 : pc_con <= 21 ? 5 : pc_con <= 23 ? 6 : pc_con <= 25 ? 7 : pc_con <= 27 ? 8 : 9}$",
                           "prefix": "",
@@ -909,20 +799,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_con_pv",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -934,12 +811,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Chance de clonagem: ",
+                          "value": "Chance de clonagem:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -951,7 +828,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_con <= 1 ? 0 : pc_con <= 3 ? 0 : pc_con <= 5 ? 0 : pc_con <= 7 ? 1 : pc_con <= 9 ? 10 : pc_con <= 11 ? 25 : pc_con <= 13 ? 50 : pc_con <= 15 ? 75 : pc_con <= 17 ? 95 : pc_con <= 19 ? 100 : pc_con <= 21 ? 100 : pc_con <= 23 ? 100 : pc_con <= 25 ? 100 : pc_con <= 27 ? 100 : 100}$",
                           "prefix": "",
@@ -960,20 +837,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_con_clonagem",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -985,12 +849,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Morre em: ",
+                          "value": "Morre em:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1002,7 +866,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_con <= 1 ? -5 : pc_con <= 3 ? -6 : pc_con <= 5 ? -7 : pc_con <= 7 ? -8 : pc_con <= 9 ? -9 : pc_con <= 11 ? -10 : pc_con <= 13 ? -11 : pc_con <= 15 ? -12 : pc_con <= 17 ? -13 : pc_con <= 19 ? -14 : pc_con <= 21 ? -15 : pc_con <= 23 ? -16 : pc_con <= 25 ? -17 : pc_con <= 27 ? -18 : -19}$",
                           "prefix": "",
@@ -1011,20 +875,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_danos_mortais",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -1036,12 +887,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Realizar/aprender poder: ",
+                          "value": "Realizar/aprender poder:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1053,7 +904,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_int <= 1 ? 0 : pc_int <= 3 ? 0 : pc_int <= 5 ? 0 : pc_int <= 7 ? 0 : pc_int <= 9 ? 0 : pc_int <= 11 ? 15 : pc_int <= 13 ? 25 : pc_int <= 15 ? 35 : pc_int <= 17 ? 45 : pc_int <= 19 ? 55 : pc_int <= 21 ? 65 : pc_int <= 23 ? 75 : pc_int <= 25 ? 85 : pc_int <= 27 ? 95 : 100}$",
                           "prefix": "",
@@ -1062,20 +913,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_int_poder",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -1087,12 +925,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Alcance adicional: ",
+                          "value": "Alcance adicional:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1104,7 +942,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_int <= 1 ? 0 : pc_int <= 3 ? 0 : pc_int <= 5 ? 0 : pc_int <= 7 ? 0 : pc_int <= 9 ? 0 : pc_int <= 11 ? 0 : pc_int <= 13 ? 1 : pc_int <= 15 ? 2 : pc_int <= 17 ? 3 : pc_int <= 19 ? 4 : pc_int <= 21 ? 5 : pc_int <= 23 ? 6 : pc_int <= 25 ? 7 : pc_int <= 27 ? 8 : 9}$",
                           "prefix": "",
@@ -1113,20 +951,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_int_alcance",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -1138,12 +963,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Ajuste de JPM: ",
+                          "value": "Ajuste de JPM:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1155,7 +980,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_int <= 1 ? -5 : pc_int <= 3 ? -4 : pc_int <= 5 ? -3 : pc_int <= 7 ? -2 : pc_int <= 9 ? -1 : pc_int <= 11 ? 0 : pc_int <= 13 ? 1 : pc_int <= 15 ? 2 : pc_int <= 17 ? 3 : pc_int <= 19 ? 4 : pc_int <= 21 ? 5 : pc_int <= 23 ? 6 : pc_int <= 25 ? 7 : pc_int <= 27 ? 8 : 9}$",
                           "prefix": "",
@@ -1164,20 +989,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_int_jpm",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -1189,12 +1001,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Robôs desativados/dia: ",
+                          "value": "Robôs desativados/dia:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1206,7 +1018,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_cie <= 1 ? \"0\" : pc_cie <= 3 ? \"0\" : pc_cie <= 5 ? \"0\" : pc_cie <= 7 ? \"0\" : pc_cie <= 9 ? \"1\" : pc_cie <= 11 ? \"1d2\" : pc_cie <= 13 ? \"1d3\" : pc_cie <= 15 ? \"1d4\" : pc_cie <= 17 ? \"1d6\" : pc_cie <= 19 ? \"1d8\" : pc_cie <= 21 ? \"2d4\" : pc_cie <= 23 ? \"1d10\" : pc_cie <= 25 ? \"1d12\" : pc_cie <= 27 ? \"2d6\" : \"1d20\"}$",
                           "prefix": "",
@@ -1215,20 +1027,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_cie_robos",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -1240,12 +1039,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Crédito Tecnológico: ",
+                          "value": "Crédito Tecnológico:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1257,7 +1056,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_cie <= 1 ? -25 : pc_cie <= 3 ? -20 : pc_cie <= 5 ? -15 : pc_cie <= 7 ? -10 : pc_cie <= 9 ? -5 : pc_cie <= 11 ? 0 : pc_cie <= 13 ? 5 : pc_cie <= 15 ? 10 : pc_cie <= 17 ? 15 : pc_cie <= 19 ? 20 : pc_cie <= 21 ? 25 : pc_cie <= 23 ? 30 : pc_cie <= 25 ? 35 : pc_cie <= 27 ? 40 : 45}$",
                           "prefix": "",
@@ -1266,20 +1065,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_credito_tec",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -1291,12 +1077,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Máx. de seguidores: ",
+                          "value": "Máx. de seguidores:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1308,7 +1094,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_com <= 1 ? 0 : pc_com <= 3 ? 0 : pc_com <= 5 ? 0 : pc_com <= 7 ? 0 : pc_com <= 9 ? 0 : pc_com <= 11 ? 1 : pc_com <= 13 ? 2 : pc_com <= 15 ? 3 : pc_com <= 17 ? 4 : pc_com <= 19 ? 5 : pc_com <= 21 ? 6 : pc_com <= 23 ? 7 : pc_com <= 25 ? 8 : pc_com <= 27 ? 9 : 10}$",
                           "prefix": "",
@@ -1317,20 +1103,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_com_seguidores",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -1342,12 +1115,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Ajuste de reação: ",
+                          "value": "Ajuste de reação:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1359,7 +1132,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_com <= 1 ? -25 : pc_com <= 3 ? -20 : pc_com <= 5 ? -15 : pc_com <= 7 ? -10 : pc_com <= 9 ? -5 : pc_com <= 11 ? 0 : pc_com <= 13 ? 5 : pc_com <= 15 ? 10 : pc_com <= 17 ? 15 : pc_com <= 19 ? 20 : pc_com <= 21 ? 25 : pc_com <= 23 ? 30 : pc_com <= 25 ? 35 : pc_com <= 27 ? 40 : 45}$",
                           "prefix": "",
@@ -1368,20 +1141,7 @@
                           "altRollMessage": "",
                           "style": "label",
                           "type": "label"
-                        }
-                      ],
-                      "key": "pnl_der_com_reacao",
-                      "cssClass": null,
-                      "role": 0,
-                      "permission": 0,
-                      "tooltip": null,
-                      "flow": "horizontal",
-                      "align": null,
-                      "type": "panel",
-                      "visibilityFormula": null
-                    },
-                    {
-                      "contents": [
+                        },
                         {
                           "key": "",
                           "cssClass": "",
@@ -1393,12 +1153,12 @@
                           "defaultValue": null,
                           "size": "medium",
                           "icon": "",
-                          "value": "Idiomas adicionais: ",
+                          "value": "Idiomas adicionais:",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "label",
+                          "style": "bold",
                           "type": "label"
                         },
                         {
@@ -1410,7 +1170,7 @@
                           "visibilityFormula": null,
                           "label": null,
                           "defaultValue": null,
-                          "size": "x-small",
+                          "size": "m-small",
                           "icon": "",
                           "value": "${pc_com <= 1 ? 0 : pc_com <= 3 ? 0 : pc_com <= 5 ? 0 : pc_com <= 7 ? 0 : pc_com <= 9 ? 0 : pc_com <= 11 ? 0 : pc_com <= 13 ? 1 : pc_com <= 15 ? 2 : pc_com <= 17 ? 3 : pc_com <= 19 ? 4 : pc_com <= 21 ? 5 : pc_com <= 23 ? 6 : pc_com <= 25 ? 7 : pc_com <= 27 ? 8 : 9}$",
                           "prefix": "",
@@ -1421,15 +1181,17 @@
                           "type": "label"
                         }
                       ],
-                      "key": "pnl_der_com_idiomas",
+                      "key": "pnl_derivados",
                       "cssClass": null,
                       "role": 0,
                       "permission": 0,
                       "tooltip": null,
-                      "flow": "horizontal",
+                      "flow": "grid-4",
                       "align": null,
                       "type": "panel",
-                      "visibilityFormula": null
+                      "visibilityFormula": null,
+                      "title": "Derivados das tabelas do livro",
+                      "titleStyle": "title"
                     },
                     {
                       "key": "",
@@ -1447,7 +1209,7 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "info",
+                      "style": "label",
                       "type": "label"
                     },
                     {
@@ -1542,7 +1304,7 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "title",
+                      "style": "bold",
                       "type": "label"
                     },
                     {
@@ -1552,9 +1314,9 @@
                           "cssClass": "",
                           "role": "0",
                           "permission": "0",
-                          "tooltip": "",
+                          "tooltip": "Valor de proteção da veste equipada",
                           "visibilityFormula": null,
-                          "label": "Proteção da veste",
+                          "label": "Veste",
                           "defaultValue": "10",
                           "size": "m-small",
                           "allowDecimal": false,
@@ -1569,9 +1331,9 @@
                           "cssClass": "",
                           "role": "0",
                           "permission": "0",
-                          "tooltip": "",
+                          "tooltip": "Soma de aparatos defensivos e poderes que alteram o CP",
                           "visibilityFormula": null,
-                          "label": "Aparatos e poderes",
+                          "label": "Aparatos",
                           "defaultValue": "0",
                           "size": "m-small",
                           "allowDecimal": false,
@@ -1659,7 +1421,7 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "info",
+                      "style": "label",
                       "type": "label"
                     },
                     {
@@ -1678,7 +1440,7 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "title",
+                      "style": "bold",
                       "type": "label"
                     },
                     {
@@ -1718,21 +1480,42 @@
                           "type": "numberField"
                         },
                         {
-                          "key": "pc_pv_negativo_morte",
+                          "key": "",
                           "cssClass": "",
                           "role": "0",
                           "permission": "0",
                           "tooltip": "",
                           "visibilityFormula": null,
-                          "label": "Morre em",
-                          "defaultValue": "-10",
+                          "label": null,
+                          "defaultValue": null,
                           "size": "m-small",
-                          "allowDecimal": false,
-                          "minVal": "",
-                          "maxVal": "",
-                          "allowRelative": false,
-                          "showControls": true,
-                          "type": "numberField"
+                          "icon": "",
+                          "value": "Morre em:",
+                          "prefix": "",
+                          "suffix": "",
+                          "rollMessage": "",
+                          "altRollMessage": "",
+                          "style": "bold",
+                          "type": "label"
+                        },
+                        {
+                          "key": "pc_danos_mortais",
+                          "cssClass": "",
+                          "role": "0",
+                          "permission": "0",
+                          "tooltip": "",
+                          "visibilityFormula": null,
+                          "label": null,
+                          "defaultValue": null,
+                          "size": "m-small",
+                          "icon": "",
+                          "value": "${pc_con <= 1 ? -5 : pc_con <= 3 ? -6 : pc_con <= 5 ? -7 : pc_con <= 7 ? -8 : pc_con <= 9 ? -9 : pc_con <= 11 ? -10 : pc_con <= 13 ? -11 : pc_con <= 15 ? -12 : pc_con <= 17 ? -13 : pc_con <= 19 ? -14 : pc_con <= 21 ? -15 : pc_con <= 23 ? -16 : pc_con <= 25 ? -17 : pc_con <= 27 ? -18 : -19}$",
+                          "prefix": "",
+                          "suffix": " PV",
+                          "rollMessage": "",
+                          "altRollMessage": "",
+                          "style": "label",
+                          "type": "label"
                         }
                       ],
                       "key": "pnl_pv",
@@ -1761,7 +1544,7 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "title",
+                      "style": "bold",
                       "type": "label"
                     },
                     {
@@ -1827,65 +1610,78 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "info",
+                      "style": "label",
                       "type": "label"
                     },
                     {
-                      "key": "roll_jpr",
-                      "cssClass": "",
-                      "role": "0",
-                      "permission": "0",
-                      "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPR — Reflexos)",
-                      "visibilityFormula": null,
-                      "label": null,
-                      "defaultValue": null,
-                      "size": "full-size",
-                      "icon": "",
-                      "value": "JPR — Reflexos",
-                      "prefix": "",
-                      "suffix": "",
-                      "rollMessage": "<p><strong>JPR — Reflexos</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_des <= 1 ? -5 : pc_des <= 3 ? -4 : pc_des <= 5 ? -3 : pc_des <= 7 ? -2 : pc_des <= 9 ? -1 : pc_des <= 11 ? 0 : pc_des <= 13 ? 1 : pc_des <= 15 ? 2 : pc_des <= 17 ? 3 : pc_des <= 19 ? 4 : pc_des <= 21 ? 5 : pc_des <= 23 ? 6 : pc_des <= 25 ? 7 : pc_des <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
-                      "altRollMessage": "",
-                      "style": "button",
-                      "type": "label"
-                    },
-                    {
-                      "key": "roll_jpf",
-                      "cssClass": "",
-                      "role": "0",
-                      "permission": "0",
-                      "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPF — Física)",
-                      "visibilityFormula": null,
-                      "label": null,
-                      "defaultValue": null,
-                      "size": "full-size",
-                      "icon": "",
-                      "value": "JPF — Física",
-                      "prefix": "",
-                      "suffix": "",
-                      "rollMessage": "<p><strong>JPF — Física</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_con <= 1 ? -5 : pc_con <= 3 ? -4 : pc_con <= 5 ? -3 : pc_con <= 7 ? -2 : pc_con <= 9 ? -1 : pc_con <= 11 ? 0 : pc_con <= 13 ? 1 : pc_con <= 15 ? 2 : pc_con <= 17 ? 3 : pc_con <= 19 ? 4 : pc_con <= 21 ? 5 : pc_con <= 23 ? 6 : pc_con <= 25 ? 7 : pc_con <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
-                      "altRollMessage": "",
-                      "style": "button",
-                      "type": "label"
-                    },
-                    {
-                      "key": "roll_jpm",
-                      "cssClass": "",
-                      "role": "0",
-                      "permission": "0",
-                      "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPM — Mental)",
-                      "visibilityFormula": null,
-                      "label": null,
-                      "defaultValue": null,
-                      "size": "full-size",
-                      "icon": "",
-                      "value": "JPM — Mental",
-                      "prefix": "",
-                      "suffix": "",
-                      "rollMessage": "<p><strong>JPM — Mental</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_int <= 1 ? -5 : pc_int <= 3 ? -4 : pc_int <= 5 ? -3 : pc_int <= 7 ? -2 : pc_int <= 9 ? -1 : pc_int <= 11 ? 0 : pc_int <= 13 ? 1 : pc_int <= 15 ? 2 : pc_int <= 17 ? 3 : pc_int <= 19 ? 4 : pc_int <= 21 ? 5 : pc_int <= 23 ? 6 : pc_int <= 25 ? 7 : pc_int <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
-                      "altRollMessage": "",
-                      "style": "button",
-                      "type": "label"
+                      "contents": [
+                        {
+                          "key": "roll_jpr",
+                          "cssClass": "",
+                          "role": "0",
+                          "permission": "0",
+                          "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPR — Reflexos)",
+                          "visibilityFormula": null,
+                          "label": null,
+                          "defaultValue": null,
+                          "size": "medium",
+                          "icon": "",
+                          "value": "JPR — Reflexos",
+                          "prefix": "",
+                          "suffix": "",
+                          "rollMessage": "<p><strong>JPR — Reflexos</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_des <= 1 ? -5 : pc_des <= 3 ? -4 : pc_des <= 5 ? -3 : pc_des <= 7 ? -2 : pc_des <= 9 ? -1 : pc_des <= 11 ? 0 : pc_des <= 13 ? 1 : pc_des <= 15 ? 2 : pc_des <= 17 ? 3 : pc_des <= 19 ? 4 : pc_des <= 21 ? 5 : pc_des <= 23 ? 6 : pc_des <= 25 ? 7 : pc_des <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
+                          "altRollMessage": "",
+                          "style": "button",
+                          "type": "label"
+                        },
+                        {
+                          "key": "roll_jpf",
+                          "cssClass": "",
+                          "role": "0",
+                          "permission": "0",
+                          "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPF — Física)",
+                          "visibilityFormula": null,
+                          "label": null,
+                          "defaultValue": null,
+                          "size": "medium",
+                          "icon": "",
+                          "value": "JPF — Física",
+                          "prefix": "",
+                          "suffix": "",
+                          "rollMessage": "<p><strong>JPF — Física</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_con <= 1 ? -5 : pc_con <= 3 ? -4 : pc_con <= 5 ? -3 : pc_con <= 7 ? -2 : pc_con <= 9 ? -1 : pc_con <= 11 ? 0 : pc_con <= 13 ? 1 : pc_con <= 15 ? 2 : pc_con <= 17 ? 3 : pc_con <= 19 ? 4 : pc_con <= 21 ? 5 : pc_con <= 23 ? 6 : pc_con <= 25 ? 7 : pc_con <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
+                          "altRollMessage": "",
+                          "style": "button",
+                          "type": "label"
+                        },
+                        {
+                          "key": "roll_jpm",
+                          "cssClass": "",
+                          "role": "0",
+                          "permission": "0",
+                          "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPM — Mental)",
+                          "visibilityFormula": null,
+                          "label": null,
+                          "defaultValue": null,
+                          "size": "medium",
+                          "icon": "",
+                          "value": "JPM — Mental",
+                          "prefix": "",
+                          "suffix": "",
+                          "rollMessage": "<p><strong>JPM — Mental</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_int <= 1 ? -5 : pc_int <= 3 ? -4 : pc_int <= 5 ? -3 : pc_int <= 7 ? -2 : pc_int <= 9 ? -1 : pc_int <= 11 ? 0 : pc_int <= 13 ? 1 : pc_int <= 15 ? 2 : pc_int <= 17 ? 3 : pc_int <= 19 ? 4 : pc_int <= 21 ? 5 : pc_int <= 23 ? 6 : pc_int <= 25 ? 7 : pc_int <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
+                          "altRollMessage": "",
+                          "style": "button",
+                          "type": "label"
+                        }
+                      ],
+                      "key": "pnl_jps",
+                      "cssClass": null,
+                      "role": 0,
+                      "permission": 0,
+                      "tooltip": null,
+                      "flow": "horizontal",
+                      "align": null,
+                      "type": "panel",
+                      "visibilityFormula": null
                     },
                     {
                       "key": "",
@@ -1903,7 +1699,7 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "title",
+                      "style": "bold",
                       "type": "label"
                     },
                     {
@@ -1922,7 +1718,7 @@
                       "suffix": "",
                       "rollMessage": "",
                       "altRollMessage": "",
-                      "style": "info",
+                      "style": "label",
                       "type": "label"
                     },
                     {
@@ -2080,25 +1876,6 @@
                     {
                       "contents": [
                         {
-                          "key": "",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "",
-                          "visibilityFormula": null,
-                          "label": null,
-                          "defaultValue": null,
-                          "size": "full-size",
-                          "icon": "",
-                          "value": "Veterano",
-                          "prefix": "",
-                          "suffix": "",
-                          "rollMessage": "",
-                          "altRollMessage": "",
-                          "style": "title",
-                          "type": "label"
-                        },
-                        {
                           "contents": [
                             {
                               "key": "roll_pc_pilotar",
@@ -2222,29 +1999,14 @@
                       "flow": null,
                       "align": null,
                       "type": "panel",
-                      "visibilityFormula": "pc_classe == 'classe_veterano'"
+                      "visibilityFormula": null,
+                      "title": "Veterano",
+                      "titleStyle": "title",
+                      "collapsible": true,
+                      "defaultCollapsed": true
                     },
                     {
                       "contents": [
-                        {
-                          "key": "",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "",
-                          "visibilityFormula": null,
-                          "label": null,
-                          "defaultValue": null,
-                          "size": "full-size",
-                          "icon": "",
-                          "value": "Operativo — os seis talentos de Gatuno",
-                          "prefix": "",
-                          "suffix": "",
-                          "rollMessage": "",
-                          "altRollMessage": "",
-                          "style": "title",
-                          "type": "label"
-                        },
                         {
                           "contents": [
                             {
@@ -2456,38 +2218,51 @@
                           "visibilityFormula": null
                         },
                         {
-                          "key": "pc_percepcao",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "",
-                          "visibilityFormula": null,
-                          "label": "Percepção (faixa em 1d6)",
-                          "defaultValue": "2",
-                          "size": "m-small",
-                          "allowDecimal": false,
-                          "minVal": "1",
-                          "maxVal": "5",
-                          "allowRelative": false,
-                          "showControls": true,
-                          "type": "numberField"
-                        },
-                        {
-                          "key": "pc_atq_furtivo",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "",
-                          "visibilityFormula": null,
-                          "label": "Ataque Furtivo (×)",
-                          "defaultValue": "2",
-                          "size": "m-small",
-                          "allowDecimal": false,
-                          "minVal": "2",
-                          "maxVal": "5",
-                          "allowRelative": false,
-                          "showControls": true,
-                          "type": "numberField"
+                          "contents": [
+                            {
+                              "key": "pc_percepcao",
+                              "cssClass": "",
+                              "role": "0",
+                              "permission": "0",
+                              "tooltip": "Rola 1d6 e compara com a faixa do nível",
+                              "visibilityFormula": null,
+                              "label": "Percepção",
+                              "defaultValue": "2",
+                              "size": "m-small",
+                              "allowDecimal": false,
+                              "minVal": "1",
+                              "maxVal": "5",
+                              "allowRelative": false,
+                              "showControls": true,
+                              "type": "numberField"
+                            },
+                            {
+                              "key": "pc_atq_furtivo",
+                              "cssClass": "",
+                              "role": "0",
+                              "permission": "0",
+                              "tooltip": "Multiplicador de dano depois de uma Furtividade bem-sucedida",
+                              "visibilityFormula": null,
+                              "label": "Atq. Furtivo ×",
+                              "defaultValue": "2",
+                              "size": "m-small",
+                              "allowDecimal": false,
+                              "minVal": "2",
+                              "maxVal": "5",
+                              "allowRelative": false,
+                              "showControls": true,
+                              "type": "numberField"
+                            }
+                          ],
+                          "key": "pnl_op_extra",
+                          "cssClass": null,
+                          "role": 0,
+                          "permission": 0,
+                          "tooltip": null,
+                          "flow": "horizontal",
+                          "align": null,
+                          "type": "panel",
+                          "visibilityFormula": null
                         },
                         {
                           "key": "",
@@ -2505,7 +2280,7 @@
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "info",
+                          "style": "label",
                           "type": "label"
                         }
                       ],
@@ -2517,29 +2292,14 @@
                       "flow": null,
                       "align": null,
                       "type": "panel",
-                      "visibilityFormula": "pc_classe == 'classe_operativo'"
+                      "visibilityFormula": null,
+                      "title": "Operativo — os seis talentos de Gatuno",
+                      "titleStyle": "title",
+                      "collapsible": true,
+                      "defaultCollapsed": true
                     },
                     {
                       "contents": [
-                        {
-                          "key": "",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "",
-                          "visibilityFormula": null,
-                          "label": null,
-                          "defaultValue": null,
-                          "size": "full-size",
-                          "icon": "",
-                          "value": "Técnico",
-                          "prefix": "",
-                          "suffix": "",
-                          "rollMessage": "",
-                          "altRollMessage": "",
-                          "style": "title",
-                          "type": "label"
-                        },
                         {
                           "contents": [
                             {
@@ -2622,7 +2382,7 @@
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "info",
+                          "style": "label",
                           "type": "label"
                         }
                       ],
@@ -2634,29 +2394,14 @@
                       "flow": null,
                       "align": null,
                       "type": "panel",
-                      "visibilityFormula": "pc_classe == 'classe_tecnico'"
+                      "visibilityFormula": null,
+                      "title": "Técnico",
+                      "titleStyle": "title",
+                      "collapsible": true,
+                      "defaultCollapsed": true
                     },
                     {
                       "contents": [
-                        {
-                          "key": "",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "",
-                          "visibilityFormula": null,
-                          "label": null,
-                          "defaultValue": null,
-                          "size": "full-size",
-                          "icon": "",
-                          "value": "Sensível à Força",
-                          "prefix": "",
-                          "suffix": "",
-                          "rollMessage": "",
-                          "altRollMessage": "",
-                          "style": "title",
-                          "type": "label"
-                        },
                         {
                           "contents": [
                             {
@@ -2788,7 +2533,7 @@
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "info",
+                          "style": "label",
                           "type": "label"
                         },
                         {
@@ -2832,7 +2577,11 @@
                       "flow": null,
                       "align": null,
                       "type": "panel",
-                      "visibilityFormula": "pc_classe == 'classe_sensivel'"
+                      "visibilityFormula": null,
+                      "title": "Sensível à Força",
+                      "titleStyle": "title",
+                      "collapsible": true,
+                      "defaultCollapsed": true
                     }
                   ],
                   "key": "pnl_classe",
@@ -2915,8 +2664,8 @@
       "visibilityFormula": null
     },
     "display": {
-      "width": "860",
-      "height": "820",
+      "width": "1020",
+      "height": "840",
       "fix_size": false,
       "pp_width": "64",
       "pp_height": "64"
@@ -2932,7 +2681,7 @@
       }
     },
     "activeEffects": {},
-    "templateSystemUniqueVersion": "1789139840147"
+    "templateSystemUniqueVersion": "1789142047624"
   },
   "items": [],
   "effects": [],
