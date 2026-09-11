@@ -419,17 +419,21 @@ const fichaCriatura = {
 
         titulo('Defesa e vida'),
         painel('pnl_cr_def', [
-          num('cr_cp', 'CP', { defaultValue: 10 }),
-          num('cr_jp', 'JP', { defaultValue: 15 }),
-          num('cr_dv', 'DV (d8)', { defaultValue: 1, minVal: 0 }),
-          num('cr_dv_bonus', 'Bônus de DV', { defaultValue: 0 }),
-        ], { flow: 'horizontal' }),
+          num('cr_cp', 'CP', { defaultValue: 10, size: 'm-small' }),
+          num('cr_jp', 'JP', { defaultValue: 15, size: 'm-small' }),
+          num('cr_dv', 'DV (d8)', { defaultValue: 1, minVal: 0, size: 'm-small' }),
+          num('cr_dv_bonus', '+ DV', {
+            defaultValue: 0, size: 'm-small',
+            tooltip: 'Bônus fixo somado aos dados de vida',
+          }),
+        ], { flow: 'grid-4' }),
         painel('pnl_cr_pv', [
-          num('cr_pv_atual', 'PV atual', { defaultValue: 8, allowRelative: true }),
-          num('cr_pv_max', 'PV máximo', { defaultValue: 8, minVal: 1 }),
+          num('cr_pv_atual', 'PV atual', { defaultValue: 8, allowRelative: true, size: 'medium' }),
+          num('cr_pv_max', 'PV máximo', { defaultValue: 8, minVal: 1, size: 'medium' }),
           rotulo('Rolar PV', {
             key: 'roll_cr_pv',
             style: 'button',
+            size: 'medium',
             tooltip: 'Criaturas usam SEMPRE d8',
             rollMessage: `<p>PV: ${'${[cr_dv + \'d8\'] + cr_dv_bonus}$'}</p>`,
           }),
@@ -440,10 +444,10 @@ const fichaCriatura = {
 
         titulo('Resistências'),
         painel('pnl_cr_res', [
-          num('cr_rm', 'RM (%)', { defaultValue: 0, minVal: 0, maxVal: 100 }),
-          num('cr_rd', 'RD', { defaultValue: 0, minVal: 0 }),
-          texto('cr_rd_excecao', 'RD não vale contra'),
-        ], { flow: 'horizontal' }),
+          num('cr_rm', 'RM (%)', { defaultValue: 0, minVal: 0, maxVal: 100, size: 'm-small' }),
+          num('cr_rd', 'RD', { defaultValue: 0, minVal: 0, size: 'm-small' }),
+          texto('cr_rd_excecao', 'RD não vale contra', { size: 'medium' }),
+        ], { flow: 'grid-3' }),
         rotulo('RM: a cada poder dirigido à criatura, role d%. Abaixo da RM, aquele ' +
                'poder NUNCA MAIS a afeta — e o Alcance do Sensível é gasto igual.',
                { size: 'full-size', style: 'label' }),
@@ -466,11 +470,11 @@ const fichaCriatura = {
                'com 100% e só saem de combate por Desativação — a exceção é o ' +
                'Metahumano, com 80%.', { size: 'full-size', style: 'label' }),
         painel('pnl_cr_premios', [
-          num('cr_xp', 'XP', { defaultValue: 0 }),
-          texto('cr_habitat', 'Habitat'),
-          texto('cr_encontros', 'Encontros'),
-          texto('cr_premios', 'Prêmios (O/D/U)'),
-        ], { flow: 'horizontal' }),
+          num('cr_xp', 'XP', { defaultValue: 0, size: 'm-small' }),
+          texto('cr_habitat', 'Habitat', { size: 'medium' }),
+          texto('cr_encontros', 'Encontros', { size: 'medium' }),
+          texto('cr_premios', 'Prêmios (O/D/U)', { size: 'medium' }),
+        ], { flow: 'grid-2' }),
 
         titulo('Ataques'),
         area('cr_ataques', 'Ataques'),

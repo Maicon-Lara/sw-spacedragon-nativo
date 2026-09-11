@@ -2681,7 +2681,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789142047624"
+        "templateSystemUniqueVersion": "1789144396912"
       }
     },
     {
@@ -3029,9 +3029,9 @@
                       "cssClass": "",
                       "role": "0",
                       "permission": "0",
-                      "tooltip": "",
+                      "tooltip": "Bônus fixo somado aos dados de vida",
                       "visibilityFormula": null,
-                      "label": "Bônus de DV",
+                      "label": "+ DV",
                       "defaultValue": "0",
                       "size": "m-small",
                       "allowDecimal": false,
@@ -3047,7 +3047,7 @@
                   "role": 0,
                   "permission": 0,
                   "tooltip": null,
-                  "flow": "horizontal",
+                  "flow": "grid-4",
                   "align": null,
                   "type": "panel",
                   "visibilityFormula": null
@@ -3063,7 +3063,7 @@
                       "visibilityFormula": null,
                       "label": "PV atual",
                       "defaultValue": "8",
-                      "size": "m-small",
+                      "size": "medium",
                       "allowDecimal": false,
                       "minVal": "",
                       "maxVal": "",
@@ -3080,7 +3080,7 @@
                       "visibilityFormula": null,
                       "label": "PV máximo",
                       "defaultValue": "8",
-                      "size": "m-small",
+                      "size": "medium",
                       "allowDecimal": false,
                       "minVal": "1",
                       "maxVal": "",
@@ -3097,7 +3097,7 @@
                       "visibilityFormula": null,
                       "label": null,
                       "defaultValue": null,
-                      "size": "x-small",
+                      "size": "medium",
                       "icon": "",
                       "value": "Rolar PV",
                       "prefix": "",
@@ -3201,7 +3201,7 @@
                       "visibilityFormula": null,
                       "label": "RD não vale contra",
                       "defaultValue": "",
-                      "size": "full-size",
+                      "size": "medium",
                       "charList": "",
                       "maxLength": "",
                       "type": "textField"
@@ -3212,7 +3212,7 @@
                   "role": 0,
                   "permission": 0,
                   "tooltip": null,
-                  "flow": "horizontal",
+                  "flow": "grid-3",
                   "align": null,
                   "type": "panel",
                   "visibilityFormula": null
@@ -3382,7 +3382,7 @@
                       "visibilityFormula": null,
                       "label": "Habitat",
                       "defaultValue": "",
-                      "size": "full-size",
+                      "size": "medium",
                       "charList": "",
                       "maxLength": "",
                       "type": "textField"
@@ -3396,7 +3396,7 @@
                       "visibilityFormula": null,
                       "label": "Encontros",
                       "defaultValue": "",
-                      "size": "full-size",
+                      "size": "medium",
                       "charList": "",
                       "maxLength": "",
                       "type": "textField"
@@ -3410,7 +3410,7 @@
                       "visibilityFormula": null,
                       "label": "Prêmios (O/D/U)",
                       "defaultValue": "",
-                      "size": "full-size",
+                      "size": "medium",
                       "charList": "",
                       "maxLength": "",
                       "type": "textField"
@@ -3421,7 +3421,7 @@
                   "role": 0,
                   "permission": 0,
                   "tooltip": null,
-                  "flow": "horizontal",
+                  "flow": "grid-2",
                   "align": null,
                   "type": "panel",
                   "visibilityFormula": null
@@ -3526,7 +3526,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789142047625"
+        "templateSystemUniqueVersion": "1789144396913"
       }
     }
   ],
