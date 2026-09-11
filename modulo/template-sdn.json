@@ -1876,25 +1876,6 @@
                         {
                           "contents": [
                             {
-                              "key": "",
-                              "cssClass": "",
-                              "role": "0",
-                              "permission": "0",
-                              "tooltip": "",
-                              "visibilityFormula": null,
-                              "label": null,
-                              "defaultValue": null,
-                              "size": "full-size",
-                              "icon": "",
-                              "value": "Veterano",
-                              "prefix": "",
-                              "suffix": "",
-                              "rollMessage": "",
-                              "altRollMessage": "",
-                              "style": "bold",
-                              "type": "label"
-                            },
-                            {
                               "contents": [
                                 {
                                   "key": "roll_pc_pilotar",
@@ -2018,29 +1999,14 @@
                           "flow": null,
                           "align": null,
                           "type": "panel",
-                          "visibilityFormula": "pc_classe == 'classe_veterano' ? 1 : 0"
+                          "visibilityFormula": null,
+                          "title": "Veterano",
+                          "titleStyle": "title",
+                          "collapsible": true,
+                          "defaultCollapsed": true
                         },
                         {
                           "contents": [
-                            {
-                              "key": "",
-                              "cssClass": "",
-                              "role": "0",
-                              "permission": "0",
-                              "tooltip": "",
-                              "visibilityFormula": null,
-                              "label": null,
-                              "defaultValue": null,
-                              "size": "full-size",
-                              "icon": "",
-                              "value": "Operativo — os seis talentos de Gatuno",
-                              "prefix": "",
-                              "suffix": "",
-                              "rollMessage": "",
-                              "altRollMessage": "",
-                              "style": "bold",
-                              "type": "label"
-                            },
                             {
                               "contents": [
                                 {
@@ -2313,29 +2279,14 @@
                           "flow": null,
                           "align": null,
                           "type": "panel",
-                          "visibilityFormula": "pc_classe == 'classe_operativo' ? 1 : 0"
+                          "visibilityFormula": null,
+                          "title": "Operativo — os seis talentos de Gatuno",
+                          "titleStyle": "title",
+                          "collapsible": true,
+                          "defaultCollapsed": true
                         },
                         {
                           "contents": [
-                            {
-                              "key": "",
-                              "cssClass": "",
-                              "role": "0",
-                              "permission": "0",
-                              "tooltip": "",
-                              "visibilityFormula": null,
-                              "label": null,
-                              "defaultValue": null,
-                              "size": "full-size",
-                              "icon": "",
-                              "value": "Técnico",
-                              "prefix": "",
-                              "suffix": "",
-                              "rollMessage": "",
-                              "altRollMessage": "",
-                              "style": "bold",
-                              "type": "label"
-                            },
                             {
                               "contents": [
                                 {
@@ -2430,29 +2381,14 @@
                           "flow": null,
                           "align": null,
                           "type": "panel",
-                          "visibilityFormula": "pc_classe == 'classe_tecnico' ? 1 : 0"
+                          "visibilityFormula": null,
+                          "title": "Técnico",
+                          "titleStyle": "title",
+                          "collapsible": true,
+                          "defaultCollapsed": true
                         },
                         {
                           "contents": [
-                            {
-                              "key": "",
-                              "cssClass": "",
-                              "role": "0",
-                              "permission": "0",
-                              "tooltip": "",
-                              "visibilityFormula": null,
-                              "label": null,
-                              "defaultValue": null,
-                              "size": "full-size",
-                              "icon": "",
-                              "value": "Sensível à Força",
-                              "prefix": "",
-                              "suffix": "",
-                              "rollMessage": "",
-                              "altRollMessage": "",
-                              "style": "bold",
-                              "type": "label"
-                            },
                             {
                               "contents": [
                                 {
@@ -2628,7 +2564,11 @@
                           "flow": null,
                           "align": null,
                           "type": "panel",
-                          "visibilityFormula": "pc_classe == 'classe_sensivel' ? 1 : 0"
+                          "visibilityFormula": null,
+                          "title": "Sensível à Força",
+                          "titleStyle": "title",
+                          "collapsible": true,
+                          "defaultCollapsed": true
                         }
                       ],
                       "key": "pnl_classe",
@@ -2728,7 +2668,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789141913315"
+        "templateSystemUniqueVersion": "1789141975581"
       }
     },
     {
@@ -3573,7 +3513,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789141913316"
+        "templateSystemUniqueVersion": "1789141975582"
       }
     }
   ],

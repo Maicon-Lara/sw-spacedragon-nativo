@@ -254,10 +254,11 @@ function talento(key, nome, comAjusteDes = true) {
   ], { flow: 'horizontal' });
 }
 
-// A visibilidade e avaliada como `!!formula.result`. Se a engine devolver a STRING
-// "false", `!!"false"` e VERDADEIRO e o painel aparece sempre. Por isso o ternario:
-// o resultado tem de ser o NUMERO 1 ou 0.
-const vis = (c) => `pc_classe == '${c}' ? 1 : 0`;
+// Nao usamos visibilityFormula para esconder o bloco da classe: no CSB 5.2.1 a
+// decisao e `canRender = !!formula.result`, e nao consegui fazer a engine devolver
+// algo falsy de forma confiavel — todos os blocos apareciam juntos. Em vez disso,
+// cada classe fica num painel RECOLHIVEL, fechado por padrao. Mais previsivel, e o
+// Mestre ainda consegue espiar o bloco de outra classe quando precisa.
 
 const abaClasse = aba('tab_classe', 'Classe', [
   painel('pnl_classe', [
@@ -271,15 +272,13 @@ const abaClasse = aba('tab_classe', 'Classe', [
 
     // Veterano
     painel('pnl_veterano', [
-      titulo('Veterano'),
       talento('pc_pilotar', 'Pilotar naves', false),
       talento('pc_desarmar', 'Desarmar e subjugar', false),
       num('pc_critico', 'Multiplicador de crítico', { defaultValue: 2, minVal: 2, maxVal: 5 }),
-    ], { visibilityFormula: vis('classe_veterano') }),
+    ], { title: "Veterano", collapsible: true, recolhido: true }),
 
     // Operativo — SEIS talentos, e só seis
     painel('pnl_operativo', [
-      titulo('Operativo — os seis talentos de Gatuno'),
       talento('pc_sabotagem', 'Sabotagem (destrancar e avariar)'),
       texto('pc_sabotagem_rodadas', 'Rodadas do trabalho', { defaultValue: '1d8' }),
       talento('pc_escalar', 'Escalar', false),
@@ -290,21 +289,19 @@ const abaClasse = aba('tab_classe', 'Classe', [
       rotulo('Sabotagem é a ÚNICA % que o Crédito Tecnológico modifica. Não existem ' +
              'talentos separados de "Arrombar" nem de "Esconder".',
              { size: 'full-size', style: 'label' }),
-    ], { visibilityFormula: vis('classe_operativo') }),
+    ], { title: "Operativo — os seis talentos de Gatuno", collapsible: true, recolhido: true }),
 
     // Técnico
     painel('pnl_tecnico', [
-      titulo('Técnico'),
       talento('pc_operar_maquinas', 'Operar Máquinas', false),
       num('pc_nt_max', 'NT máximo', { defaultValue: 1, minVal: 1, maxVal: 10 }),
       rotulo('O NT sobe um passo a cada DOIS níveis, chegando a 10 no 19º. Ele limita ' +
              'o que o Técnico CRIA, não o que pode usar.',
              { size: 'full-size', style: 'label' }),
-    ], { visibilityFormula: vis('classe_tecnico') }),
+    ], { title: "Técnico", collapsible: true, recolhido: true }),
 
     // Sensível à Força
     painel('pnl_sensivel', [
-      titulo('Sensível à Força'),
       painel('pnl_alcance', [
         num('pc_alcance_gasto', 'Alcance gasto (%)', { defaultValue: 0, allowRelative: true }),
         num('pc_alcance_tabela', 'Alcance da tabela (%)', { defaultValue: 1, minVal: 1 }),
@@ -330,7 +327,7 @@ const abaClasse = aba('tab_classe', 'Classe', [
           ` ${'${roll > alvo * 2 ? \'<em>Passou do dobro: efeito colateral a critério do Mestre.</em>\' : \'\'}$'}</p>`,
       }),
       area('pc_poderes_conhecidos', 'Poderes conhecidos (começa com 2 de 1ª Grandeza)'),
-    ], { visibilityFormula: vis('classe_sensivel') }),
+    ], { title: "Sensível à Força", collapsible: true, recolhido: true }),
   ]),
 ]);
 
