@@ -1209,7 +1209,7 @@
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "subtitle",
+                          "style": "label",
                           "type": "label"
                         },
                         {
@@ -1314,9 +1314,9 @@
                               "cssClass": "",
                               "role": "0",
                               "permission": "0",
-                              "tooltip": "",
+                              "tooltip": "Valor de proteção da veste equipada",
                               "visibilityFormula": null,
-                              "label": "Proteção da veste",
+                              "label": "Veste",
                               "defaultValue": "10",
                               "size": "m-small",
                               "allowDecimal": false,
@@ -1331,9 +1331,9 @@
                               "cssClass": "",
                               "role": "0",
                               "permission": "0",
-                              "tooltip": "",
+                              "tooltip": "Soma de aparatos defensivos e poderes que alteram o CP",
                               "visibilityFormula": null,
-                              "label": "Aparatos e poderes",
+                              "label": "Aparatos",
                               "defaultValue": "0",
                               "size": "m-small",
                               "allowDecimal": false,
@@ -1421,7 +1421,7 @@
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "subtitle",
+                          "style": "label",
                           "type": "label"
                         },
                         {
@@ -1480,21 +1480,42 @@
                               "type": "numberField"
                             },
                             {
-                              "key": "pc_pv_negativo_morte",
+                              "key": "",
                               "cssClass": "",
                               "role": "0",
                               "permission": "0",
                               "tooltip": "",
                               "visibilityFormula": null,
-                              "label": "Morre em",
-                              "defaultValue": "-10",
+                              "label": null,
+                              "defaultValue": null,
                               "size": "m-small",
-                              "allowDecimal": false,
-                              "minVal": "",
-                              "maxVal": "",
-                              "allowRelative": false,
-                              "showControls": true,
-                              "type": "numberField"
+                              "icon": "",
+                              "value": "Morre em:",
+                              "prefix": "",
+                              "suffix": "",
+                              "rollMessage": "",
+                              "altRollMessage": "",
+                              "style": "bold",
+                              "type": "label"
+                            },
+                            {
+                              "key": "pc_danos_mortais",
+                              "cssClass": "",
+                              "role": "0",
+                              "permission": "0",
+                              "tooltip": "",
+                              "visibilityFormula": null,
+                              "label": null,
+                              "defaultValue": null,
+                              "size": "m-small",
+                              "icon": "",
+                              "value": "${pc_con <= 1 ? -5 : pc_con <= 3 ? -6 : pc_con <= 5 ? -7 : pc_con <= 7 ? -8 : pc_con <= 9 ? -9 : pc_con <= 11 ? -10 : pc_con <= 13 ? -11 : pc_con <= 15 ? -12 : pc_con <= 17 ? -13 : pc_con <= 19 ? -14 : pc_con <= 21 ? -15 : pc_con <= 23 ? -16 : pc_con <= 25 ? -17 : pc_con <= 27 ? -18 : -19}$",
+                              "prefix": "",
+                              "suffix": " PV",
+                              "rollMessage": "",
+                              "altRollMessage": "",
+                              "style": "label",
+                              "type": "label"
                             }
                           ],
                           "key": "pnl_pv",
@@ -1589,65 +1610,78 @@
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "subtitle",
+                          "style": "label",
                           "type": "label"
                         },
                         {
-                          "key": "roll_jpr",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPR — Reflexos)",
-                          "visibilityFormula": null,
-                          "label": null,
-                          "defaultValue": null,
-                          "size": "full-size",
-                          "icon": "",
-                          "value": "JPR — Reflexos",
-                          "prefix": "",
-                          "suffix": "",
-                          "rollMessage": "<p><strong>JPR — Reflexos</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_des <= 1 ? -5 : pc_des <= 3 ? -4 : pc_des <= 5 ? -3 : pc_des <= 7 ? -2 : pc_des <= 9 ? -1 : pc_des <= 11 ? 0 : pc_des <= 13 ? 1 : pc_des <= 15 ? 2 : pc_des <= 17 ? 3 : pc_des <= 19 ? 4 : pc_des <= 21 ? 5 : pc_des <= 23 ? 6 : pc_des <= 25 ? 7 : pc_des <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
-                          "altRollMessage": "",
-                          "style": "button",
-                          "type": "label"
-                        },
-                        {
-                          "key": "roll_jpf",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPF — Física)",
-                          "visibilityFormula": null,
-                          "label": null,
-                          "defaultValue": null,
-                          "size": "full-size",
-                          "icon": "",
-                          "value": "JPF — Física",
-                          "prefix": "",
-                          "suffix": "",
-                          "rollMessage": "<p><strong>JPF — Física</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_con <= 1 ? -5 : pc_con <= 3 ? -4 : pc_con <= 5 ? -3 : pc_con <= 7 ? -2 : pc_con <= 9 ? -1 : pc_con <= 11 ? 0 : pc_con <= 13 ? 1 : pc_con <= 15 ? 2 : pc_con <= 17 ? 3 : pc_con <= 19 ? 4 : pc_con <= 21 ? 5 : pc_con <= 23 ? 6 : pc_con <= 25 ? 7 : pc_con <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
-                          "altRollMessage": "",
-                          "style": "button",
-                          "type": "label"
-                        },
-                        {
-                          "key": "roll_jpm",
-                          "cssClass": "",
-                          "role": "0",
-                          "permission": "0",
-                          "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPM — Mental)",
-                          "visibilityFormula": null,
-                          "label": null,
-                          "defaultValue": null,
-                          "size": "full-size",
-                          "icon": "",
-                          "value": "JPM — Mental",
-                          "prefix": "",
-                          "suffix": "",
-                          "rollMessage": "<p><strong>JPM — Mental</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_int <= 1 ? -5 : pc_int <= 3 ? -4 : pc_int <= 5 ? -3 : pc_int <= 7 ? -2 : pc_int <= 9 ? -1 : pc_int <= 11 ? 0 : pc_int <= 13 ? 1 : pc_int <= 15 ? 2 : pc_int <= 17 ? 3 : pc_int <= 19 ? 4 : pc_int <= 21 ? 5 : pc_int <= 23 ? 6 : pc_int <= 25 ? 7 : pc_int <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
-                          "altRollMessage": "",
-                          "style": "button",
-                          "type": "label"
+                          "contents": [
+                            {
+                              "key": "roll_jpr",
+                              "cssClass": "",
+                              "role": "0",
+                              "permission": "0",
+                              "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPR — Reflexos)",
+                              "visibilityFormula": null,
+                              "label": null,
+                              "defaultValue": null,
+                              "size": "medium",
+                              "icon": "",
+                              "value": "JPR — Reflexos",
+                              "prefix": "",
+                              "suffix": "",
+                              "rollMessage": "<p><strong>JPR — Reflexos</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_des <= 1 ? -5 : pc_des <= 3 ? -4 : pc_des <= 5 ? -3 : pc_des <= 7 ? -2 : pc_des <= 9 ? -1 : pc_des <= 11 ? 0 : pc_des <= 13 ? 1 : pc_des <= 15 ? 2 : pc_des <= 17 ? 3 : pc_des <= 19 ? 4 : pc_des <= 21 ? 5 : pc_des <= 23 ? 6 : pc_des <= 25 ? 7 : pc_des <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
+                              "altRollMessage": "",
+                              "style": "button",
+                              "type": "label"
+                            },
+                            {
+                              "key": "roll_jpf",
+                              "cssClass": "",
+                              "role": "0",
+                              "permission": "0",
+                              "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPF — Física)",
+                              "visibilityFormula": null,
+                              "label": null,
+                              "defaultValue": null,
+                              "size": "medium",
+                              "icon": "",
+                              "value": "JPF — Física",
+                              "prefix": "",
+                              "suffix": "",
+                              "rollMessage": "<p><strong>JPF — Física</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_con <= 1 ? -5 : pc_con <= 3 ? -4 : pc_con <= 5 ? -3 : pc_con <= 7 ? -2 : pc_con <= 9 ? -1 : pc_con <= 11 ? 0 : pc_con <= 13 ? 1 : pc_con <= 15 ? 2 : pc_con <= 17 ? 3 : pc_con <= 19 ? 4 : pc_con <= 21 ? 5 : pc_con <= 23 ? 6 : pc_con <= 25 ? 7 : pc_con <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
+                              "altRollMessage": "",
+                              "style": "button",
+                              "type": "label"
+                            },
+                            {
+                              "key": "roll_jpm",
+                              "cssClass": "",
+                              "role": "0",
+                              "permission": "0",
+                              "tooltip": "1d20 + ajuste ≥ o valor de JP da classe (JPM — Mental)",
+                              "visibilityFormula": null,
+                              "label": null,
+                              "defaultValue": null,
+                              "size": "medium",
+                              "icon": "",
+                              "value": "JPM — Mental",
+                              "prefix": "",
+                              "suffix": "",
+                              "rollMessage": "<p><strong>JPM — Mental</strong> — alvo ${pc_jp}$:</p>\n<p>${roll:=[1d20]}$ + ${aj:=pc_int <= 1 ? -5 : pc_int <= 3 ? -4 : pc_int <= 5 ? -3 : pc_int <= 7 ? -2 : pc_int <= 9 ? -1 : pc_int <= 11 ? 0 : pc_int <= 13 ? 1 : pc_int <= 15 ? 2 : pc_int <= 17 ? 3 : pc_int <= 19 ? 4 : pc_int <= 21 ? 5 : pc_int <= 23 ? 6 : pc_int <= 25 ? 7 : pc_int <= 27 ? 8 : 9}$ = ${total:=roll + aj}$ ${total >= pc_jp ? '<strong>Passou</strong>' : 'Falhou'}$</p>",
+                              "altRollMessage": "",
+                              "style": "button",
+                              "type": "label"
+                            }
+                          ],
+                          "key": "pnl_jps",
+                          "cssClass": null,
+                          "role": 0,
+                          "permission": 0,
+                          "tooltip": null,
+                          "flow": "horizontal",
+                          "align": null,
+                          "type": "panel",
+                          "visibilityFormula": null
                         },
                         {
                           "key": "",
@@ -1684,7 +1718,7 @@
                           "suffix": "",
                           "rollMessage": "",
                           "altRollMessage": "",
-                          "style": "subtitle",
+                          "style": "label",
                           "type": "label"
                         },
                         {
@@ -2267,7 +2301,7 @@
                               "suffix": "",
                               "rollMessage": "",
                               "altRollMessage": "",
-                              "style": "subtitle",
+                              "style": "label",
                               "type": "label"
                             }
                           ],
@@ -2384,7 +2418,7 @@
                               "suffix": "",
                               "rollMessage": "",
                               "altRollMessage": "",
-                              "style": "subtitle",
+                              "style": "label",
                               "type": "label"
                             }
                           ],
@@ -2550,7 +2584,7 @@
                               "suffix": "",
                               "rollMessage": "",
                               "altRollMessage": "",
-                              "style": "subtitle",
+                              "style": "label",
                               "type": "label"
                             },
                             {
@@ -2694,7 +2728,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789141469458"
+        "templateSystemUniqueVersion": "1789141640008"
       }
     },
     {
@@ -2962,7 +2996,7 @@
                   "suffix": "",
                   "rollMessage": "",
                   "altRollMessage": "",
-                  "style": "subtitle",
+                  "style": "label",
                   "type": "label"
                 },
                 {
@@ -3147,7 +3181,7 @@
                   "suffix": "",
                   "rollMessage": "",
                   "altRollMessage": "",
-                  "style": "subtitle",
+                  "style": "label",
                   "type": "label"
                 },
                 {
@@ -3246,7 +3280,7 @@
                   "suffix": "",
                   "rollMessage": "",
                   "altRollMessage": "",
-                  "style": "subtitle",
+                  "style": "label",
                   "type": "label"
                 },
                 {
@@ -3364,7 +3398,7 @@
                   "suffix": "",
                   "rollMessage": "",
                   "altRollMessage": "",
-                  "style": "subtitle",
+                  "style": "label",
                   "type": "label"
                 },
                 {
@@ -3487,7 +3521,7 @@
                   "suffix": "",
                   "rollMessage": "",
                   "altRollMessage": "",
-                  "style": "subtitle",
+                  "style": "label",
                   "type": "label"
                 },
                 {
@@ -3539,7 +3573,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1789141469459"
+        "templateSystemUniqueVersion": "1789141640009"
       }
     }
   ],

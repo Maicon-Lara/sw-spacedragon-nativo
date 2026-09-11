@@ -143,7 +143,7 @@ const abaAtributos = aba('tab_atributos', 'Atributos', [
     rotulo(
       'O Crédito Tecnológico é um número só: chance de sabotar máquinas, uso de ' +
       'aparatos ofensivos pelo Caçador e desconto do Técnico em qualquer compra.',
-      { size: 'full-size', style: 'subtitle' }),
+      { size: 'full-size', style: 'label' }),
     painel('pnl_ler', [
       rotulo('Idiomas que lê e escreve: ', { size: 'medium' }),
       rotulo('${floor(pc_com / 6)}$', { key: 'der_ler_escrever' }),
@@ -166,7 +166,7 @@ function blocoJP([slug, nome, ajuste]) {
   return rotulo(nome, {
     key: `roll_${slug}`,
     style: 'button',
-    size: 'full-size',
+    size: 'medium',
     tooltip: `1d20 + ajuste ≥ o valor de JP da classe (${nome})`,
     rollMessage:
       `<p><strong>${nome}</strong> — alvo ${'${pc_jp}$'}:</p>\n` +
@@ -179,8 +179,14 @@ const abaCombate = aba('tab_combate', 'Combate', [
   painel('pnl_combate', [
     titulo('Coeficiente de Proteção'),
     painel('pnl_cp_entradas', [
-      num('pc_veste_protecao', 'Proteção da veste', { defaultValue: 10, minVal: 0 }),
-      num('pc_cp_aparatos', 'Aparatos e poderes', { defaultValue: 0, allowRelative: true }),
+      num('pc_veste_protecao', 'Veste', {
+        defaultValue: 10, minVal: 0, size: 'm-small',
+        tooltip: 'Valor de proteção da veste equipada',
+      }),
+      num('pc_cp_aparatos', 'Aparatos', {
+        defaultValue: 0, allowRelative: true, size: 'm-small',
+        tooltip: 'Soma de aparatos defensivos e poderes que alteram o CP',
+      }),
     ], { flow: 'horizontal' }),
     painel('pnl_cp_total', [
       rotulo('CP = ', { size: 'medium' }),
@@ -189,13 +195,15 @@ const abaCombate = aba('tab_combate', 'Combate', [
     rotulo(
       'O modificador de Destreza entra INTEIRO — o Space Dragon não tem teto de ' +
       'Destreza por armadura. O bônus de nível vem da Tabela 4-1 e não é cumulativo.',
-      { size: 'full-size', style: 'subtitle' }),
+      { size: 'full-size', style: 'label' }),
 
     titulo('Pontos de Vida'),
     painel('pnl_pv', [
       num('pc_pv_atual', 'PV atual', { defaultValue: 1, allowRelative: true }),
       num('pc_pv_max', 'PV máximo', { defaultValue: 1, minVal: 1 }),
-      num('pc_pv_negativo_morte', 'Morre em', { defaultValue: -10 }),
+      rotulo('Morre em:', { size: 'm-small', style: 'bold' }),
+      rotulo('${' + lookup(T.T1_3, 3, 'pc_con') + '}$',
+             { key: 'pc_danos_mortais', suffix: ' PV', size: 'm-small' }),
     ], { flow: 'horizontal' }),
 
     titulo('Base de Ataque e Jogadas de Proteção'),
@@ -204,14 +212,14 @@ const abaCombate = aba('tab_combate', 'Combate', [
       num('pc_jp', 'JP (alvo)', { defaultValue: 15, minVal: 1 }),
     ], { flow: 'horizontal' }),
     rotulo('Uma JP só, e ela DESCE com o nível. Rola-se 1d20 + ajuste e o total ' +
-           'precisa IGUALAR OU SUPERAR o valor.', { size: 'full-size', style: 'subtitle' }),
-    ...JPS.map(blocoJP),
+           'precisa IGUALAR OU SUPERAR o valor.', { size: 'full-size', style: 'label' }),
+    painel('pnl_jps', JPS.map(blocoJP), { flow: 'horizontal' }),
 
     titulo('Ordem de Ação — o MENOR resultado age PRIMEIRO'),
     rotulo('Atacar: role o dado de dano da arma. Aparato ou poder: use o NT ou a ' +
            'Grandeza. Movimentação dupla e outras ações: 10 − ajuste de Destreza. ' +
            'Empates são simultâneos. A rodada dura o maior resultado × 2 segundos.',
-           { size: 'full-size', style: 'subtitle' }),
+           { size: 'full-size', style: 'label' }),
     painel('pnl_ordem', [
       rotulo('Outras ações: ', { size: 'medium' }),
       rotulo('${10 - (' + lookup(T.T1_2, 1, 'pc_des') + ')}$', { key: 'pc_ordem_outras' }),
@@ -278,7 +286,7 @@ const abaClasse = aba('tab_classe', 'Classe', [
       num('pc_atq_furtivo', 'Ataque Furtivo (×)', { defaultValue: 2, minVal: 2, maxVal: 5 }),
       rotulo('Sabotagem é a ÚNICA % que o Crédito Tecnológico modifica. Não existem ' +
              'talentos separados de "Arrombar" nem de "Esconder".',
-             { size: 'full-size', style: 'subtitle' }),
+             { size: 'full-size', style: 'label' }),
     ], { visibilityFormula: vis('classe_operativo') }),
 
     // Técnico
@@ -288,7 +296,7 @@ const abaClasse = aba('tab_classe', 'Classe', [
       num('pc_nt_max', 'NT máximo', { defaultValue: 1, minVal: 1, maxVal: 10 }),
       rotulo('O NT sobe um passo a cada DOIS níveis, chegando a 10 no 19º. Ele limita ' +
              'o que o Técnico CRIA, não o que pode usar.',
-             { size: 'full-size', style: 'subtitle' }),
+             { size: 'full-size', style: 'label' }),
     ], { visibilityFormula: vis('classe_tecnico') }),
 
     // Sensível à Força
@@ -307,7 +315,7 @@ const abaClasse = aba('tab_classe', 'Classe', [
       rotulo('Usar um poder desconta % igual à Grandeza dele, MESMO se falhar ou for ' +
              'anulado. Zera com 8 h de descanso. Nunca passe do máximo: tentar é risco ' +
              'de morte. Manifestar cobra −4 no CP, e exige concentração — mas não fala ' +
-             'nem gesto.', { size: 'full-size', style: 'subtitle' }),
+             'nem gesto.', { size: 'full-size', style: 'label' }),
       rotulo('Poder desconhecido', {
         key: 'roll_poder_desconhecido',
         style: 'button',
@@ -399,7 +407,7 @@ const fichaCriatura = {
           { flow: 'horizontal' }),
         rotulo('Intelecto 0 é irracional e imune a poderes mentais. Ciência 0 é ' +
                'totalmente primitivo. Comunicação 0 não se comunica de forma alguma.',
-               { size: 'full-size', style: 'subtitle' }),
+               { size: 'full-size', style: 'label' }),
 
         titulo('Defesa e vida'),
         painel('pnl_cr_def', [
@@ -420,7 +428,7 @@ const fichaCriatura = {
         ], { flow: 'horizontal' }),
         rotulo('A JP é um valor único e já engloba JPR, JPF e JPM — não se aplica ' +
                'modificador nenhum. O CP já inclui a proteção natural.',
-               { size: 'full-size', style: 'subtitle' }),
+               { size: 'full-size', style: 'label' }),
 
         titulo('Resistências'),
         painel('pnl_cr_res', [
@@ -430,7 +438,7 @@ const fichaCriatura = {
         ], { flow: 'horizontal' }),
         rotulo('RM: a cada poder dirigido à criatura, role d%. Abaixo da RM, aquele ' +
                'poder NUNCA MAIS a afeta — e o Alcance do Sensível é gasto igual.',
-               { size: 'full-size', style: 'subtitle' }),
+               { size: 'full-size', style: 'label' }),
 
         titulo('Moral, movimento e prêmios'),
         painel('pnl_cr_moral', [
@@ -448,7 +456,7 @@ const fichaCriatura = {
         ], { flow: 'horizontal' }),
         rotulo('Moral 0% sempre foge; 100% nunca desiste. Robôs de mente simples vêm ' +
                'com 100% e só saem de combate por Desativação — a exceção é o ' +
-               'Metahumano, com 80%.', { size: 'full-size', style: 'subtitle' }),
+               'Metahumano, com 80%.', { size: 'full-size', style: 'label' }),
         painel('pnl_cr_premios', [
           num('cr_xp', 'XP', { defaultValue: 0 }),
           texto('cr_habitat', 'Habitat'),
@@ -459,7 +467,7 @@ const fichaCriatura = {
         titulo('Ataques'),
         area('cr_ataques', 'Ataques'),
         rotulo('O dado de dano do ataque é TAMBÉM a Ordem de Ação da criatura, e o ' +
-               'menor resultado age primeiro.', { size: 'full-size', style: 'subtitle' }),
+               'menor resultado age primeiro.', { size: 'full-size', style: 'label' }),
         area('cr_descricao', 'Descrição e poderes'),
       ]),
     ]),
