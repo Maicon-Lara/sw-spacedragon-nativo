@@ -1,0 +1,41 @@
+{
+  "_id": "yeh9sIUmeK9rAcfo",
+  "name": "Metahumano (droide de combate avançado)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 16,
+      "cr_jp": 11,
+      "cr_dv": 12,
+      "cr_dv_bonus": 4,
+      "cr_pv_atual": 100,
+      "cr_pv_max": 100,
+      "cr_moral": 80,
+      "cr_mov": 9,
+      "cr_mov_outros": "",
+      "cr_rm": 5,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 1975,
+      "cr_ataques": "pistola +10 (1d6); rifle +6 (1d8); **RM 5%** · desativável",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

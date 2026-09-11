@@ -1,0 +1,41 @@
+{
+  "_id": "a0cTMa5WkkG3K4nK",
+  "name": "Gigantossauro (Zillo/colosso)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_colossal",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 18,
+      "cr_jp": 6,
+      "cr_dv": 20,
+      "cr_dv_bonus": 5,
+      "cr_pv_atual": 165,
+      "cr_pv_max": 165,
+      "cr_moral": 90,
+      "cr_mov": 14,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 7250,
+      "cr_ataques": "pisão +14 (2d10+9 [crít.: dano massivo]); cauda +10 (1d10+4)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

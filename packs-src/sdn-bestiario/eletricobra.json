@@ -1,0 +1,41 @@
+{
+  "_id": "koZPsEjmoILQU2bs",
+  "name": "Eletricobra",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 14,
+      "cr_jp": 14,
+      "cr_dv": 2,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 16,
+      "cr_pv_max": 16,
+      "cr_moral": 60,
+      "cr_mov": 9,
+      "cr_mov_outros": "nadando 6 m",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 100,
+      "cr_ataques": "mordida +4 (1d6 + 1d4 elétrico); descarga (1d8 elét. + paralisia 5 m²)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

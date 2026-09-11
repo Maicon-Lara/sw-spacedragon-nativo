@@ -1,0 +1,41 @@
+{
+  "_id": "6swAqh4VmOdvC6QZ",
+  "name": "Rinoceratops (Reek)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_imenso",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 17,
+      "cr_jp": 12,
+      "cr_dv": 10,
+      "cr_dv_bonus": 5,
+      "cr_pv_atual": 85,
+      "cr_pv_max": 85,
+      "cr_moral": 90,
+      "cr_mov": 12,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 1390,
+      "cr_ataques": "chifrada +15 (2d10+8 + arremesso); cabeçada +8 (1d10+6)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

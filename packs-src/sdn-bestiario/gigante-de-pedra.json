@@ -1,0 +1,41 @@
+{
+  "_id": "1miNa6QuACmxYiwG",
+  "name": "Gigante de pedra",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_imenso",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 18,
+      "cr_jp": 12,
+      "cr_dv": 10,
+      "cr_dv_bonus": 4,
+      "cr_pv_atual": 84,
+      "cr_pv_max": 84,
+      "cr_moral": 80,
+      "cr_mov": 11,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 6,
+      "cr_rd_excecao": "ácido",
+      "cr_xp": 1480,
+      "cr_ataques": "pancada +12 (4d6+6); rocha +6 (3d6); **RD 6/ácido**",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

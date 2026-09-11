@@ -1,0 +1,41 @@
+{
+  "_id": "YUbWC8hZmYTvOcbP",
+  "name": "Pteroave",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_grande",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 17,
+      "cr_jp": 11,
+      "cr_dv": 8,
+      "cr_dv_bonus": 2,
+      "cr_pv_atual": 66,
+      "cr_pv_max": 66,
+      "cr_moral": 80,
+      "cr_mov": 6,
+      "cr_mov_outros": "voando 14 m",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 945,
+      "cr_ataques": "bicada +8 (1d8+5); 2 garras +3 (1d6+3 + suspensão)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

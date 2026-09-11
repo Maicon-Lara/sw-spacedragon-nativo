@@ -1,0 +1,41 @@
+{
+  "_id": "iC3lWGz7GIo3yUIO",
+  "name": "Zork",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 15,
+      "cr_jp": 16,
+      "cr_dv": 1,
+      "cr_dv_bonus": 1,
+      "cr_pv_atual": 9,
+      "cr_pv_max": 9,
+      "cr_moral": 70,
+      "cr_mov": 6,
+      "cr_mov_outros": "",
+      "cr_rm": 20,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 37,
+      "cr_ataques": "pistola +1 (1d6); lança +3 (1d8+3); **RM 20%**",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

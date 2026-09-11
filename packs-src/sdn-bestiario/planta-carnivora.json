@@ -1,0 +1,41 @@
+{
+  "_id": "WCIfC0sr4IELkipM",
+  "name": "Planta carnívora",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_grande",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 10,
+      "cr_jp": 18,
+      "cr_dv": 1,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 8,
+      "cr_pv_max": 8,
+      "cr_moral": 100,
+      "cr_mov": 0,
+      "cr_mov_outros": "imóvel",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 37,
+      "cr_ataques": "agarrar (1d4/rod.; engolida 1d6 ácido/rod.)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

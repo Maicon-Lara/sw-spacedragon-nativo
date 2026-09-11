@@ -1,0 +1,41 @@
+{
+  "_id": "6iPfY82lcCzDaMV1",
+  "name": "Tiranossauro",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_imenso",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 15,
+      "cr_jp": 11,
+      "cr_dv": 14,
+      "cr_dv_bonus": 4,
+      "cr_pv_atual": 116,
+      "cr_pv_max": 116,
+      "cr_moral": 90,
+      "cr_mov": 10,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 2615,
+      "cr_ataques": "mordida +16 (3d8+6 + engolir); cauda +10 (2d6+2)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

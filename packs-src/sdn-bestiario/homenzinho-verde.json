@@ -1,0 +1,41 @@
+{
+  "_id": "iEdooQMOMcfLcqyE",
+  "name": "Homenzinho verde",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_pequeno",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 13,
+      "cr_jp": 18,
+      "cr_dv": 1,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 8,
+      "cr_pv_max": 8,
+      "cr_moral": 70,
+      "cr_mov": 4,
+      "cr_mov_outros": "",
+      "cr_rm": 15,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 37,
+      "cr_ataques": "mini pistola +2 (1d4); **RM 15%**; ciência avançada",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

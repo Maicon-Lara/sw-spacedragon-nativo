@@ -1,0 +1,41 @@
+{
+  "_id": "IO9BGkFsQWfvwap2",
+  "name": "Devorador de mentes",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_pequeno",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 12,
+      "cr_jp": 17,
+      "cr_dv": 3,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 24,
+      "cr_pv_max": 24,
+      "cr_moral": 80,
+      "cr_mov": 9,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 175,
+      "cr_ataques": "poderes da Força até 3ª Grandeza; levita",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

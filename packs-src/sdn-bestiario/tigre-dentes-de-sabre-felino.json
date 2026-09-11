@@ -1,0 +1,41 @@
+{
+  "_id": "EUUfwUc0wQfO4QhJ",
+  "name": "Tigre dentes-de-sabre (felino)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_grande",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 14,
+      "cr_jp": 14,
+      "cr_dv": 7,
+      "cr_dv_bonus": 4,
+      "cr_pv_atual": 60,
+      "cr_pv_max": 60,
+      "cr_moral": 90,
+      "cr_mov": 14,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 735,
+      "cr_ataques": "mordida +6 (1d8+4 [crít.: perde membro]); 2 garras +3 (1d6+1)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

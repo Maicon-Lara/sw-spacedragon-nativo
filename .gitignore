@@ -1,0 +1,8 @@
+node_modules/
+_ref/
+_scratch/
+
+# saída de build: os packs compilados em LevelDB e o zip de distribuição.
+# A fonte versionada é packs-src/ — os packs se reconstroem com `npm run build`.
+modulo/packs/
+*.zip

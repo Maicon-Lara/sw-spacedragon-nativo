@@ -1,0 +1,41 @@
+{
+  "_id": "w2PmYIZoIUYPgs2s",
+  "name": "Humanoide robótico (droide)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 15,
+      "cr_jp": 12,
+      "cr_dv": 9,
+      "cr_dv_bonus": 3,
+      "cr_pv_atual": 75,
+      "cr_pv_max": 75,
+      "cr_moral": 100,
+      "cr_mov": 9,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 1075,
+      "cr_ataques": "pancada +8 (1d8+4); raio laser +4 (1d6) · desativável",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

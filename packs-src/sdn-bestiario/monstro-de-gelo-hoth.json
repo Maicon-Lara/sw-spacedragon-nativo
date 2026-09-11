@@ -1,0 +1,41 @@
+{
+  "_id": "8CV0OO3yIqi2G0C5",
+  "name": "Monstro de gelo (Hoth)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_grande",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 15,
+      "cr_jp": 14,
+      "cr_dv": 6,
+      "cr_dv_bonus": 2,
+      "cr_pv_atual": 50,
+      "cr_pv_max": 50,
+      "cr_moral": 70,
+      "cr_mov": 6,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 555,
+      "cr_ataques": "pancada +6 (1d10+4); sopro gélido (1d6 + JPF ou paralisia); imune a gelo",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

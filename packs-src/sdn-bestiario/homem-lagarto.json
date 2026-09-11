@@ -1,0 +1,41 @@
+{
+  "_id": "64ei88BlEc2ZeCdl",
+  "name": "Homem lagarto",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 14,
+      "cr_jp": 16,
+      "cr_dv": 4,
+      "cr_dv_bonus": 1,
+      "cr_pv_atual": 33,
+      "cr_pv_max": 33,
+      "cr_moral": 60,
+      "cr_mov": 9,
+      "cr_mov_outros": "",
+      "cr_rm": 10,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 280,
+      "cr_ataques": "mordida +3 (1d6+3); cauda +2 (1d4+2); lança +1 (1d8+3); **RM 10%**",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

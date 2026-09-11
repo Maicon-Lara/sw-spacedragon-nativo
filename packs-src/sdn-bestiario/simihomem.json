@@ -1,0 +1,41 @@
+{
+  "_id": "mQspQeFAE04hy24j",
+  "name": "Simihomem",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 14,
+      "cr_jp": 14,
+      "cr_dv": 5,
+      "cr_dv_bonus": 2,
+      "cr_pv_atual": 42,
+      "cr_pv_max": 42,
+      "cr_moral": 80,
+      "cr_mov": 9,
+      "cr_mov_outros": "",
+      "cr_rm": 5,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 450,
+      "cr_ataques": "espada +6 (1d8+4); zarabatana +3 (1d4 + veneno); **RM 5%**",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

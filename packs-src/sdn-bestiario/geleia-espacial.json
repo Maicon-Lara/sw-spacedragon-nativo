@@ -1,0 +1,41 @@
+{
+  "_id": "8kCgWcCrgwyfqkgb",
+  "name": "Geleia espacial",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 10,
+      "cr_jp": 15,
+      "cr_dv": 4,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 32,
+      "cr_pv_max": 32,
+      "cr_moral": 100,
+      "cr_mov": 4,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 320,
+      "cr_ataques": "envolver [3 testes de Força; asfixia]; **imune a físico**",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "4aNgQcSp4SNhAm90",
+  "name": "Lagarto do deserto (dewback bravo)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_grande",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 14,
+      "cr_jp": 15,
+      "cr_dv": 7,
+      "cr_dv_bonus": 2,
+      "cr_pv_atual": 58,
+      "cr_pv_max": 58,
+      "cr_moral": 80,
+      "cr_mov": 12,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 635,
+      "cr_ataques": "cauda +8 (1d8+4); língua +5 (1d4+2 + envolver, 15 m)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "sw-spacedragon-nativo",
+  "title": "Star Wars — Space Dragon (Nativo)",
+  "description": "Star Wars rodando no Space Dragon nativo: fichas de personagem e criatura para o Custom System Builder, mais compêndios de espécies, classes, poderes da Força, aparatos, equipamento, naves e bestiário. Níveis 1–20, CP, uma única JP, talentos em d%, Alcance da Força em porcentagem e a Ordem de Ação em que o menor resultado age primeiro. Obra de fã, não oficial e sem fins lucrativos.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Maicon Lara"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "custom-system-builder",
+        "type": "system",
+        "manifest": "https://gitlab.com/custom-system-builder/custom-system-builder/-/raw/main/system.json",
+        "compatibility": {
+          "minimum": "6.0.0",
+          "verified": "6.0.2"
+        }
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "sdn-fichas",
+      "label": "SD Nativo: Fichas (importe primeiro)",
+      "path": "packs/sdn-fichas",
+      "type": "Actor",
+      "system": "custom-system-builder"
+    },
+    {
+      "name": "sdn-bestiario",
+      "label": "SD Nativo: Bestiário",
+      "path": "packs/sdn-bestiario",
+      "type": "Actor",
+      "system": "custom-system-builder"
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Star Wars — Space Dragon (Nativo)",
+      "sorting": "m",
+      "color": "#7a1620",
+      "packs": [
+        "sdn-fichas",
+        "sdn-bestiario"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "url": "https://github.com/Maicon-Lara/sw-spacedragon-nativo",
+  "manifest": "https://github.com/Maicon-Lara/sw-spacedragon-nativo/releases/latest/download/module.json",
+  "download": "https://github.com/Maicon-Lara/sw-spacedragon-nativo/releases/latest/download/sw-spacedragon-nativo.zip",
+  "license": "LICENSE",
+  "readme": "https://github.com/Maicon-Lara/sw-spacedragon-nativo#readme"
+}

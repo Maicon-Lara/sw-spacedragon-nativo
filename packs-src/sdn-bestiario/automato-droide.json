@@ -1,0 +1,41 @@
+{
+  "_id": "q8Pi6qREeamI6Wun",
+  "name": "Autômato (droide)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 14,
+      "cr_jp": 15,
+      "cr_dv": 4,
+      "cr_dv_bonus": 1,
+      "cr_pv_atual": 33,
+      "cr_pv_max": 33,
+      "cr_moral": 100,
+      "cr_mov": 9,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 245,
+      "cr_ataques": "pancada +2 (1d6+2) · desativável",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "Cojr2maZckmgAWB7",
+  "name": "Lula da areia (Sarlacc jovem)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_imenso",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 12,
+      "cr_jp": 12,
+      "cr_dv": 10,
+      "cr_dv_bonus": 2,
+      "cr_pv_atual": 82,
+      "cr_pv_max": 82,
+      "cr_moral": 70,
+      "cr_mov": 4,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 1390,
+      "cr_ataques": "2 tentáculos +8 (1d6+6 + agarrar); arrasta p/ baixo da areia",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

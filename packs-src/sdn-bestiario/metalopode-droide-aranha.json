@@ -1,0 +1,41 @@
+{
+  "_id": "wC6QOObLq6Azk81n",
+  "name": "Metalópode (droide-aranha)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_imenso",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 15,
+      "cr_jp": 14,
+      "cr_dv": 9,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 72,
+      "cr_pv_max": 72,
+      "cr_moral": 100,
+      "cr_mov": 12,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 1150,
+      "cr_ataques": "disparador +8 (1d12); **acerebral: NÃO desativável**",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

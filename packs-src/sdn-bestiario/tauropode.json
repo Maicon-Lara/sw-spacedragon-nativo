@@ -1,0 +1,41 @@
+{
+  "_id": "OypSQ6pdieKLuIIe",
+  "name": "Taurópode",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_grande",
+      "cr_afiliacao": "afil_leal",
+      "cr_cp": 14,
+      "cr_jp": 15,
+      "cr_dv": 5,
+      "cr_dv_bonus": 4,
+      "cr_pv_atual": 44,
+      "cr_pv_max": 44,
+      "cr_moral": 90,
+      "cr_mov": 12,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 360,
+      "cr_ataques": "chifrada +8 (1d10+4); coice +4 (1d6+2); bovino de 8 patas",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

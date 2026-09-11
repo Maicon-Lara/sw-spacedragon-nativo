@@ -1,0 +1,41 @@
+{
+  "_id": "844YImEQ60bAm4n2",
+  "name": "Crocossauro",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_imenso",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 16,
+      "cr_jp": 14,
+      "cr_dv": 6,
+      "cr_dv_bonus": 2,
+      "cr_pv_atual": 50,
+      "cr_pv_max": 50,
+      "cr_moral": 80,
+      "cr_mov": 9,
+      "cr_mov_outros": "nadando 12 m",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 555,
+      "cr_ataques": "mordida +6 (1d10+4 + agarrar); cauda +3 (1d6+1); giro 2d10+4",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

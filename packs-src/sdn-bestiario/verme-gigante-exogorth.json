@@ -1,0 +1,41 @@
+{
+  "_id": "o0NcQufBo0DqQWfx",
+  "name": "Verme gigante (Exogorth)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_imenso",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 11,
+      "cr_jp": 15,
+      "cr_dv": 4,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 32,
+      "cr_pv_max": 32,
+      "cr_moral": 70,
+      "cr_mov": 6,
+      "cr_mov_outros": "escavando 6 m",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 280,
+      "cr_ataques": "mordida +5 (1d8 + engolir em crít.); sem sentidos",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

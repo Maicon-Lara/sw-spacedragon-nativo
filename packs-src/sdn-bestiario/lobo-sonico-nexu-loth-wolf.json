@@ -1,0 +1,41 @@
+{
+  "_id": "4gH1cmXL0KJN0mVu",
+  "name": "Lobo sônico (Nexu/loth-wolf)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_medio",
+      "cr_afiliacao": "afil_leal",
+      "cr_cp": 13,
+      "cr_jp": 16,
+      "cr_dv": 2,
+      "cr_dv_bonus": 1,
+      "cr_pv_atual": 17,
+      "cr_pv_max": 17,
+      "cr_moral": 90,
+      "cr_mov": 18,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 100,
+      "cr_ataques": "mordida +2 (1d6); uivo sônico [JPM ou −2 em tudo]",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

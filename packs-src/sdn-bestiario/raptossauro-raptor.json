@@ -1,0 +1,41 @@
+{
+  "_id": "WelKYqrbuaXgMCpd",
+  "name": "Raptossauro (raptor)",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_pequeno",
+      "cr_afiliacao": "afil_rebelde",
+      "cr_cp": 13,
+      "cr_jp": 18,
+      "cr_dv": 2,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 16,
+      "cr_pv_max": 16,
+      "cr_moral": 70,
+      "cr_mov": 16,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 100,
+      "cr_ataques": "mordida +3 (1d6+1); 2 garras +1 (1d4); **caça em grupo** (+1/aliado)",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}

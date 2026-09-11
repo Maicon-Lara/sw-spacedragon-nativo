@@ -1,0 +1,41 @@
+{
+  "_id": "ouZ3q8yOqeiNuYWb",
+  "name": "Medusa elétrica",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "template": null,
+    "props": {
+      "cr_tamanho": "tam_pequeno",
+      "cr_afiliacao": "afil_neutro",
+      "cr_cp": 11,
+      "cr_jp": 19,
+      "cr_dv": 0,
+      "cr_dv_bonus": 0,
+      "cr_pv_atual": 1,
+      "cr_pv_max": 1,
+      "cr_moral": 100,
+      "cr_mov": 6,
+      "cr_mov_outros": "",
+      "cr_rm": 0,
+      "cr_rd": 0,
+      "cr_rd_excecao": "",
+      "cr_xp": 10,
+      "cr_ataques": "tentáculo +0 (1d4 elétrico); sem cérebro",
+      "cr_descricao": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "cofre",
+      "versao": 1
+    }
+  }
+}
