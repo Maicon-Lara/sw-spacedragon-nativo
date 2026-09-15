@@ -1,0 +1,94 @@
+{
+  "_id": "gi4LwOT8YuHsCkKR",
+  "_key": "!journal!gi4LwOT8YuHsCkKR",
+  "name": "Criação de Personagem — o essencial",
+  "pages": [
+    {
+      "name": "1 · Como se rola",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>O Space Dragon resolve tudo com cinco formas, e elas correm em <strong>duas direções\nopostas</strong>. Se você vem do Old Dragon 2, é aqui que se erra.</p>\n\n<table>\n<thead><tr><th>Forma</th><th>Rolagem</th><th>Passa quando</th></tr></thead>\n<tbody>\n<tr><td><strong>Teste de atributo</strong></td><td><code>1d20</code></td><td>resultado <strong>≤ o atributo</strong> (um 20 natural sempre falha)</td></tr>\n<tr><td><strong>Talento / chance</strong></td><td><code>d%</code></td><td>resultado <strong>≤ a porcentagem</strong></td></tr>\n<tr><td><strong>Jogada de Proteção</strong></td><td><code>1d20 + ajuste</code></td><td>total <strong>≥ o valor de JP</strong> da sua classe</td></tr>\n<tr><td><strong>Ataque</strong></td><td><code>1d20 + BA</code></td><td>total <strong>≥ o CP</strong> do alvo</td></tr>\n<tr><td><strong>Jogada resistida</strong></td><td><code>1d20 + atributo</code></td><td><strong>o maior</strong> dos dois vence</td></tr>\n</tbody>\n</table>\n\n<p>Decore isto: <strong>atributo e talento rolam por baixo. Proteção e ataque rolam por\ncima.</strong></p>\n\n<h2>As três Jogadas de Proteção</h2>\n<p>Você tem <strong>um</strong> valor de JP, que vem da sua classe e <strong>desce</strong>\nconforme você sobe de nível. O tipo só diz qual ajuste você soma:</p>\n<ul>\n<li><strong>JPR</strong> — Reflexos. Explosão, queda, surpresa. Soma <strong>Destreza</strong>.</li>\n<li><strong>JPF</strong> — Física. Veneno, doença, dano massivo, não morrer. Soma <strong>Constituição</strong>.</li>\n<li><strong>JPM</strong> — Mental. Resistir à Força e a efeitos mentais. Soma <strong>Intelecto</strong>.</li>\n</ul>\n\n<h2>Ordem de Ação</h2>\n<p>Não existe iniciativa. <strong>O menor resultado age primeiro.</strong></p>\n<ul>\n<li><strong>Atacar:</strong> role o <strong>dado de dano da sua arma</strong>.</li>\n<li><strong>Aparato ou poder da Força:</strong> use o <strong>NT</strong> do aparato ou a <strong>Grandeza</strong> do poder.</li>\n<li><strong>Correr ou fazer outra coisa:</strong> <code>10 − seu ajuste de Destreza</code>.</li>\n</ul>\n<p>Empate é simultâneo. A faca é rápida; o rifle pesado é lento.</p>"
+      },
+      "sort": 100,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_id": "8uKDYsEMay1PCS7h",
+      "_key": "!journal.pages!gi4LwOT8YuHsCkKR.8uKDYsEMay1PCS7h"
+    },
+    {
+      "name": "2 · Passo a passo",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Oito passos. Dá para fazer em dez minutos.</p>\n\n<ol>\n<li><strong>Role 3d6 seis vezes</strong> e distribua os resultados livremente entre Força,\nDestreza, Constituição, Intelecto, Ciência e Comunicação.</li>\n\n<li><strong>Escolha a espécie</strong> e aplique o +2 e o −2 dela.</li>\n\n<li><strong>Escolha a classe.</strong> Repare no atributo-chave: ele diz se o personagem vai\nfuncionar.</li>\n\n<li><strong>Escolha a Afiliação</strong> — Leal, Neutro ou Rebelde. Ela tranca quais\nespecializações você poderá pegar no 5º nível. <em>O Sensível à Força é a exceção: as Sendas\ndele não têm trava.</em></li>\n\n<li><strong>Pontos de Vida.</strong> No 1º nível você recebe o <strong>máximo</strong> do seu\ndado de vida, sem rolar, mais o ajuste de Constituição.</li>\n\n<li><strong>Créditos iniciais.</strong> Role o que a sua classe manda e compre equipamento\nno compêndio.</li>\n\n<li><strong>Coeficiente de Proteção.</strong>\n<p style=\"text-align:center\"><strong>CP = proteção da veste + ajuste de Destreza + aparatos e poderes + bônus de nível</strong></p>\n<p>O ajuste de Destreza entra <strong>inteiro</strong> — não existe teto de Destreza por\narmadura neste sistema. O bônus de nível é <strong>+1 no 4º, +2 no 8º, +3 no 12º, +4 no 16º\ne +5 no 20º</strong>, e o valor da faixa <em>é</em> o total, não se somam entre si.</p></li>\n\n<li><strong>Movimento 10 metros</strong>, menos o que a veste, a carga, a gravidade e o\nterreno tirarem.</li>\n</ol>\n\n<h2>Na ficha do Foundry</h2>\n<p>Crie o ator, escolha <strong>Personagem (SD Nativo)</strong> no seletor <em>Template</em> e\nclique no <strong>botão de recarregar</strong> ao lado. Sem esse clique a ficha vem em branco.\nDepois é só digitar os seis atributos: todo o resto se calcula sozinho.</p>"
+      },
+      "sort": 200,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_id": "wqxAcubWQao5YScU",
+      "_key": "!journal.pages!gi4LwOT8YuHsCkKR.wqxAcubWQao5YScU"
+    },
+    {
+      "name": "3 · As quatro classes",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<table>\n<thead><tr><th>Classe</th><th>DV</th><th>Atributo-chave</th><th>Créditos iniciais</th></tr></thead>\n<tbody>\n<tr>\n  <td><strong>Veterano</strong><br><small>Homem Espacial</small></td>\n  <td>d10</td>\n  <td>Força e Destreza (12+ nas duas)</td>\n  <td>2d10 × 5.000</td>\n</tr>\n<tr>\n  <td><strong>Operativo</strong><br><small>Gatuno</small></td>\n  <td>d6</td>\n  <td>Destreza (12+); Ciência ajuda</td>\n  <td>2d6 × 5.000</td>\n</tr>\n<tr>\n  <td><strong>Técnico</strong><br><small>Cientista</small></td>\n  <td>d8</td>\n  <td>Ciência (14+)</td>\n  <td>1d8 × 5.000</td>\n</tr>\n<tr>\n  <td><strong>Sensível à Força</strong><br><small>Mentálico</small></td>\n  <td>d4</td>\n  <td>Intelecto</td>\n  <td>1d6 × 5.000</td>\n</tr></tbody>\n</table>\n\n<h2>Veterano</h2>\n<p><em>Ação, combate e pilotagem. O soldado, o pistoleiro, o capitão.</em></p>\n<ul>\n  <li><strong>Dado de Vida:</strong> d10 · <strong>Atributo-chave:</strong> Força e Destreza (12+ nas duas) · <strong>Créditos:</strong> 2d10 × 5.000 CR</li>\n  <li><strong>Armas:</strong> qualquer uma</li>\n  <li><strong>Vestes:</strong> qualquer uma, e escudos</li>\n  <li><strong>Aparatos:</strong> defensivos e utilitários</li>\n  <li><strong>O que você anota na ficha:</strong> Pilotar naves · Desarmar e subjugar · multiplicador de crítico</li>\n</ul>\n<p><strong>Especializações, no 5º nível:</strong> Emissário <small>(Leal)</small> — <em>diplomata, senador, capitão-líder</em> · Mercenário <small>(Neutro)</small> — <em>soldado e pistoleiro</em> · Caçador de Recompensas <small>(Rebelde)</small> — <em>o caçador</em></p>\n\n<h2>Operativo</h2>\n<p><em>O submundo. Contrabandista, ladrão, espião, assassino.</em></p>\n<ul>\n  <li><strong>Dado de Vida:</strong> d6 · <strong>Atributo-chave:</strong> Destreza (12+); Ciência ajuda · <strong>Créditos:</strong> 2d6 × 5.000 CR</li>\n  <li><strong>Armas:</strong> só as de uma mão</li>\n  <li><strong>Vestes:</strong> leves ou médias, sem escudo — com escudo você perde os talentos</li>\n  <li><strong>Aparatos:</strong> só utilitários</li>\n  <li><strong>O que você anota na ficha:</strong> Sabotagem · Escalar · Furtividade · Furtar · Percepção · Ataque Furtivo</li>\n</ul>\n<p><strong>Especializações, no 5º nível:</strong> Espião <small>(Leal)</small> — <em>agente de inteligência</em> · Sabotador <small>(Neutro)</small> — <em>demolições e armadilhas</em> · Assassino <small>(Neutro)</small> — <em>a lâmina do submundo</em> · Contrabandista <small>(Rebelde)</small> — <em>o malandro espacial</em></p>\n\n<h2>Técnico</h2>\n<p><em>A engenhoca. Mecânico de droides, médico de campo, engenheiro, slicer.</em></p>\n<ul>\n  <li><strong>Dado de Vida:</strong> d8 · <strong>Atributo-chave:</strong> Ciência (14+) · <strong>Créditos:</strong> 1d8 × 5.000 CR</li>\n  <li><strong>Armas:</strong> só armas de fogo de energia</li>\n  <li><strong>Vestes:</strong> qualquer uma, e aparatos defensivos</li>\n  <li><strong>Aparatos:</strong> constrói e opera qualquer um — só ele usa os ofensivos</li>\n  <li><strong>O que você anota na ficha:</strong> Operar Máquinas · Nível Tecnológico (NT) · Desativar Robôs</li>\n</ul>\n<p><strong>Especializações, no 5º nível:</strong> Médico de Campo <small>(Leal)</small> — <em>o curandeiro</em> · Engenheiro <small>(Neutro)</small> — <em>o inventor</em> · Slicer <small>(Rebelde)</small> — <em>o mestre dos sistemas</em></p>\n\n<h2>Sensível à Força</h2>\n<p><em>A Força. Jedi, Sith, e tudo o que anda entre os dois.</em></p>\n<ul>\n  <li><strong>Dado de Vida:</strong> d4 · <strong>Atributo-chave:</strong> Intelecto · <strong>Créditos:</strong> 1d6 × 5.000 CR</li>\n  <li><strong>Armas:</strong> sabre de luz e pistolas</li>\n  <li><strong>Vestes:</strong> só leves — veste pesada ou escudo BLOQUEIA os poderes (o Guardião é a exceção)</li>\n  <li><strong>Aparatos:</strong> só utilitários</li>\n  <li><strong>O que você anota na ficha:</strong> Alcance da Força (% do dia) · Grandeza-Limite · poderes conhecidos</li>\n</ul>\n<p><strong>Especializações, no 5º nível:</strong> Guardião — <em>o Jedi ou Sith de sabre</em> · Consular — <em>o conjurador</em> · Sentinela — <em>o equilíbrio, caçador e investigador</em> · Vidente — <em>o místico dos nexos</em></p>\n<p>As Sendas do Sensível <strong>não têm trava de Afiliação</strong>. Quem manda na moral é o Caminho (Luz ou Sombra) e a Corrupção.</p>"
+      },
+      "sort": 300,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_id": "KcyRgQFbcS81m6aF",
+      "_key": "!journal.pages!gi4LwOT8YuHsCkKR.KcyRgQFbcS81m6aF"
+    },
+    {
+      "name": "4 · As espécies",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Todas as espécies têm <strong>movimento 10 m</strong> e valem desde o 1º nível. O\n<strong>Humano</strong> e o <strong>Droide</strong> são os moldes nativos do Space Dragon; as\noutras sete são deste cenário, construídas sobre o molde Humano.</p>\n\n<table>\n<thead><tr><th>Espécie</th><th>Ajustes</th><th>O que ela te dá</th></tr></thead>\n<tbody>\n<tr>\n  <td><strong>Humano</strong></td>\n  <td>+2 e −2 à sua escolha</td>\n  <td>Versátil. Ganha <strong>+1 num atributo a cada 4 níveis</strong> — nenhuma outra espécie do cenário ganha isso, fora o Droide.</td>\n</tr>\n<tr>\n  <td><strong>Wookiee</strong></td>\n  <td>+2 Força, −2 Comunicação</td>\n  <td>Dano desarmado 1d6 · +2 no dano corpo a corpo com menos da metade dos PV · +1 de CP natural · +2 em JPM contra medo. <em>Arma de uma mão causa −1 de dano nas suas mãos.</em></td>\n</tr>\n<tr>\n  <td><strong>Twi'lek</strong></td>\n  <td>+2 Comunicação, −2 Constituição</td>\n  <td>Bônus em interação social · os lekku sentem má intenção a até 6 m (1-2 em 1d6, o Mestre rola) · resiste a calor.</td>\n</tr>\n<tr>\n  <td><strong>Rodiano</strong></td>\n  <td>+2 Destreza, −2 Comunicação</td>\n  <td>Caçador nato: bônus para rastrear e emboscar · visão térmica a 18 m · sangue-frio.</td>\n</tr>\n<tr>\n  <td><strong>Zabrak</strong></td>\n  <td>+2 Constituição, −2 Comunicação</td>\n  <td>Dois corações · resiste à dor · vontade férrea. O mais duro de derrubar.</td>\n</tr>\n<tr>\n  <td><strong>Mon Calamari</strong></td>\n  <td>+2 Ciência, −2 Força</td>\n  <td>Anfíbio, nada no movimento pleno · enxerga submerso e na penumbra a 18 m · engenho náutico e liderança serena.</td>\n</tr>\n<tr>\n  <td><strong>Trandoshano</strong></td>\n  <td>+2 Força, −2 Destreza</td>\n  <td>Regenera · garras e escamas · caçador de presas. <em>No frio intenso, testes de Destreza e movimento ficam Difíceis.</em></td>\n</tr>\n<tr>\n  <td><strong>Chiss</strong></td>\n  <td>+2 Intelecto, −2 Comunicação</td>\n  <td>Infravisão 18 m · mente tática (−1 na Ordem de Ação, ou seja, age mais cedo) · começa com um idioma a mais.</td>\n</tr>\n<tr>\n  <td><strong>Droide</strong></td>\n  <td>+2 Força, −2 Comunicação</td>\n  <td><strong>Vence automaticamente toda JPF</strong> (menos estabilização) · RM 5% · infravisão 18 m · mantém o +1 a cada 4 níveis. <em>Não regenera PV sozinho, precisa de reparo. Dano de Íon dobra. Não pode ser Sensível à Força.</em></td>\n</tr></tbody>\n</table>\n\n<p><strong>Um detalhe que decide escolha:</strong> só o Humano e o Droide ganham\n<strong>+1 num atributo a cada 4 níveis</strong>. As espécies do cenário trocam esse\ncrescimento pelos talentos próprias delas.</p>"
+      },
+      "sort": 400,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_id": "k2rJ0wXccyJ7KOXD",
+      "_key": "!journal.pages!gi4LwOT8YuHsCkKR.k2rJ0wXccyJ7KOXD"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "sw-spacedragon-nativo": {
+      "fonte": "gerador",
+      "versao": 1
+    }
+  }
+}

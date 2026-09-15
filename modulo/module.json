@@ -2,7 +2,7 @@
   "id": "sw-spacedragon-nativo",
   "title": "Star Wars — Space Dragon (Nativo)",
   "description": "Star Wars rodando no Space Dragon nativo: fichas de personagem e criatura para o Custom System Builder, mais compêndios de espécies, classes, poderes da Força, aparatos, equipamento, naves e bestiário. Níveis 1–20, CP, uma única JP, talentos em d%, Alcance da Força em porcentagem e a Ordem de Ação em que o menor resultado age primeiro. Obra de fã, não oficial e sem fins lucrativos.",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "compatibility": {
     "minimum": "13",
     "verified": "14"
@@ -39,6 +39,13 @@
       "path": "packs/sdn-bestiario",
       "type": "Actor",
       "system": "custom-system-builder"
+    },
+    {
+      "name": "sdn-journal",
+      "label": "SD Nativo: Guia do Jogador",
+      "path": "packs/sdn-journal",
+      "type": "JournalEntry",
+      "system": "custom-system-builder"
     }
   ],
   "packFolders": [
@@ -48,7 +55,8 @@
       "color": "#7a1620",
       "packs": [
         "sdn-fichas",
-        "sdn-bestiario"
+        "sdn-bestiario",
+        "sdn-journal"
       ]
     }
   ],

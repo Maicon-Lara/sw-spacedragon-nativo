@@ -13,6 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { BESTIARIO } from './data/bestiario.mjs';
+import { journalCriacao } from './journal.mjs';
 
 const RAIZ = path.resolve(fileURLToPath(import.meta.url), '../..');
 const SRC = path.join(RAIZ, 'packs-src');
@@ -159,9 +160,24 @@ function escreverFonte(pack, docs) {
 const [compilePack, extractPack] = await carregarCli();
 fs.mkdirSync(PACKS, { recursive: true });
 
+function journalDoc(j) {
+  const _id = id16('journal:' + j.name);
+  return {
+    _id, _key: `!journal!${_id}`,
+    name: j.name,
+    pages: j.pages.map((pg) => {
+      const pid = id16('jpage:' + j.name + ':' + pg.name);
+      return { ...pg, _id: pid, _key: `!journal.pages!${_id}.${pid}` };
+    }),
+    folder: null, sort: 0, ownership: { default: 2 },
+    flags: { [ID]: { fonte: 'gerador', versao: 1 } },
+  };
+}
+
 const tarefas = [
   ['sdn-fichas', fichasDoc()],
   ['sdn-bestiario', BESTIARIO.map(criaturaDoc)],
+  ['sdn-journal', [journalDoc(journalCriacao())]],
 ];
 
 for (const [pack, docs] of tarefas) {
