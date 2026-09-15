@@ -115,6 +115,12 @@ function paginaClasses() {
   <li><strong>Aparatos:</strong> ${cru(c.aparatos)}</li>
   <li><strong>O que você anota na ficha:</strong> ${cru(c.talentos)}</li>
 </ul>
+<table>
+<thead><tr><th>Habilidade</th><th>Nível</th><th>O que faz</th></tr></thead>
+<tbody>${c.poderes.map(([n, lv, d]) =>
+  `<tr><td><strong>${esc(n)}</strong></td><td>${esc(lv)}</td><td>${cru(d)}</td></tr>`).join('')}
+</tbody>
+</table>
 <p><strong>Especializações, no 5º nível:</strong> ${c.specs.map(
     ([n, a, d]) => `${esc(n)}${a !== '—' ? ` <small>(${esc(a)})</small>` : ''} — <em>${esc(d)}</em>`
   ).join(' · ')}</p>

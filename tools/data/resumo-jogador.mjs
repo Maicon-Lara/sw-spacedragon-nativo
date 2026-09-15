@@ -10,7 +10,7 @@
 export const CLASSES = [
   {
     nome: 'Veterano',
-    chassi: 'Homem Espacial',
+    chassi: 'Cosmonauta',
     papel: 'Ação, combate e pilotagem. O soldado, o pistoleiro, o capitão.',
     dv: 'd10',
     chave: 'Força e Destreza (12+ nas duas)',
@@ -19,6 +19,12 @@ export const CLASSES = [
     vestes: 'qualquer uma, e escudos',
     aparatos: 'defensivos e utilitários',
     talentos: 'Pilotar naves · Desarmar e subjugar · multiplicador de crítico',
+    poderes: [
+      ['Dano Crítico', '1º', 'No acerto crítico o dano multiplica pela coluna da tabela: <strong>×2 no 1º, subindo até ×5 no 20º</strong>. É a marca da classe.'],
+      ['Pilotar Naves', '1º', 'Talento em d%. Pilota qualquer nave ou veículo, e é o <strong>capitão natural</strong> de uma tripulação. A falha perde a rota ou complica a manobra.'],
+      ['Desarmar e Subjugar', '1º', 'Talento em d%. Sacrificando um ataque, <strong>desarma</strong> (soma Destreza) ou <strong>subjuga</strong> (soma Força). Desarmar vem antes de subjugar.'],
+      ['Ataques Múltiplos', '7º', '<strong>Um ataque a mais por rodada</strong>, com a segunda Base de Ataque da tabela (no 7º, <code>+7/+1</code>). Pode trocar o extra por Desarmar ou Subjugar.'],
+    ],
     specs: [
       ['Emissário', 'Leal', 'diplomata, senador, capitão-líder'],
       ['Mercenário', 'Neutro', 'soldado e pistoleiro'],
@@ -36,6 +42,14 @@ export const CLASSES = [
     vestes: 'leves ou médias, sem escudo — com escudo você perde os talentos',
     aparatos: 'só utilitários',
     talentos: 'Sabotagem · Escalar · Furtividade · Furtar · Percepção · Ataque Furtivo',
+    poderes: [
+      ['Sabotagem', '1º', 'Destranca portas <em>e</em> avaria máquinas — é <strong>um talento só</strong>. Uma tentativa por objeto, e precisa dos instrumentos em mão. A coluna <em>Rodadas</em> diz quanto tempo leva. É a <strong>única</strong> % modificada pelo Crédito Tecnológico.'],
+      ['Escalar', '1º', 'Cada sucesso sobe 3 m. A falha derruba: 1d6 a cada 3 m já escalados — e nada se a falha for na primeira jogada.'],
+      ['Furtividade', '1º', 'Esconder-se <em>e</em> mover-se em silêncio, também <strong>um talento só</strong>. O Mestre rola em segredo, porque você se julga bem-sucedido até algo provar o contrário. Atacar revela a posição.'],
+      ['Furtar', '1º', 'Se a rolagem passar do <strong>dobro</strong> da dificuldade, todo mundo percebe — a vítima inclusive.'],
+      ['Percepção', '1º', 'Rola <strong>1d6</strong>, não d%, contra a faixa do seu nível.'],
+      ['Ataque Furtivo', '1º', 'Depois de uma Furtividade bem-sucedida: <strong>+2 no ataque</strong> e dano <strong>multiplicado</strong> pela coluna. Depois dele a posição está revelada.'],
+    ],
     specs: [
       ['Espião', 'Leal', 'agente de inteligência'],
       ['Sabotador', 'Neutro', 'demolições e armadilhas'],
@@ -54,6 +68,12 @@ export const CLASSES = [
     vestes: 'qualquer uma, e aparatos defensivos',
     aparatos: 'constrói e opera qualquer um — só ele usa os ofensivos',
     talentos: 'Operar Máquinas · Nível Tecnológico (NT) · Desativar Robôs',
+    poderes: [
+      ['Operar e Consertar Máquinas', '1º', 'Talento em d%. Opera e conserta qualquer máquina, e <strong>pilota naves</strong> — pior que o Veterano, mas pilota. Máquina avariada precisa de conserto antes de funcionar.'],
+      ['Aparatos e Feitos Científicos', '1º', 'Constrói as engenhocas e realiza os feitos. O <strong>Nível Tecnológico</strong> limita o que você <strong>cria</strong>, nunca o que pode usar.'],
+      ['Desativar Robôs', '1º', 'Com o disruptor, rola <strong>1d20</strong> contra a Tabela 3-2. São oito categorias de robô, e o alvo melhora conforme você sobe.'],
+      ['Crédito Tecnológico', '1º', 'Desconto em <strong>qualquer</strong> gasto com equipamento, pela sua Ciência. O mesmo número vale como chance de sabotar máquinas.'],
+    ],
     specs: [
       ['Médico de Campo', 'Leal', 'o curandeiro'],
       ['Engenheiro', 'Neutro', 'o inventor'],
@@ -71,6 +91,13 @@ export const CLASSES = [
     vestes: 'só leves — veste pesada ou escudo BLOQUEIA os poderes (o Guardião é a exceção)',
     aparatos: 'só utilitários',
     talentos: 'Alcance da Força (% do dia) · Grandeza-Limite · poderes conhecidos',
+    poderes: [
+      ['Poderes da Força', '1º', 'Começa <strong>conhecendo dois de 1ª Grandeza</strong>. Poder conhecido você usa à vontade; <strong>desconhecido</strong> pede <code>d% ≤ Intelecto</code> antes — e a falha <strong>gasta o Alcance do mesmo jeito</strong>.'],
+      ['Alcance da Força', '1º', 'Seu combustível diário, em <strong>%</strong>. Cada poder desconta % igual à <strong>Grandeza</strong> dele, mesmo que falhe ou seja anulado. Zera com <strong>8 h de descanso</strong>. <em>Passar do limite é risco de morte.</em>'],
+      ['Aprender Poderes', '1º', 'Depois de manifestar um poder desconhecido com sucesso, uma <strong>segunda rolagem</strong> o memoriza de vez.'],
+      ['Duelo da Força', '1º', 'Ao ser alvo de um poder, gaste Alcance igual à Grandeza dele e faça <strong>1d6 + seu nível</strong> resistido contra quem lançou. Vencer pelo <strong>dobro</strong> deixa revidar na hora.'],
+      ['Resistência Mental', '1º', 'Se a sua rolagem ficar <strong>abaixo da RM</strong> da criatura, ela <strong>nunca mais</strong> poderá ser afetada por <em>aquele</em> poder.'],
+    ],
     specs: [
       ['Guardião', '—', 'o Jedi ou Sith de sabre'],
       ['Consular', '—', 'o conjurador'],

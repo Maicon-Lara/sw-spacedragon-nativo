@@ -94,6 +94,8 @@ for (const c of CLASSES) {
     `| **Vestes** | ${md(c.vestes)} |`,
     `| **Aparatos** | ${md(c.aparatos)} |`,
     `| **Na ficha** | ${md(c.talentos)} |`);
+  p('| Habilidade | Nível | O que faz |', '|---|---|---|',
+    ...c.poderes.map(([n, lv, d]) => `| **${n}** | ${lv} | ${md(d)} |`));
   p('**Especializações (5º nível):** ' + c.specs.map(
     ([n, a, d]) => `**${n}**${a !== '—' ? ` (${a})` : ''} — *${d}*`).join(' · '));
   if (c.nota) p('> ' + md(c.nota));
