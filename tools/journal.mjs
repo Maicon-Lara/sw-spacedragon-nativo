@@ -162,10 +162,27 @@ crescimento pelos talentos próprias delas.</p>
 
 
 // ── 5. Especializações ──────────────────────────────────────────────────────
-const selo = (n) => `<span style="background:#7a1620;color:#fff;padding:0 .45em;border-radius:3px;font-weight:bold">${n}</span>`;
+const selo = (n) => `<span style="background:#7a1620;color:#fff;padding:.05em .5em;border-radius:3px;font-weight:bold;margin-right:.4em">${n}</span>`;
 
-const linha = (rot, conteudo) =>
-  `<p style="margin:.15em 0"><strong style="display:inline-block;width:5.5em">${rot}</strong>${conteudo}</p>`;
+// Uma linha por troca, no fim da habilidade — nao um bloco de quatro rotulos.
+// CONGELA e ANOTE diziam a mesma coisa duas vezes, e MANTEM era o complemento
+// do CONGELA, ou seja, nada. Sobrou o que a mesa precisa: o que travou, onde
+// escrever o numero, e o que o jogador decide.
+function extrasDoPasso(passo) {
+  const out = [];
+  const congelados = (passo.congela ?? []).map((c) => `${cru(c)} em <u>&nbsp;&nbsp;&nbsp;&nbsp;</u>`);
+  if (congelados.length) {
+    out.push(`<p style="margin:.1em 0 .1em 1.6em">⊘ <strong>Congela</strong> ${congelados.join(' &middot; ')}</p>`);
+  }
+  const txt = (passo.congela ?? []).join(' ').toLowerCase();
+  const escolhas = (passo.anota ?? []).filter((a) =>
+    !txt.includes(a.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase()));
+  if (escolhas.length) {
+    out.push(`<p style="margin:.1em 0 .1em 1.6em">⚔ <strong>Escolhas</strong> ${
+      escolhas.map((a) => `${esc(a)}: <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>`).join(' &middot; ')}</p>`);
+  }
+  return out.join('');
+}
 
 function paginaEspecs() {
   const porClasse = {};
@@ -173,34 +190,20 @@ function paginaEspecs() {
 
   const blocos = Object.entries(porClasse).map(([classe, lista]) => `
 <h2>${esc(classe)}</h2>
-${lista.map((e) => {
-  const passos = e.passos.map((p) => {
-    const partes = [];
-    if ((p.congela ?? []).length) partes.push(linha('CONGELA', cru(p.congela.join(' · '))));
-    if ((p.anota ?? []).length) {
-      partes.push(linha('ANOTE', p.anota.map((a) => `${esc(a)} <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>`).join(' &nbsp; ')));
-    }
-    if (p === e.passos[0] || (p.congela ?? []).length) {
-      partes.push(linha('MANTÉM', esc(mantem(e, p.nivel).join(' · '))));
-    }
-    partes.push(linha('GANHA', p.ganha.map(cru).join('<br>')));
-    return `<p style="margin:.6em 0 .15em">${selo(p.nivel)}</p>${partes.join('')}`;
-  }).join('');
-  return `
+${lista.map((e) => `
 <h3>${esc(e.nome)}${e.afiliacao !== '—' ? ` <small>(${esc(e.afiliacao)})</small>` : ''}</h3>
 <p><em>${esc(e.sabor)}</em></p>
-${passos}
-${e.nota ? `<p>${cru(e.nota)}</p>` : ''}`;
-}).join('')}`).join('');
+${e.passos.map((p) =>
+  `<p style="margin:.7em 0 .1em">${selo(p.nivel)}${p.ganha.map(cru).join(' ')}</p>${extrasDoPasso(p)}`
+).join('')}
+${e.nota ? `<p>${cru(e.nota)}</p>` : ''}`).join('')}`).join('');
 
   return `
-<p>No Space Dragon uma especialização é uma <strong>troca</strong>, não um acréscimo. Ela abre
-no <strong>5º nível</strong> e quase sempre <strong>congela</strong> algum talento em troca do
-que dá. Leia sempre as três linhas na ordem.</p>
+<p>No Space Dragon uma especialização é uma <strong>troca</strong>, não um acréscimo. Ela abre no
+<strong>5º nível</strong>, e a maioria <strong>congela</strong> algum talento em troca do que dá.</p>
 
-<p><strong>ANOTE</strong> é o passo que a mesa esquece: no momento em que um talento congela,
-<strong>escreva o valor dele na ficha</strong>. Seis sessões depois ninguém lembra em que
-número parou.</p>
+<p>Quando um talento congela, <strong>escreva na ficha o valor em que ele parou</strong>. Seis
+sessões depois ninguém lembra, e a discussão come a cena.</p>
 ${blocos}`;
 }
 

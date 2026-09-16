@@ -130,23 +130,37 @@ p('> **ANOTE é o passo que a mesa esquece.** No momento em que um talento conge
 const porClasse = {};
 for (const e of ESPECIALIZACOES) (porClasse[e.classe] ??= []).push(e);
 
+// Uma linha de troca por habilidade, no fim dela. CONGELA e ANOTE eram a mesma
+// informacao escrita duas vezes; MANTEM era o complemento do CONGELA, ou seja,
+// nada. Sobrou o que importa: o que travou, e onde escrever o numero.
+function linhasDoPasso(passo) {
+  const out = [];
+
+  // o que travou, e onde escrever o numero
+  const congelados = (passo.congela ?? []).map((c) => `${md(c)} em \_\_\_\_`);
+  if (congelados.length) out.push(`⊘ **Congela** ${congelados.join(' · ')}`);
+
+  // o que o jogador DECIDE — mesmo vocabulario do Paladino de OD2
+  const congeladoTxt = (passo.congela ?? []).join(' ').toLowerCase();
+  const escolhas = (passo.anota ?? []).filter((a) => {
+    const limpo = a.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+    return !congeladoTxt.includes(limpo);
+  });
+  if (escolhas.length) {
+    out.push('⚔ **Escolhas** ' + escolhas.map((a) => `${a}: \_\_\_\_\_\_\_\_`).join(' · '));
+  }
+  return out;
+}
+
 for (const [classe, lista] of Object.entries(porClasse)) {
   p(`### ${classe}`);
   for (const e of lista) {
     p(`#### ${e.nome}${e.afiliacao !== '—' ? ` *(${e.afiliacao})*` : ''}`);
     p(`*${e.sabor}*`);
     for (const passo of e.passos) {
-      const linhas = [];
-      if ((passo.congela ?? []).length) linhas.push(`| **CONGELA** | ${md(passo.congela.join(' · '))} |`);
-      if ((passo.anota ?? []).length) {
-        linhas.push(`| **ANOTE** | ${passo.anota.map((a) => `${a} \_\_\_\_\_`).join(' · ')} |`);
-      }
-      if (passo === e.passos[0] || (passo.congela ?? []).length) {
-        linhas.push(`| **MANTÉM** | ${mantem(e, passo.nivel).join(' · ')} |`);
-      }
-      linhas.push(`| **GANHA** | ${passo.ganha.map(md).join('<br>')} |`);
-      p(`**Nível ${passo.nivel}**`);
-      p('| | |', '|---|---|', ...linhas);
+      const extras = linhasDoPasso(passo);
+      p(`**${passo.nivel}** · ` + passo.ganha.map(md).join(' ')
+        + (extras.length ? '\n' + extras.join('\n') : ''));
     }
     if (e.nota) p('> ' + md(e.nota));
   }

@@ -28,7 +28,7 @@ export const ESPECIALIZACOES = [
       {
         nivel: 5,
         congela: ['Pilotar Naves'],
-        anota: ['Pilotar Naves', 'a arma escolhida'],
+        anota: ['Pilotar Naves', 'Arma'],
         ganha: ['Escolhe <strong>uma arma</strong>. Com ela, o crítico é sempre <strong>um multiplicador acima</strong> da tabela do Veterano — ×4 já no 5º nível.'],
       },
       {
@@ -211,7 +211,7 @@ export const ESPECIALIZACOES = [
       {
         nivel: 5,
         congela: ['o teto de Grandeza, que passa a ser a <strong>6ª</strong>'],
-        anota: ['teto = 6ª Grandeza'],
+        anota: ['Forma de Sabre'],
         ganha: ['<strong>Adestramento de Combate:</strong> a BA passa a evoluir como a de um Veterano, e você usa <strong>vestes médias</strong> sem bloquear os poderes.',
                 '<strong>Formas de Sabre:</strong> domina uma das sete Formas.'],
       },
@@ -245,7 +245,7 @@ export const ESPECIALIZACOES = [
     passos: [
       {
         nivel: 5, congela: [],
-        anota: ['os três talentos escolhidos'],
+        anota: ['Os três talentos'],
         ganha: ['<strong>Ofícios do Submundo:</strong> escolhe <strong>três talentos de Operativo</strong>, com a % de um Gatuno de <strong>metade</strong> do seu nível (mínimo 1).'],
       },
       { nivel: 10, ganha: ['<strong>Vontade Inquebrável:</strong> suas JP contra poderes da Força e efeitos mentais são <strong>Fáceis</strong>.'] },
