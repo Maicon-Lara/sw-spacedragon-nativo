@@ -188,7 +188,8 @@ export const TABELAS_SPEC = {
   },
   'Vidente': {
     base: 'Sensível à Força',
-    congela: { ba: 10 },
+    // O livro (Radiestesico) congela a JP ja no 5o e a BA no 10o — nao so a BA.
+    congela: { jp: 5, ba: 10 },
     novas: {
       'Comunhão': (n) => (n >= 20 ? '100 m' : n >= 10 ? '40 m' : '20 m'),
       'Teto da Comunhão': (n) => (n >= 20 ? '½ do Alcance' : n >= 10 ? '⅓' : '¼'),
