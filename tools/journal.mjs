@@ -2,7 +2,7 @@
 // É o que o jogador abre no Foundry enquanto preenche a ficha.
 
 import { CLASSES, ESPECIES } from './data/resumo-jogador.mjs';
-import { ESPECIALIZACOES, mantem } from './data/especializacoes.mjs';
+import { paginaEspecs } from './journal-especs.mjs';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -162,51 +162,6 @@ crescimento pelos talentos próprias delas.</p>
 
 
 // ── 5. Especializações ──────────────────────────────────────────────────────
-const selo = (n) => `<span style="background:#7a1620;color:#fff;padding:.05em .5em;border-radius:3px;font-weight:bold;margin-right:.4em">${n}</span>`;
-
-// Uma linha por troca, no fim da habilidade — nao um bloco de quatro rotulos.
-// CONGELA e ANOTE diziam a mesma coisa duas vezes, e MANTEM era o complemento
-// do CONGELA, ou seja, nada. Sobrou o que a mesa precisa: o que travou, onde
-// escrever o numero, e o que o jogador decide.
-function extrasDoPasso(passo) {
-  const out = [];
-  const congelados = (passo.congela ?? []).map((c) => `${cru(c)} em <u>&nbsp;&nbsp;&nbsp;&nbsp;</u>`);
-  if (congelados.length) {
-    out.push(`<p style="margin:.1em 0 .1em 1.6em">⊘ <strong>Congela</strong> ${congelados.join(' &middot; ')}</p>`);
-  }
-  const txt = (passo.congela ?? []).join(' ').toLowerCase();
-  const escolhas = (passo.anota ?? []).filter((a) =>
-    !txt.includes(a.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase()));
-  if (escolhas.length) {
-    out.push(`<p style="margin:.1em 0 .1em 1.6em">⚔ <strong>Escolhas</strong> ${
-      escolhas.map((a) => `${esc(a)}: <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>`).join(' &middot; ')}</p>`);
-  }
-  return out.join('');
-}
-
-function paginaEspecs() {
-  const porClasse = {};
-  for (const e of ESPECIALIZACOES) (porClasse[e.classe] ??= []).push(e);
-
-  const blocos = Object.entries(porClasse).map(([classe, lista]) => `
-<h2>${esc(classe)}</h2>
-${lista.map((e) => `
-<h3>${esc(e.nome)}${e.afiliacao !== '—' ? ` <small>(${esc(e.afiliacao)})</small>` : ''}</h3>
-<p><em>${esc(e.sabor)}</em></p>
-${e.passos.map((p) =>
-  `<p style="margin:.7em 0 .1em">${selo(p.nivel)}${p.ganha.map(cru).join(' ')}</p>${extrasDoPasso(p)}`
-).join('')}
-${e.nota ? `<p>${cru(e.nota)}</p>` : ''}`).join('')}`).join('');
-
-  return `
-<p>No Space Dragon uma especialização é uma <strong>troca</strong>, não um acréscimo. Ela abre no
-<strong>5º nível</strong>, e a maioria <strong>congela</strong> algum talento em troca do que dá.</p>
-
-<p>Quando um talento congela, <strong>escreva na ficha o valor em que ele parou</strong>. Seis
-sessões depois ninguém lembra, e a discussão come a cena.</p>
-${blocos}`;
-}
-
 export function journalCriacao() {
   return {
     name: 'Criação de Personagem — o essencial',

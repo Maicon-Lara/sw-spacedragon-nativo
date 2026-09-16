@@ -9,7 +9,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { CLASSES, ESPECIES } from './data/resumo-jogador.mjs';
-import { ESPECIALIZACOES, mantem, matrizCongelamento } from './data/especializacoes.mjs';
+import { matrizCongelamento } from './data/especializacoes.mjs';
+import { TEXTOS_SPEC } from './data/textos-spec.mjs';
+import { tabelaDaSpec } from './data/tabelas-spec.mjs';
 
 const DESTINO = path.join(
   'C:', 'Users', 'MaiconDouglasFrancad', 'Documents', 'Ekhoria',
@@ -128,41 +130,27 @@ p('> **ANOTE é o passo que a mesa esquece.** No momento em que um talento conge
 }
 
 const porClasse = {};
-for (const e of ESPECIALIZACOES) (porClasse[e.classe] ??= []).push(e);
-
-// Uma linha de troca por habilidade, no fim dela. CONGELA e ANOTE eram a mesma
-// informacao escrita duas vezes; MANTEM era o complemento do CONGELA, ou seja,
-// nada. Sobrou o que importa: o que travou, e onde escrever o numero.
-function linhasDoPasso(passo) {
-  const out = [];
-
-  // o que travou, e onde escrever o numero
-  const congelados = (passo.congela ?? []).map((c) => `${md(c)} em \_\_\_\_`);
-  if (congelados.length) out.push(`⊘ **Congela** ${congelados.join(' · ')}`);
-
-  // o que o jogador DECIDE — mesmo vocabulario do Paladino de OD2
-  const congeladoTxt = (passo.congela ?? []).join(' ').toLowerCase();
-  const escolhas = (passo.anota ?? []).filter((a) => {
-    const limpo = a.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
-    return !congeladoTxt.includes(limpo);
-  });
-  if (escolhas.length) {
-    out.push('⚔ **Escolhas** ' + escolhas.map((a) => `${a}: \_\_\_\_\_\_\_\_`).join(' · '));
-  }
-  return out;
-}
+for (const e of TEXTOS_SPEC) (porClasse[e.classe] ??= []).push(e);
 
 for (const [classe, lista] of Object.entries(porClasse)) {
   p(`### ${classe}`);
   for (const e of lista) {
-    p(`#### ${e.nome}${e.afiliacao !== '—' ? ` *(${e.afiliacao})*` : ''}`);
-    p(`*${e.sabor}*`);
-    for (const passo of e.passos) {
-      const extras = linhasDoPasso(passo);
-      p(`**${passo.nivel}** · ` + passo.ganha.map(md).join(' ')
-        + (extras.length ? '\n' + extras.join('\n') : ''));
-    }
-    if (e.nota) p('> ' + md(e.nota));
+    p(`#### ${e.nome}${e.sabor ? ` — *${e.sabor}*` : ''}`);
+    // TEXTO ORIGINAL, como esta no cofre
+    p(e.texto);
+    if (e.exemplo) p(`> *${e.exemplo}*`);
+
+    const t = tabelaDaSpec(e.nome);
+    if (!t) continue;
+    p(`**Progressão do ${e.nome}** — do 5º ao 20º nível.`);
+    p('| Nv | ' + t.colunas.join(' | ') + ' |',
+      '|---|' + t.colunas.map(() => '---').join('|') + '|',
+      ...t.linhas.map((l) => `| **${l.nivel}** | ` + l.valores.map((v, i) =>
+        l.congelado.has(t.chaves[i]) ? `⊘ ${v}` : v).join(' | ') + ' |'));
+    const travadas = Object.keys(t.congela);
+    p('⊘ = congelado, repete o valor em que travou.'
+      + (travadas.length ? '' : ' *(esta especialização não congela nada.)*'));
+    if (t.nota) p('> ' + t.nota);
   }
 }
 
