@@ -104,7 +104,7 @@ export const CLASSES = [
       ['Sentinela', '—', 'o equilíbrio, caçador e investigador'],
       ['Vidente', '—', 'o místico dos nexos'],
     ],
-    nota: 'As Sendas do Sensível <strong>não têm trava de Afiliação</strong>. Quem manda na moral é o Caminho (Luz ou Sombra) e a Corrupção.',
+    nota: 'As Sendas do Sensível <strong>não têm trava de Afiliação</strong>. Quem manda na moral é o <strong>Caminho</strong> — Luz, Sombra ou <strong>Cinza</strong> — e a Corrupção. O Caminho também decide qual coluna do corpo congela primeiro.',
   },
 ];
 
