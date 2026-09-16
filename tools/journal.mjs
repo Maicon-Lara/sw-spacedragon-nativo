@@ -2,6 +2,7 @@
 // É o que o jogador abre no Foundry enquanto preenche a ficha.
 
 import { CLASSES, ESPECIES } from './data/resumo-jogador.mjs';
+import { ESPECIALIZACOES, mantem } from './data/especializacoes.mjs';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -159,6 +160,50 @@ crescimento pelos talentos próprias delas.</p>
 `;
 }
 
+
+// ── 5. Especializações ──────────────────────────────────────────────────────
+const selo = (n) => `<span style="background:#7a1620;color:#fff;padding:0 .45em;border-radius:3px;font-weight:bold">${n}</span>`;
+
+const linha = (rot, conteudo) =>
+  `<p style="margin:.15em 0"><strong style="display:inline-block;width:5.5em">${rot}</strong>${conteudo}</p>`;
+
+function paginaEspecs() {
+  const porClasse = {};
+  for (const e of ESPECIALIZACOES) (porClasse[e.classe] ??= []).push(e);
+
+  const blocos = Object.entries(porClasse).map(([classe, lista]) => `
+<h2>${esc(classe)}</h2>
+${lista.map((e) => {
+  const passos = e.passos.map((p) => {
+    const partes = [];
+    if ((p.congela ?? []).length) partes.push(linha('CONGELA', cru(p.congela.join(' · '))));
+    if ((p.anota ?? []).length) {
+      partes.push(linha('ANOTE', p.anota.map((a) => `${esc(a)} <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>`).join(' &nbsp; ')));
+    }
+    if (p === e.passos[0] || (p.congela ?? []).length) {
+      partes.push(linha('MANTÉM', esc(mantem(e, p.nivel).join(' · '))));
+    }
+    partes.push(linha('GANHA', p.ganha.map(cru).join('<br>')));
+    return `<p style="margin:.6em 0 .15em">${selo(p.nivel)}</p>${partes.join('')}`;
+  }).join('');
+  return `
+<h3>${esc(e.nome)}${e.afiliacao !== '—' ? ` <small>(${esc(e.afiliacao)})</small>` : ''}</h3>
+<p><em>${esc(e.sabor)}</em></p>
+${passos}
+${e.nota ? `<p>${cru(e.nota)}</p>` : ''}`;
+}).join('')}`).join('');
+
+  return `
+<p>No Space Dragon uma especialização é uma <strong>troca</strong>, não um acréscimo. Ela abre
+no <strong>5º nível</strong> e quase sempre <strong>congela</strong> algum talento em troca do
+que dá. Leia sempre as três linhas na ordem.</p>
+
+<p><strong>ANOTE</strong> é o passo que a mesa esquece: no momento em que um talento congela,
+<strong>escreva o valor dele na ficha</strong>. Seis sessões depois ninguém lembra em que
+número parou.</p>
+${blocos}`;
+}
+
 export function journalCriacao() {
   return {
     name: 'Criação de Personagem — o essencial',
@@ -167,6 +212,7 @@ export function journalCriacao() {
       pagina('2 · Passo a passo', PASSOS, 200),
       pagina('3 · As quatro classes', paginaClasses(), 300),
       pagina('4 · As espécies', paginaEspecies(), 400),
+      pagina('5 · Especializações', paginaEspecs(), 500),
     ],
   };
 }

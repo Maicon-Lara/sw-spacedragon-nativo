@@ -9,6 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { CLASSES, ESPECIES } from './data/resumo-jogador.mjs';
+import { ESPECIALIZACOES, mantem, matrizCongelamento } from './data/especializacoes.mjs';
 
 const DESTINO = path.join(
   'C:', 'Users', 'MaiconDouglasFrancad', 'Documents', 'Ekhoria',
@@ -99,6 +100,56 @@ for (const c of CLASSES) {
   p('**Especializações (5º nível):** ' + c.specs.map(
     ([n, a, d]) => `**${n}**${a !== '—' ? ` (${a})` : ''} — *${d}*`).join(' · '));
   if (c.nota) p('> ' + md(c.nota));
+}
+
+
+// ── especializações ─────────────────────────────────────────────────────────
+p('## As especializações');
+
+p('No Space Dragon uma especialização é uma **troca**, não um acréscimo. Ela abre no',
+  '**5º nível** e quase sempre **congela** algum talento em troca do que dá.');
+
+p('> **ANOTE é o passo que a mesa esquece.** No momento em que um talento congela,',
+  '> **escreva o valor dele na ficha**. Seis sessões depois ninguém lembra em que número',
+  '> parou, e a discussão come a cena.');
+
+// a matriz: de relance, o que cada caminho do Operativo sacrifica
+{
+  const { talentos, specs, matriz } = matrizCongelamento('Operativo');
+  p('### O que cada caminho do Operativo sacrifica');
+  p('| Talento | ' + specs.join(' | ') + ' |',
+    '|---|' + specs.map(() => '---').join('|') + '|',
+    ...talentos.map((t) => '| **' + t + '** | ' + specs.map((sp) => {
+      const n = matriz[t][sp];
+      return n ? `~~congela no ${n}º~~` : 'segue';
+    }).join(' | ') + ' |'));
+  p('> O **Espião** não congela nada — é a única do Operativo que só soma. O **Sabotador**',
+    '> congela cinco dos seis: ele aposta tudo numa carta.');
+}
+
+const porClasse = {};
+for (const e of ESPECIALIZACOES) (porClasse[e.classe] ??= []).push(e);
+
+for (const [classe, lista] of Object.entries(porClasse)) {
+  p(`### ${classe}`);
+  for (const e of lista) {
+    p(`#### ${e.nome}${e.afiliacao !== '—' ? ` *(${e.afiliacao})*` : ''}`);
+    p(`*${e.sabor}*`);
+    for (const passo of e.passos) {
+      const linhas = [];
+      if ((passo.congela ?? []).length) linhas.push(`| **CONGELA** | ${md(passo.congela.join(' · '))} |`);
+      if ((passo.anota ?? []).length) {
+        linhas.push(`| **ANOTE** | ${passo.anota.map((a) => `${a} \_\_\_\_\_`).join(' · ')} |`);
+      }
+      if (passo === e.passos[0] || (passo.congela ?? []).length) {
+        linhas.push(`| **MANTÉM** | ${mantem(e, passo.nivel).join(' · ')} |`);
+      }
+      linhas.push(`| **GANHA** | ${passo.ganha.map(md).join('<br>')} |`);
+      p(`**Nível ${passo.nivel}**`);
+      p('| | |', '|---|---|', ...linhas);
+    }
+    if (e.nota) p('> ' + md(e.nota));
+  }
 }
 
 // ── espécies ────────────────────────────────────────────────────────────────
