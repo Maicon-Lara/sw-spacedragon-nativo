@@ -155,7 +155,10 @@ export const TABELAS_SPEC = {
   // ── Sensível à Força ──────────────────────────────────────────────────────
   'Guardião': {
     base: 'Sensível à Força',
-    congela: {},
+    // Toda especializacao de Mentalico do livro paga com BA e JP. O Guardiao trocou
+    // a BA por uma melhor (a do Cosmonauta), entao a moeda dele e a JP — congelada
+    // ja no 5o — mais o teto de Grandeza na 6a.
+    congela: { jp: 5 },
     substitui: {
       ba: (n) => V[n - 1].ba,
       grandeza: (n) => {
@@ -179,12 +182,13 @@ export const TABELAS_SPEC = {
   },
   'Sentinela': {
     base: 'Sensível à Força',
-    congela: {},
+    // Paga mais tarde que as outras — e o preco de ser a mais versatil —, mas paga.
+    congela: { jp: 10 },
     novas: {
       'Talentos (metade do nível)': (n) => gatuno('furtividade', Math.max(1, n / 2)),
-      'JP contra a Força': (n) => (n >= 10 ? 'Fácil' : 'normal'),
+      'JPM contra a Força': (n) => (n >= 10 ? '+4' : '—'),
     },
-    nota: 'Escolhe três talentos de Operativo, com a % de um Gatuno de metade do seu nível. A única especialização que não troca nada.',
+    nota: 'Escolhe três talentos de Operativo, com a % de um Gatuno de metade do seu nível. A JP congela no 10º — mais tarde que nas outras Sendas, que é o preço de ser a mais versátil — mas em compensação ganha <strong>+4 nas JPM</strong> contra a Força e efeitos mentais.',
   },
   'Vidente': {
     base: 'Sensível à Força',
