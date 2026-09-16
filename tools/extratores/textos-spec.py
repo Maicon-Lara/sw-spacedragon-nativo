@@ -18,7 +18,7 @@ ARQUIVOS = [
     ('SW-SDN-Classes.md', {'Veterano': ['Mercenário', 'Caçador de Recompensas', 'Emissário'],
                            'Operativo': ['Espião', 'Sabotador', 'Assassino', 'Contrabandista'],
                            'Técnico': ['Médico de Campo', 'Engenheiro', 'Slicer']}),
-    ('SW-SDN-Forca.md', {'Sensível à Força': ['Guardião', 'Consular', 'Sentinela', 'Vidente']}),
+    ('SW-SDN-Forca.md', {'Sensível à Força': ['Guardião', 'Consular', 'Sentinela', 'Vidente', 'Lapidário']}),
 ]
 
 saida = []

@@ -203,6 +203,36 @@ export const TABELAS_SPEC = {
   },
 };
 
+// ── O Lapidário ─────────────────────────────────────────────────────────────
+// O Hipercientista do livro, vestido de engenheiro de kyber. É a única Senda que
+// congela as DUAS colunas ja no 5o e nunca mais progride — por isso e a unica em
+// que o Caminho nao tem o que decidir. Ele esta tao fora do eixo mistico que nem a
+// escolha moral chega ao corpo dele.
+Object.assign(TABELAS_SPEC, {
+  'Lapidário': {
+    base: 'Sensível à Força',
+    congela: { ba: 5, jp: 5 },
+    substitui: {
+      // o Alcance avanca UMA LINHA DA TABELA a cada dois niveis, nao um por nivel.
+      // O livro da o exemplo: no 5o tem 9%, e so no 7o sobe para 13% (o valor do 6o).
+      alcance: (n) => S[Math.min(20, 5 + Math.floor((n - 5) / 2)) - 1].alcance,
+      // a Grandeza trava duas vezes: para na 3a ate o 9o, na 4a ate o 13o, e so
+      // entao volta a subir de dois em dois. Teto pratico: 8a.
+      grandeza: (n) => {
+        if (n < 9) return '3ª';
+        if (n < 13) return '4ª';
+        return ordinal(Math.min(8, 5 + Math.floor((n - 13) / 2)));
+      },
+    },
+    novas: {
+      'Aparatos': (n) => (n >= 20 ? 'como Técnico igual' : n >= 10 ? 'como Técnico ½' : 'defensivos'),
+      'PV por nível': (n) => (n >= 17 ? '+2' : '—'),
+      'Poder pede rolagem': (n) => (n >= 20 ? 'sempre' : '—'),
+    },
+    nota: 'Ele extrai o poder <strong>do cristal</strong>, não de si — e a Força própria atrofia. No 20º alcança o auge como artífice e o fundo como místico: cria aparatos como um Técnico de igual nível, mas <strong>todo</strong> poder da Força passa a exigir rolagem, porque ele já desaprendeu a sentir.',
+  },
+});
+
 // ── A Senda Mandaloriana ────────────────────────────────────────────────────
 // Não é uma especialização a mais: ela SUBSTITUI a especialização da classe, e
 // cada classe paga um preço diferente por entrar nela. Por isso são quatro
@@ -231,15 +261,22 @@ Object.assign(TABELAS_SPEC, {
   },
   'Mandaloriano Sensível': {
     base: 'Sensível à Força',
+    // NAO congela BA nem JP: a Senda cobra com o OFICIO, nao com o corpo. Mas o
+    // Mentalico e a unica classe cujo aprofundamento cobraria o corpo, entao escapar
+    // disso vale mais para ele do que para os outros tres chassis. O teto de Grandeza
+    // e a compensacao — e e a moeda certa, porque e Forca, nao carne.
     congela: {},
     substitui: {
-      // conta como um Sensivel de UM NIVEL ABAIXO
       alcance: (n) => S[Math.max(1, n - 1) - 1].alcance,
+      grandeza: (n) => {
+        const g = num(grandezaEm(n));
+        return g >= 6 ? '6ª (teto)' : `${g}ª`;
+      },
     },
     novas: {
-      'Forma de Sabre': (n) => (n >= 5 ? 'até [11]' : '—'),
+      'Forma de Sabre': (n) => (n >= 5 ? 'até 10º' : '—'),
     },
-    nota: 'O <strong>Alcance conta como o de um Sensível de um nível abaixo</strong>. Em troca, o clã lhe ensina <strong>uma</strong> Forma de Sabre, até a técnica [11]. Sem Eco da Senda e sem Mudar de Guarda: ele conhece uma Forma só, e não tem para onde trocar.',
+    nota: 'O <strong>Alcance conta como o de um Sensível de um nível abaixo</strong> e o <strong>teto de Grandeza para na 6ª</strong>: ele passou a vida jurando um credo e aprendendo a lutar de armadura, não meditando sobre a natureza da Força. Em troca, mantém BA e JP progredindo até o 20º — o único Sensível que não paga com o corpo — e o clã lhe ensina <strong>uma</strong> Forma de Sabre. Sem Eco da Senda e sem Mudar de Guarda: conhece uma Forma só, e não tem para onde trocar.',
   },
 });
 
