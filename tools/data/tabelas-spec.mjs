@@ -198,6 +198,46 @@ export const TABELAS_SPEC = {
   },
 };
 
+// ── A Senda Mandaloriana ────────────────────────────────────────────────────
+// Não é uma especialização a mais: ela SUBSTITUI a especialização da classe, e
+// cada classe paga um preço diferente por entrar nela. Por isso são quatro
+// tabelas, uma por classe base — as combinações que a mesa de fato usa.
+Object.assign(TABELAS_SPEC, {
+  'Mandaloriano Veterano': {
+    base: 'Veterano',
+    congela: { desarmar: 5 },
+    nota: 'Mantém <strong>Ataques Múltiplos</strong> e <strong>Pilotar</strong> — o guerreiro de clã continua soldado e continua piloto. O que ele abre mão é da manobra de desarme, e da especialização que teria escolhido.',
+  },
+  'Mandaloriano Operativo': {
+    base: 'OperativoTalentos',
+    congela: { furtivo: 5 },
+    novas: {
+      'Rastrear': (n, b) => b.percepcao,
+    },
+    nota: 'O <strong>Ataque Furtivo congela</strong>: o guerreiro de honra não apunhala pelas costas. Em troca o clã lhe ensina a <strong>rastrear</strong>, com a mesma faixa da sua Percepção (1d6).',
+  },
+  'Mandaloriano Técnico': {
+    base: 'Técnico',
+    congela: {},
+    novas: {
+      'Crédito Tecnológico': () => 'perdido',
+    },
+    nota: 'Perde o <strong>Crédito Tecnológico</strong> — o dever de clã rouba o tempo de barganha. Mantém aparatos e feitos: o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.',
+  },
+  'Mandaloriano Sensível': {
+    base: 'Sensível à Força',
+    congela: {},
+    substitui: {
+      // conta como um Sensivel de UM NIVEL ABAIXO
+      alcance: (n) => S[Math.max(1, n - 1) - 1].alcance,
+    },
+    novas: {
+      'Forma de Sabre': (n) => (n >= 5 ? 'até [11]' : '—'),
+    },
+    nota: 'O <strong>Alcance conta como o de um Sensível de um nível abaixo</strong>. Em troca, o clã lhe ensina <strong>uma</strong> Forma de Sabre, até a técnica [11]. Sem Eco da Senda e sem Mudar de Guarda: ele conhece uma Forma só, e não tem para onde trocar.',
+  },
+});
+
 /**
  * Monta a tabela da especialização, do 5º ao 20º nível.
  * Devolve { colunas: [...], linhas: [{ nivel, valores: [...], congelado: Set }] }.

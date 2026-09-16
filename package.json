@@ -12,7 +12,8 @@
     "build": "node tools/build.mjs",
     "zip": "python tools/make-zip.py",
     "verificar": "node tools/verificar.mjs && python tools/validar-template.py",
-    "tudo": "npm run dados && npm run template && npm run guia && npm run verificar && npm run build && npm run zip"
+    "tudo": "npm run dados && npm run template && npm run guia && npm run verificar && npm run build && npm run zip && npm run cofre",
+    "cofre": "node tools/tabelas-no-cofre.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "^3.0.4"
