@@ -23,8 +23,13 @@ const md = (s) => String(s)
   .replace(/<em>(.*?)<\/em>/g, '*$1*')
   .replace(/<\/?[^>]+>/g, '');
 
-const L = [];
-const p = (...linhas) => L.push(...linhas, '');
+// Dois documentos, não um. A criação de personagem é o que o jogador abre no
+// começo da mesa e tem de caber numa mão cheia de páginas. As especializações
+// abrem no 5º nível, são 85% do texto, e ele só as consulta quando chega lá.
+const L = [];   // criação de personagem
+const LE = [];  // especializações
+let destino = L;
+const p = (...linhas) => destino.push(...linhas, '');
 
 p(`---
 title: "Guia do Jogador — criação de personagem"
@@ -105,7 +110,24 @@ for (const c of CLASSES) {
 }
 
 
-// ── especializações ─────────────────────────────────────────────────────────
+// ── especializações: daqui em diante, o SEGUNDO documento ───────────────────
+destino = LE;
+
+p(`---
+title: "Guia do Jogador — as especializações"
+author: Maicon Lara
+date: 2026
+tags:
+  - spacedragon
+  - starwars
+---`);
+
+p('# As Especializações');
+
+p('> Abre no **5º nível**. Antes disso, use o',
+  '> [[SW-SDN-Guia-do-Jogador|Guia do Jogador]] — este aqui só interessa quando você',
+  '> chega lá.');
+
 p('## As especializações');
 
 p('No Space Dragon uma especialização é uma **troca**, não um acréscimo. Ela abre no',
@@ -166,7 +188,9 @@ for (const [classe, lista] of Object.entries(porClasse)) {
   }
 }
 
-// ── espécies ────────────────────────────────────────────────────────────────
+// ── espécies: de volta ao PRIMEIRO documento ────────────────────────────────
+destino = L;
+
 p('## As espécies');
 
 p('Todas com **movimento 10 m**, e tudo vale desde o 1º nível. **Humano** e **Droide** são',
@@ -186,7 +210,16 @@ p('*Star Wars — Adaptação para Space Dragon (regras nativas)* · texto de **
   'obra de fã, não oficial e sem fins lucrativos · CC BY-SA 4.0 · Star Wars © Lucasfilm Ltd. ·',
   '*Space Dragon* © Old Dragon Editora.');
 
-fs.writeFileSync(DESTINO, L.join('\n').replace(/\n{3,}/g, '\n\n'), 'utf8');
-const txt = fs.readFileSync(DESTINO, 'utf8');
-console.log(`gerado ${path.basename(DESTINO)}`);
-console.log(`  ${txt.split('\n').length} linhas · ${txt.split(/\s+/).length} palavras`);
+// o rodapé de créditos vale para os dois
+const CREDITO = LE.length ? L.slice(-3) : [];
+LE.push('---', '', ...CREDITO);
+
+const escrever = (caminho, linhas) => {
+  const txt = linhas.join('\n').replace(/\n{3,}/g, '\n\n');
+  fs.writeFileSync(caminho, txt, 'utf8');
+  console.log(`gerado ${path.basename(caminho)}`);
+  console.log(`  ${txt.split('\n').length} linhas · ${txt.split(/\s+/).length} palavras`);
+};
+
+escrever(DESTINO, L);
+escrever(DESTINO.replace('Guia-do-Jogador', 'Guia-Especializacoes'), LE);
