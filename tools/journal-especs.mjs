@@ -39,10 +39,16 @@ export function mdParaHtml(txt) {
 function tabelaHtml(t) {
   const cabecalho = ['Nv', ...t.colunas].map((c) => `<th>${esc(c)}</th>`).join('');
   const corpo = t.linhas.map((l) => {
-    const celulas = l.valores.map((v, i) =>
-      l.congelado.has(t.chaves[i])
-        ? `<td style="opacity:.55" title="congelado">⊘ ${esc(v)}</td>`
-        : `<td>${esc(v)}</td>`).join('');
+    const celulas = l.valores.map((v, i) => {
+      const k = t.chaves[i];
+      if (l.congelado.has(k)) {
+        return `<td style="opacity:.55" title="congelado">⊘ ${esc(v)}</td>`;
+      }
+      if (l.trocado.has(k)) {
+        return `<td title="valor próprio desta especialização"><strong>${esc(v)}</strong></td>`;
+      }
+      return `<td>${esc(v)}</td>`;
+    }).join('');
     return `<tr><td><strong>${l.nivel}</strong></td>${celulas}</tr>`;
   }).join('');
   return `<table style="font-size:.85em"><thead><tr>${cabecalho}</tr></thead>` +
@@ -56,13 +62,20 @@ export function paginaEspecs() {
   const blocos = Object.entries(porClasse).map(([classe, lista]) => {
     const specs = lista.map((e) => {
       const t = tabelaDaSpec(e.nome);
+      const legenda = [];
+      if (t && Object.keys(t.congela).length) {
+        legenda.push('⊘ = congelado, repete o valor em que travou');
+      }
+      if (t && t.linhas.some((l) => l.trocado.size)) {
+        legenda.push('<strong>em negrito</strong> = o valor desta especialização, ' +
+                     'no lugar do da classe base');
+      }
       const tabela = t ? [
         `<p><strong>Progressão do ${esc(e.nome)}</strong> — do 5º ao 20º nível.</p>`,
         tabelaHtml(t),
-        `<p style="font-size:.85em">⊘ = congelado, repete o valor em que travou.` +
-        (Object.keys(t.congela).length
-          ? '</p>'
-          : ' <em>Esta especialização não congela nada.</em></p>'),
+        `<p style="font-size:.85em">${legenda.length
+          ? legenda.join(' · ') + '.'
+          : '<em>Nada congela nem muda: a tabela é a mesma da classe base.</em>'}</p>`,
         t.nota ? `<p>${t.nota}</p>` : '',
       ].join('') : '';
 

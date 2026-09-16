@@ -111,9 +111,9 @@ p('## As especializações');
 p('No Space Dragon uma especialização é uma **troca**, não um acréscimo. Ela abre no',
   '**5º nível** e quase sempre **congela** algum talento em troca do que dá.');
 
-p('> **ANOTE é o passo que a mesa esquece.** No momento em que um talento congela,',
-  '> **escreva o valor dele na ficha**. Seis sessões depois ninguém lembra em que número',
-  '> parou, e a discussão come a cena.');
+p('Cada uma traz a **mesma tabela da classe base**, já resolvida para aquele caminho.',
+  'A coluna mostra sempre o valor que vale para você: se a especialização substitui um',
+  'talento, é o novo número que aparece ali, não o da classe base.');
 
 // a matriz: de relance, o que cada caminho do Operativo sacrifica
 {
@@ -145,11 +145,23 @@ for (const [classe, lista] of Object.entries(porClasse)) {
     p(`**Progressão do ${e.nome}** — do 5º ao 20º nível.`);
     p('| Nv | ' + t.colunas.join(' | ') + ' |',
       '|---|' + t.colunas.map(() => '---').join('|') + '|',
-      ...t.linhas.map((l) => `| **${l.nivel}** | ` + l.valores.map((v, i) =>
-        l.congelado.has(t.chaves[i]) ? `⊘ ${v}` : v).join(' | ') + ' |'));
-    const travadas = Object.keys(t.congela);
-    p('⊘ = congelado, repete o valor em que travou.'
-      + (travadas.length ? '' : ' *(esta especialização não congela nada.)*'));
+      ...t.linhas.map((l) => `| **${l.nivel}** | ` + l.valores.map((v, i) => {
+        const k = t.chaves[i];
+        if (l.congelado.has(k)) return `⊘ ${v}`;
+        if (l.trocado.has(k)) return `**${v}**`;
+        return v;
+      }).join(' | ') + ' |'));
+
+    const legenda = [];
+    if (Object.keys(t.congela).length) {
+      legenda.push('⊘ = congelado, repete o valor em que travou');
+    }
+    if (t.linhas.some((l) => l.trocado.size)) {
+      legenda.push('**em negrito** = o valor desta especialização, no lugar do da classe base');
+    }
+    p(legenda.length
+      ? legenda.join(' · ') + '.'
+      : '*Nada congela nem muda: a tabela é a mesma da classe base.*');
     if (t.nota) p('> ' + t.nota);
   }
 }

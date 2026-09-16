@@ -5,11 +5,19 @@
 // já resolvida para o caminho dele — as colunas que congelaram repetindo o número
 // em que travaram, e as colunas novas que a especialização traz.
 //
+// Três mecanismos, e a ordem importa:
+//
 // `congela: { coluna: nível }` — a partir dali a coluna repete o valor daquele
 // nível. O personagem alcançou aquele patamar; o que ele perde é o crescimento.
 //
-// `novas: { título: (nivel, base, tudo) => valor }` — as colunas que só a
-// especialização tem.
+// `substitui: { coluna: fn }` — a coluna passa a mostrar o valor DAQUELA
+// especialização, no lugar do da classe base. É o caso do Espião, cuja Sabotagem
+// é a % de Furtividade: em vez de uma coluna "Sabotagem" e outra "Sabotagem nova",
+// existe uma coluna só, com o número que ele de fato rola. A marca de substituído
+// só aparece quando o valor REALMENTE difere do da base.
+//
+// `novas: { título: fn }` — reservado para o que não existe na classe base, como
+// o "Desarme da armadilha" do Sabotador.
 
 import { PROGRESSOES } from './progressoes.mjs';
 
@@ -45,10 +53,10 @@ export const TABELAS_SPEC = {
   'Mercenário': {
     base: 'Veterano',
     congela: { pilotar: 5, jp: 10 },
-    novas: {
-      'Crítico c/ a arma': (n, b) => `×${mult(b.critico) + 1}`,
+    substitui: {
+      critico: (n, b) => `×${mult(b.critico) + 1}`,
     },
-    nota: 'O crítico da coluna vale para qualquer arma; o da última coluna, só para a arma escolhida.',
+    nota: 'A coluna Crítico já é a da <strong>arma escolhida</strong>, sempre um multiplicador acima da tabela do Veterano. Com outra arma vale o crítico normal — e do 10º em diante, mais −4 no ataque.',
   },
   'Caçador de Recompensas': {
     base: 'Veterano',
@@ -73,41 +81,44 @@ export const TABELAS_SPEC = {
   'Espião': {
     base: 'OperativoTalentos',
     congela: {},
-    novas: {
-      'Sabotagem (nova)': (n, b) => (n >= 20 ? '99%' : b.furtividade),
-      'Disfarce': (n, b) => (n >= 20 ? '99%' : b.furtar),
+    // A coluna mostra o valor que vale para ELE, nao o da classe base.
+    substitui: {
+      sabotagem: (n, b) => (n >= 20 ? '99%' : b.furtividade),
+      furtividade: (n, b) => (n >= 20 ? '99%' : b.furtividade),
+      furtar: (n, b) => (n >= 20 ? '99%' : b.furtar),
     },
-    nota: 'A Sabotagem sobe para a % de Furtividade e passa a subir com ela. No 20º, Furtividade, Sabotagem e Furtar igualam os 99% de Escalar.',
+    nota: 'A Sabotagem dele <em>é</em> a % de Furtividade, e sobe junto com ela — por isso as duas colunas andam iguais. A mesma % de Furtar serve para passar-se por outra pessoa. No 20º, Furtividade, Sabotagem e Furtar igualam os 99% de Escalar.',
   },
   'Sabotador': {
     base: 'OperativoTalentos',
     congela: { furtar: 5, furtivo: 5, escalar: 10, furtividade: 10, percepcao: 10 },
-    novas: {
-      'Bônus': (n, b) => `+${100 - num(b.escalar)}%`,
-      // No 20o o livro fixa 99% e 1%, e nao o que a formula daria (81%/19%).
-      'Sabotagem final': (n, b) =>
+    // A Sabotagem da coluna ja vem com o bonus somado: e a % que ele rola.
+    // No 20o o livro fixa 99%, acima do que a formula daria (81%).
+    substitui: {
+      sabotagem: (n, b) =>
         n >= 20 ? '99%' : pct(num(b.sabotagem) + (100 - num(b.escalar))),
+    },
+    novas: {
       'Desarme da armadilha': (n, b) =>
         n >= 20 ? '1%' : n < 10 ? '—' : pct(100 - (num(b.sabotagem) + (100 - num(b.escalar)))),
     },
-    nota: 'O bônus é recalculado a cada nível sobre a % da tabela — não acumula. A armadilha é o inverso da sua Sabotagem final. No 20º o livro fixa 99% e 1%, acima do que a fórmula daria.',
+    nota: 'A coluna Sabotagem já traz o bônus somado (100% menos a sua % de Escalar) — é a porcentagem que você rola. O bônus é recalculado a cada nível e <strong>não acumula</strong>. A armadilha é o inverso dela.',
   },
   'Assassino': {
     base: 'OperativoTalentos',
     congela: { escalar: 5, sabotagem: 5, furtar: 10 },
+    substitui: {
+      furtivo: (n, b) => `×${mult(b.furtivo) + 1}`,
+    },
     novas: {
-      'Atq. Furtivo (novo)': (n, b) => `×${mult(b.furtivo) + 1}`,
       'Acerto vira furtivo': (n) => (n >= 10 ? '20%' : '—'),
     },
-    nota: 'No 20º todos os ataques contam como Ataque Furtivo, e um crítico pede JPF ou morte.',
+    nota: 'A coluna do Ataque Furtivo já traz o +1 de multiplicador: ×3 no 5º, ×4 no 6º, e assim por diante. No 20º todos os ataques contam como Ataque Furtivo, e um crítico pede JPF ou morte.',
   },
   'Contrabandista': {
     base: 'OperativoTalentos',
     congela: { sabotagem: 5, furtar: 5, furtividade: 10 },
-    novas: {
-      'Ataque adicional': (n, b) => (n < 10 ? '—' : b.furtividade),
-    },
-    nota: 'A % de Furtividade congelada vira a sua chance de um ataque a mais no turno (com a BA de 7 níveis abaixo). No 20º são sempre dois ataques.',
+    nota: 'A % de Furtividade congelada <em>é</em> a sua chance de um ataque a mais no turno, com a BA de 7 níveis abaixo — por isso ela não vira uma coluna nova. No 20º são sempre dois ataques.',
   },
 
   // ── Técnico ───────────────────────────────────────────────────────────────
@@ -123,9 +134,11 @@ export const TABELAS_SPEC = {
   'Engenheiro': {
     base: 'Técnico',
     congela: {},
+    substitui: {
+      nt: (n) => `${Math.min(10, 4 + Math.floor((n - 5) / 2))}º`,
+    },
     novas: {
-      'NT (novo)': (n) => `${Math.min(10, 4 + Math.floor((n - 5) / 2))}º`,
-      'Custo': (n) => (n >= 10 ? 'dobrado' : 'acrescido'),
+      'Custo de inventar': (n) => (n >= 10 ? 'dobrado' : 'acrescido'),
     },
     nota: 'Salta para o 4º NT no 5º nível e ganha +1 a cada 2 níveis, chegando ao 10º NT no 17º. O Crédito Tecnológico vira custo: inventar sai mais caro que comprar.',
   },
@@ -143,9 +156,9 @@ export const TABELAS_SPEC = {
   'Guardião': {
     base: 'Sensível à Força',
     congela: {},
-    novas: {
-      'BA (como Veterano)': (n) => V[n - 1].ba,
-      'Teto efetivo': (n) => {
+    substitui: {
+      ba: (n) => V[n - 1].ba,
+      grandeza: (n) => {
         const g = num(grandezaEm(n));
         return g >= 6 ? '6ª (teto)' : `${g}ª`;
       },
@@ -155,10 +168,12 @@ export const TABELAS_SPEC = {
   'Consular': {
     base: 'Sensível à Força',
     congela: { ba: 5, jp: 10 },
+    substitui: {
+      grandeza: (n) => ordinal(Math.min(10, 4 + Math.floor((n - 5) / 2))),
+      alcance: (n) => (n >= 20 ? '200%' : S[Math.min(20, n + 2) - 1].alcance),
+    },
     novas: {
-      'Grandeza (nova)': (n) => ordinal(Math.min(10, 4 + Math.floor((n - 5) / 2))),
-      'Alcance (nova)': (n) => (n >= 20 ? '200%' : S[Math.min(20, n + 2) - 1].alcance),
-      'Preço': (n) => (n >= 20 ? 'JPF ou morre' : n >= 17 ? 'JPF ou −1 CON' : n >= 10 ? '−1-2 PV/nível' : '—'),
+      'O preço': (n) => (n >= 20 ? 'JPF ou morre' : n >= 17 ? 'JPF ou −1 CON' : n >= 10 ? '−1-2 PV/nível' : '—'),
     },
     nota: 'Ganha a 4ª Grandeza direto no 5º e +1 a cada 2 níveis, chegando à 10ª no 17º. O Alcance conta como o de um Sensível +2 níveis. O corpo paga a conta.',
   },
@@ -206,17 +221,28 @@ export function tabelaDaSpec(nome) {
     const b = base[n - 1];
     const valores = [];
     const congelado = new Set();
+    const trocado = new Set();
     for (const k of chavesBase) {
       const trava = def.congela[k];
+      const troca = def.substitui?.[k];
       if (trava && n >= trava) {
-        valores.push(base[trava - 1][k]);
+        // congelado: repete o valor em que travou (ja com a substituicao, se houver)
+        const bTrava = base[trava - 1];
+        valores.push(troca ? troca(trava, bTrava, base) : bTrava[k]);
         congelado.add(k);
+      } else if (troca) {
+        // substituido: a coluna mostra o valor FINAL daquele talento, nao o da base
+        const v = troca(n, b, base);
+        valores.push(v);
+        // so marca quando o numero REALMENTE difere — senao o destaque mente,
+        // sugerindo mudanca onde a especializacao coincide com a classe base
+        if (String(v) !== String(b[k])) trocado.add(k);
       } else {
         valores.push(b[k]);
       }
     }
     for (const t of novas) valores.push(def.novas[t](n, b, base));
-    linhas.push({ nivel: n, valores, congelado });
+    linhas.push({ nivel: n, valores, congelado, trocado });
   }
 
   return {
