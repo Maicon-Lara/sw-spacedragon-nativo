@@ -16,7 +16,7 @@ export const TEXTOS_SPEC = [
     "nome": "Caçador de Recompensas",
     "sabor": "o caçador (Rebelde)",
     "exemplo": "Boba Fett, Cad Bane, Bossk, Fennec. Casa com a [[SW-SDN-Senda-Mandaloriana|Senda Mandaloriana]].",
-    "texto": "- `5º` passa a **operar aparatos ofensivos** e a **operar/consertar máquinas**, usando a **% de Desarmar/Subjugar** como chance.\n- `10º` a rolagem de Desarmar/Subjugar rende um **ataque extra**, chegando a **+2 ataques** (com a 2ª BA).\n- `20º` usa **qualquer aparato** como um Técnico de igual nível e desfere **sempre 3 ataques**."
+    "texto": "Passa a **operar aparatos ofensivos** e a **operar e consertar máquinas**, usando como chance a **% de Desarmar/Subjugar** somada ao **Crédito Tecnológico** da sua Ciência. O talento **muda de ofício**: como manobra de desarmar e subjugar, ele **para de progredir no 5º**; a progressão da tabela continua, mas passa a valer só para aparatos e máquinas.\n- `10º` **Ataque extra:** logo depois do primeiro ataque do turno, pode rolar **Desarmar/Subjugar com a % do 5º nível**. Sucesso: faz **mais dois ataques** naquele turno, os dois com a **2ª BA** — três no total. Falha: **não faz mais nada** no turno. O ataque extra pode ser trocado por uma tentativa de desarmar ou subjugar.\n- `20º` usa **qualquer aparato** como um Técnico de igual nível e faz **sempre 3 ataques** por turno, sem rolar — o extra com a 2ª BA, e ainda podendo virar desarme ou submissão."
   },
   {
     "classe": "Veterano",

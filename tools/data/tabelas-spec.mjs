@@ -60,12 +60,15 @@ export const TABELAS_SPEC = {
   },
   'Caçador de Recompensas': {
     base: 'Veterano',
-    congela: {},
+    // O livro: Desarmar/Subjugar "para de progredir com esses fins" no 5o, e "a nova
+    // progressao passa a aumentar para a nova aplicacao". Como manobra, congela; a
+    // progressao continua, mas em Aparatos e maquinas.
+    congela: { desarmar: 5 },
     novas: {
-      'Aparatos e máquinas': (n, b) => b.desarmar,
-      'Ataques': (n) => (n >= 20 ? '3' : n >= 10 ? 'até +2' : '—'),
+      'Aparatos e máquinas': (n, b) => `${b.desarmar} + CT`,
+      'Ataques no turno': (n) => (n >= 20 ? '3, sempre' : n >= 10 ? '3, com teste' : '—'),
     },
-    nota: 'A chance de operar aparatos ofensivos e consertar máquinas é a própria % de Desarmar/Subjugar.',
+    nota: 'A coluna Desarmar congela no 5º — e é com esse número que se rola o ataque extra do 10º. A progressão segue em Aparatos e máquinas, somada ao Crédito Tecnológico (CT) da sua Ciência. No teste do ataque extra, a falha tira o resto do turno.',
   },
   'Emissário': {
     base: 'Veterano',
