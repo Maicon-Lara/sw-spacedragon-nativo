@@ -206,13 +206,13 @@ export const TABELAS_SPEC = {
   },
 };
 
-// ── O Lapidário ─────────────────────────────────────────────────────────────
+// ── O Artífice ─────────────────────────────────────────────────────────────
 // O Hipercientista do livro, vestido de engenheiro de kyber. É a única Senda que
 // congela as DUAS colunas ja no 5o e nunca mais progride — por isso e a unica em
 // que o Caminho nao tem o que decidir. Ele esta tao fora do eixo mistico que nem a
 // escolha moral chega ao corpo dele.
 Object.assign(TABELAS_SPEC, {
-  'Lapidário': {
+  'Artífice': {
     base: 'Sensível à Força',
     congela: { ba: 5, jp: 5 },
     substitui: {

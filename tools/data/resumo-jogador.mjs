@@ -103,7 +103,7 @@ export const CLASSES = [
       ['Consular', '—', 'o conjurador'],
       ['Sentinela', '—', 'o equilíbrio, caçador e investigador'],
       ['Vidente', '—', 'o místico dos nexos'],
-      ['Lapidário', '—', 'o engenheiro de kyber'],
+      ['Artífice', '—', 'o engenheiro de kyber'],
     ],
     nota: 'As Sendas do Sensível <strong>não têm trava de Afiliação</strong>. Quem manda na moral é o <strong>Caminho</strong> — Luz, Sombra ou <strong>Cinza</strong> — e a Corrupção. O Caminho também decide qual coluna do corpo congela primeiro.',
   },
