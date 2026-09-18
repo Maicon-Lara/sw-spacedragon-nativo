@@ -112,7 +112,7 @@ export const CLASSES = [
 export const ESPECIES = [
   {
     nome: 'Humano', molde: 'Humano', mods: '+2 e −2 à sua escolha',
-    resumo: 'Versátil. Ganha <strong>+1 num atributo a cada 4 níveis</strong> — nenhuma outra espécie do cenário ganha isso, fora o Droide.',
+    resumo: 'Versátil: é quem <strong>escolhe onde põe</strong> o +2 e o −2. O <strong>+1 em um atributo a cada 4 níveis</strong> (4º, 8º, 12º, 16º, 20º) vale para <strong>todas</strong> as espécies do molde Humano — só o Mutante não o recebe.',
   },
   {
     nome: 'Wookiee', molde: 'Humano', mods: '+2 Força, −2 Comunicação',
