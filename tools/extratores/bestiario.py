@@ -12,7 +12,20 @@ TAM = {u'Peq': 'pequeno', u'M\u00e9d': 'medio', u'Gd': 'grande',
 AFIL = {'A': 'leal', 'N': 'neutro', 'R': 'rebelde'}
 
 s = io.open(COFRE, encoding='utf8').read()
-roster = s[s.index('## Roster nativo'):s.index('## Os Drag')]
+roster = s[s.index('## Roster nativo'):s.index('## Atributos das criaturas')]
+
+# a tabela de atributos, que o livro publica por criatura (SD, Cap. 11)
+atributos = {}
+tab = s[s.index('## Atributos das criaturas'):s.index('## Os Drag')]
+for ln in tab.split('\n'):
+    if not ln.startswith('|') or '---' in ln or 'Criatura' in ln:
+        continue
+    c = [x.strip() for x in ln.strip('|').split('|')]
+    if len(c) != 7 or not c[1].lstrip('-').isdigit():
+        continue
+    chave = re.sub(r'\*+', '', c[0])
+    chave = re.sub(r'\s*\(.*?\)\s*', ' ', chave).strip()
+    atributos[chave] = dict(zip(('FOR', 'DES', 'CON', 'INT', 'CIE', 'COM'), map(int, c[1:])))
 
 criaturas = []
 for ln in roster.split('\n'):
@@ -91,6 +104,7 @@ for ln in roster.split('\n'):
         'rm': int(rm.group(1)) if rm else None,
         'rd': (int(rd.group(1)), rd.group(2).strip().rstrip('*')) if rd else None,
         'xp': int(re.sub(r'\D', '', c[8]) or 0),
+        'atributos': atributos.get(nome),
     })
 
 print("criaturas extraidas: %d" % len(criaturas))
@@ -106,6 +120,10 @@ for cr in criaturas:
         linhas.append('    %s: %s,' % (k, json.dumps(cr[k])))
     if cr['pvFixo']:
         linhas.append('    pvFixo: true,  // o livro escreve "DV 1 PV": nao se rola dado')
+    if cr.get('atributos'):
+        a = cr['atributos']
+        linhas.append('    atributos: { %s },'
+                      % ', '.join('%s: %d' % (k, a[k]) for k in ('FOR', 'DES', 'CON', 'INT', 'CIE', 'COM')))
     if cr['rm'] is not None:
         linhas.append('    rm: %d,' % cr['rm'])
     if cr['rd'] is not None:

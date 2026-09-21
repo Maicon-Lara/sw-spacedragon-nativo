@@ -90,6 +90,12 @@ function criaturaDoc(c) {
       props: {
         cr_tamanho: TAM_CHAVE[c.tamanho] ?? 'tam_medio',
         cr_afiliacao: AFIL_CHAVE[c.afiliacao] ?? 'afil_neutro',
+        cr_for: c.atributos?.FOR ?? 10,
+        cr_des: c.atributos?.DES ?? 10,
+        cr_con: c.atributos?.CON ?? 10,
+        cr_int: c.atributos?.INT ?? 10,
+        cr_cie: c.atributos?.CIE ?? 10,
+        cr_com: c.atributos?.COM ?? 10,
         cr_cp: c.cp,
         cr_jp: c.jp,
         cr_dv: c.dv ?? 0,

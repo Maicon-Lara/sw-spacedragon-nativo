@@ -27,6 +27,7 @@ export const BESTIARIO = [
     pv: 25,
     moral: 70,
     xp: 205,
+    atributos: { FOR: 15, DES: 17, CON: 12, INT: 0, CIE: 5, COM: 2 },
     ataques: "mordida +2 (2d6+2); ferroada +3 (1d8+3 + veneno)",
   },
   {
@@ -42,6 +43,7 @@ export const BESTIARIO = [
     pv: 33,
     moral: 100,
     xp: 245,
+    atributos: { FOR: 14, DES: 10, CON: 12, INT: 7, CIE: 10, COM: 3 },
     ataques: "pancada +2 (1d6+2) · desativável",
   },
   {
@@ -57,6 +59,7 @@ export const BESTIARIO = [
     pv: 67,
     moral: 80,
     xp: 945,
+    atributos: { FOR: 18, DES: 7, CON: 16, INT: 5, CIE: 0, COM: 2 },
     rd: { valor: 6, excecao: "físico" },
     ataques: "pancada +7 (1d10+6); **RD 6/físico**; reflete energia em falha crít.",
   },
@@ -73,6 +76,7 @@ export const BESTIARIO = [
     pv: 8,
     moral: 60,
     xp: 37,
+    atributos: { FOR: 5, DES: 7, CON: 2, INT: 2, CIE: 0, COM: 0 },
     ataques: "envolver [especial] — juntas viram geleia",
   },
   {
@@ -88,6 +92,7 @@ export const BESTIARIO = [
     pv: 24,
     moral: 80,
     xp: 175,
+    atributos: { FOR: 5, DES: 10, CON: 4, INT: 16, CIE: 14, COM: 12 },
     ataques: "poderes da Força até 3ª Grandeza; levita",
   },
   {
@@ -103,6 +108,7 @@ export const BESTIARIO = [
     pv: 50,
     moral: 80,
     xp: 555,
+    atributos: { FOR: 16, DES: 13, CON: 14, INT: 8, CIE: 0, COM: 0 },
     ataques: "mordida +6 (1d10+4 + agarrar); cauda +3 (1d6+1); giro 2d10+4",
   },
   {
@@ -118,6 +124,7 @@ export const BESTIARIO = [
     pv: 16,
     moral: 60,
     xp: 100,
+    atributos: { FOR: 8, DES: 18, CON: 8, INT: 5, CIE: 0, COM: 2 },
     ataques: "mordida +4 (1d6 + 1d4 elétrico); descarga (1d8 elét. + paralisia 5 m²)",
   },
   {
@@ -133,6 +140,7 @@ export const BESTIARIO = [
     pv: 42,
     moral: 60,
     xp: 405,
+    atributos: { FOR: 12, DES: 10, CON: 14, INT: 2, CIE: 0, COM: 0 },
     ataques: "pinça +6 (1d6+4 + radiação 15%)",
   },
   {
@@ -148,6 +156,7 @@ export const BESTIARIO = [
     pv: 42,
     moral: 70,
     xp: 405,
+    atributos: { FOR: 14, DES: 10, CON: 14, INT: 5, CIE: 0, COM: 0 },
     rd: { valor: 4, excecao: "ácido" },
     ataques: "2 garras +4 (1d6+2); **RD 4/ácido**; concha (quase invulnerável)",
   },
@@ -164,6 +173,7 @@ export const BESTIARIO = [
     pv: 32,
     moral: 100,
     xp: 320,
+    atributos: { FOR: 16, DES: 6, CON: 10, INT: 2, CIE: 4, COM: 0 },
     ataques: "envolver [3 testes de Força; asfixia]; **imune a físico**",
   },
   {
@@ -179,6 +189,7 @@ export const BESTIARIO = [
     pv: 16,
     moral: 90,
     xp: 100,
+    atributos: { FOR: 14, DES: 12, CON: 10, INT: 6, CIE: 0, COM: 6 },
     ataques: "pinça +2 (1d4+2); jato ácido +1 (1d4, 5 m)",
   },
   {
@@ -194,6 +205,7 @@ export const BESTIARIO = [
     pv: 165,
     moral: 90,
     xp: 7250,
+    atributos: { FOR: 28, DES: 12, CON: 20, INT: 2, CIE: 0, COM: 2 },
     ataques: "pisão +14 (2d10+9 [crít.: dano massivo]); cauda +10 (1d10+4)",
   },
   {
@@ -209,6 +221,7 @@ export const BESTIARIO = [
     pv: 84,
     moral: 80,
     xp: 1480,
+    atributos: { FOR: 22, DES: 14, CON: 18, INT: 8, CIE: 6, COM: 4 },
     rd: { valor: 6, excecao: "ácido" },
     ataques: "pancada +12 (4d6+6); rocha +6 (3d6); **RD 6/ácido**",
   },
@@ -225,6 +238,7 @@ export const BESTIARIO = [
     pv: 33,
     moral: 60,
     xp: 280,
+    atributos: { FOR: 14, DES: 14, CON: 12, INT: 9, CIE: 8, COM: 8 },
     rm: 10,
     ataques: "mordida +3 (1d6+3); cauda +2 (1d4+2); lança +1 (1d8+3); **RM 10%**",
   },
@@ -241,6 +255,7 @@ export const BESTIARIO = [
     pv: 67,
     moral: 80,
     xp: 875,
+    atributos: { FOR: 20, DES: 16, CON: 16, INT: 4, CIE: 2, COM: 4 },
     ataques: "2 pancadas +8 (1d10+3); rocha +3 (1d8+3)",
   },
   {
@@ -256,6 +271,7 @@ export const BESTIARIO = [
     pv: 8,
     moral: 70,
     xp: 37,
+    atributos: { FOR: 8, DES: 14, CON: 9, INT: 16, CIE: 16, COM: 14 },
     rm: 15,
     ataques: "mini pistola +2 (1d4); **RM 15%**; ciência avançada",
   },
@@ -272,6 +288,7 @@ export const BESTIARIO = [
     pv: 48,
     moral: 70,
     xp: 555,
+    atributos: { FOR: 14, DES: 12, CON: 10, INT: 12, CIE: 10, COM: 9 },
     rm: 20,
     ataques: "lança +7 (1d8+2); respira água; **RM 20%**",
   },
@@ -288,6 +305,7 @@ export const BESTIARIO = [
     pv: 75,
     moral: 100,
     xp: 1075,
+    atributos: { FOR: 14, DES: 12, CON: 16, INT: 10, CIE: 12, COM: 8 },
     ataques: "pancada +8 (1d8+4); raio laser +4 (1d6) · desativável",
   },
   {
@@ -303,6 +321,7 @@ export const BESTIARIO = [
     pv: 17,
     moral: 90,
     xp: 100,
+    atributos: { FOR: 10, DES: 16, CON: 12, INT: 8, CIE: 0, COM: 6 },
     ataques: "mordida +2 (1d6); uivo sônico [JPM ou −2 em tudo]",
   },
   {
@@ -318,6 +337,7 @@ export const BESTIARIO = [
     pv: 58,
     moral: 80,
     xp: 635,
+    atributos: { FOR: 14, DES: 12, CON: 14, INT: 4, CIE: 0, COM: 2 },
     ataques: "cauda +8 (1d8+4); língua +5 (1d4+2 + envolver, 15 m)",
   },
   {
@@ -333,6 +353,7 @@ export const BESTIARIO = [
     pv: 101,
     moral: 80,
     xp: 2075,
+    atributos: { FOR: 26, DES: 14, CON: 20, INT: 4, CIE: 0, COM: 4 },
     ataques: "presas +14 (2d8+8 + arremesso); atropelar",
   },
   {
@@ -348,6 +369,7 @@ export const BESTIARIO = [
     pv: 82,
     moral: 70,
     xp: 1390,
+    atributos: { FOR: 20, DES: 14, CON: 14, INT: 4, CIE: 0, COM: 0 },
     ataques: "2 tentáculos +8 (1d6+6 + agarrar); arrasta p/ baixo da areia",
   },
   {
@@ -363,6 +385,7 @@ export const BESTIARIO = [
     pv: 102,
     moral: 90,
     xp: 1975,
+    atributos: { FOR: 28, DES: 14, CON: 22, INT: 6, CIE: 0, COM: 2 },
     ataques: "mordida +12 (2d10+5 + agarrar 1d8/rod.); cauda +6 (1d8+3)",
   },
   {
@@ -379,6 +402,7 @@ export const BESTIARIO = [
     moral: 100,
     xp: 10,
     pvFixo: true,  // o livro escreve "DV 1 PV": nao se rola dado
+    atributos: { FOR: 2, DES: 12, CON: 2, INT: 0, CIE: 0, COM: 0 },
     ataques: "tentáculo +0 (1d4 elétrico); sem cérebro",
   },
   {
@@ -394,6 +418,7 @@ export const BESTIARIO = [
     pv: 72,
     moral: 100,
     xp: 1150,
+    atributos: { FOR: 14, DES: 14, CON: 10, INT: 6, CIE: 12, COM: 4 },
     ataques: "disparador +8 (1d12); **acerebral: NÃO desativável**",
   },
   {
@@ -409,6 +434,7 @@ export const BESTIARIO = [
     pv: 100,
     moral: 80,
     xp: 1975,
+    atributos: { FOR: 14, DES: 14, CON: 18, INT: 12, CIE: 14, COM: 12 },
     rm: 5,
     ataques: "pistola +10 (1d6); rifle +6 (1d8); **RM 5%** · desativável",
   },
@@ -425,6 +451,7 @@ export const BESTIARIO = [
     pv: 25,
     moral: 70,
     xp: 205,
+    atributos: { FOR: 12, DES: 14, CON: 12, INT: 13, CIE: 14, COM: 10 },
     rm: 30,
     ataques: "pancada +3 (1d6+1); **metamorfose** (criatura ≤ média); **RM 30%**",
   },
@@ -441,6 +468,7 @@ export const BESTIARIO = [
     pv: 40,
     moral: 60,
     xp: 450,
+    atributos: { FOR: 0, DES: 18, CON: 0, INT: 6, CIE: 4, COM: 2 },
     ataques: "toque +4 (1d6+2 elétrico); **incorpóreo, imune a físico**",
   },
   {
@@ -456,6 +484,7 @@ export const BESTIARIO = [
     pv: 59,
     moral: 70,
     xp: 735,
+    atributos: { FOR: 20, DES: 12, CON: 16, INT: 4, CIE: 0, COM: 4 },
     ataques: "pancada +8 (1d10+6 fogo); baforada (1d6 fogo, 6 m); imune a fogo",
   },
   {
@@ -471,6 +500,7 @@ export const BESTIARIO = [
     pv: 50,
     moral: 70,
     xp: 555,
+    atributos: { FOR: 18, DES: 12, CON: 14, INT: 4, CIE: 0, COM: 4 },
     ataques: "pancada +6 (1d10+4); sopro gélido (1d6 + JPF ou paralisia); imune a gelo",
   },
   {
@@ -486,6 +516,7 @@ export const BESTIARIO = [
     pv: 68,
     moral: 80,
     xp: 875,
+    atributos: { FOR: 18, DES: 12, CON: 18, INT: 6, CIE: 0, COM: 4 },
     ataques: "pancada +10 (2d8+4)",
   },
   {
@@ -501,6 +532,7 @@ export const BESTIARIO = [
     pv: 8,
     moral: 100,
     xp: 37,
+    atributos: { FOR: 14, DES: 8, CON: 1, INT: 0, CIE: 0, COM: 0 },
     ataques: "agarrar (1d4/rod.; engolida 1d6 ácido/rod.)",
   },
   {
@@ -516,6 +548,7 @@ export const BESTIARIO = [
     pv: 24,
     moral: 80,
     xp: 175,
+    atributos: { FOR: 14, DES: 16, CON: 10, INT: 9, CIE: 6, COM: 9 },
     rm: 35,
     ataques: "garra +4 (1d6+2); pistola +3 (1d6); **RM 35%**",
   },
@@ -532,6 +565,7 @@ export const BESTIARIO = [
     pv: 66,
     moral: 80,
     xp: 945,
+    atributos: { FOR: 18, DES: 20, CON: 14, INT: 4, CIE: 0, COM: 3 },
     ataques: "bicada +8 (1d8+5); 2 garras +3 (1d6+3 + suspensão)",
   },
   {
@@ -547,6 +581,7 @@ export const BESTIARIO = [
     pv: 16,
     moral: 70,
     xp: 100,
+    atributos: { FOR: 12, DES: 16, CON: 10, INT: 2, CIE: 0, COM: 2 },
     ataques: "mordida +3 (1d6+1); 2 garras +1 (1d4); **caça em grupo** (+1/aliado)",
   },
   {
@@ -562,6 +597,7 @@ export const BESTIARIO = [
     pv: 85,
     moral: 90,
     xp: 1390,
+    atributos: { FOR: 25, DES: 16, CON: 20, INT: 2, CIE: 0, COM: 2 },
     ataques: "chifrada +15 (2d10+8 + arremesso); cabeçada +8 (1d10+6)",
   },
   {
@@ -577,6 +613,7 @@ export const BESTIARIO = [
     pv: 42,
     moral: 80,
     xp: 450,
+    atributos: { FOR: 18, DES: 14, CON: 14, INT: 11, CIE: 5, COM: 12 },
     rm: 5,
     ataques: "espada +6 (1d8+4); zarabatana +3 (1d4 + veneno); **RM 5%**",
   },
@@ -593,6 +630,7 @@ export const BESTIARIO = [
     pv: 99,
     moral: 80,
     xp: 2075,
+    atributos: { FOR: 20, DES: 16, CON: 16, INT: 2, CIE: 0, COM: 1 },
     ataques: "2 tentáculos +12 (2d6+2 + agarrar); jato ácido (1d6, mancha 10 m²)",
   },
   {
@@ -608,6 +646,7 @@ export const BESTIARIO = [
     pv: 44,
     moral: 90,
     xp: 360,
+    atributos: { FOR: 20, DES: 14, CON: 18, INT: 4, CIE: 0, COM: 1 },
     ataques: "chifrada +8 (1d10+4); coice +4 (1d6+2); bovino de 8 patas",
   },
   {
@@ -623,6 +662,7 @@ export const BESTIARIO = [
     pv: 116,
     moral: 90,
     xp: 2615,
+    atributos: { FOR: 22, DES: 14, CON: 18, INT: 2, CIE: 0, COM: 1 },
     ataques: "mordida +16 (3d8+6 + engolir); cauda +10 (2d6+2)",
   },
   {
@@ -638,6 +678,7 @@ export const BESTIARIO = [
     pv: 60,
     moral: 90,
     xp: 735,
+    atributos: { FOR: 18, DES: 18, CON: 18, INT: 4, CIE: 0, COM: 2 },
     ataques: "mordida +6 (1d8+4 [crít.: perde membro]); 2 garras +3 (1d6+1)",
   },
   {
@@ -653,6 +694,7 @@ export const BESTIARIO = [
     pv: 32,
     moral: 70,
     xp: 280,
+    atributos: { FOR: 11, DES: 12, CON: 8, INT: 2, CIE: 12, COM: 0 },
     ataques: "mordida +5 (1d8 + engolir em crít.); sem sentidos",
   },
   {
@@ -668,6 +710,7 @@ export const BESTIARIO = [
     pv: 36,
     moral: 70,
     xp: 280,
+    atributos: { FOR: 14, DES: 16, CON: 18, INT: 5, CIE: 2, COM: 5 },
     ataques: "toque +4 (**dreno: −1d4 DV**, curam a criatura)",
   },
   {
@@ -683,6 +726,7 @@ export const BESTIARIO = [
     pv: 8,
     moral: 90,
     xp: 37,
+    atributos: { FOR: 10, DES: 16, CON: 6, INT: 2, CIE: 2, COM: 4 },
     ataques: "ferrão +2 (1d4 veneno cumulativo; ataque suicida)",
   },
   {
@@ -698,6 +742,7 @@ export const BESTIARIO = [
     pv: 48,
     moral: 80,
     xp: 610,
+    atributos: { FOR: 14, DES: 12, CON: 10, INT: 20, CIE: 20, COM: 12 },
     rm: 90,
     ataques: "2 garras +3 (1d8+2); poderes da Força até **5ª Grandeza**; **RM 90%**",
   },
@@ -714,6 +759,7 @@ export const BESTIARIO = [
     pv: 9,
     moral: 70,
     xp: 37,
+    atributos: { FOR: 17, DES: 12, CON: 12, INT: 10, CIE: 7, COM: 6 },
     rm: 20,
     ataques: "pistola +1 (1d6); lança +3 (1d8+3); **RM 20%**",
   },

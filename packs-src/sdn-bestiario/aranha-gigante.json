@@ -9,6 +9,12 @@
     "props": {
       "cr_tamanho": "tam_grande",
       "cr_afiliacao": "afil_rebelde",
+      "cr_for": 15,
+      "cr_des": 17,
+      "cr_con": 12,
+      "cr_int": 0,
+      "cr_cie": 5,
+      "cr_com": 2,
       "cr_cp": 14,
       "cr_jp": 15,
       "cr_dv": 3,
