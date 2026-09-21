@@ -21,7 +21,9 @@ TABELAS = [
      '| Nível | XP | DV | BA | JP | Pilotar |',
      ['xp', 'dv', 'ba', 'jp', 'pilotar', 'desarmar', 'critico']),
     ('Operativo', 'SW-SDN-Classes.md',
-     '| Nível | XP | DV | BA | JP |',
+     # o cabecalho do Operativo vem com espacamento proprio; sem isso o index()
+     # casa com o prefixo do cabecalho do Veterano e extrai a tabela errada
+     '| Nível | XP        | DV  | BA  | JP  |',
      ['xp', 'dv', 'ba', 'jp']),
     ('OperativoTalentos', 'SW-SDN-Classes.md',
      '| Nível | Sabotagem',
