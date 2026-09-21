@@ -28,6 +28,7 @@
       "cr_rd": 0,
       "cr_rd_excecao": "",
       "cr_xp": 555,
+      "cr_premios": "",
       "cr_ataques": "mordida +6 (1d10+4 + agarrar); cauda +3 (1d6+1); giro 2d10+4",
       "cr_descricao": ""
     }

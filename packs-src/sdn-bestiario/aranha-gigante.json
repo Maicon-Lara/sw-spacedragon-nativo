@@ -28,6 +28,7 @@
       "cr_rd": 0,
       "cr_rd_excecao": "",
       "cr_xp": 205,
+      "cr_premios": "",
       "cr_ataques": "mordida +2 (2d6+2); ferroada +3 (1d8+3 + veneno)",
       "cr_descricao": ""
     }

@@ -28,6 +28,7 @@
       "cr_rd": 0,
       "cr_rd_excecao": "",
       "cr_xp": 555,
+      "cr_premios": "",
       "cr_ataques": "pancada +6 (1d10+4); sopro gélido (1d6 + JPF ou paralisia); imune a gelo",
       "cr_descricao": ""
     }

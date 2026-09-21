@@ -28,6 +28,7 @@
       "cr_rd": 0,
       "cr_rd_excecao": "",
       "cr_xp": 320,
+      "cr_premios": "O, D, U",
       "cr_ataques": "envolver [3 testes de Força; asfixia]; **imune a físico**",
       "cr_descricao": ""
     }

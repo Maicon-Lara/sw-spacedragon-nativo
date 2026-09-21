@@ -28,6 +28,7 @@
       "cr_rd": 0,
       "cr_rd_excecao": "",
       "cr_xp": 205,
+      "cr_premios": "O, D, U",
       "cr_ataques": "pancada +3 (1d6+1); **metamorfose** (criatura ≤ média); **RM 30%**",
       "cr_descricao": ""
     }

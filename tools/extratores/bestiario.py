@@ -28,14 +28,31 @@ for ln in tab.split('\n'):
     atributos[chave] = dict(zip(('FOR', 'DES', 'CON', 'INT', 'CIE', 'COM'), map(int, c[1:])))
 
 criaturas = []
+# As colunas sao lidas PELO NOME do cabecalho, nao pela posicao: assim acrescentar
+# uma coluna nova ao roster (como a de Reliquias) nao desloca as outras.
+COL = {}
 for ln in roster.split('\n'):
-    if not ln.startswith('|') or '---' in ln:
+    if ln.startswith('| Criatura |'):
+        for k, titulo in enumerate(x.strip() for x in ln.strip('|').split('|')):
+            COL[titulo] = k
+        break
+if not COL:
+    raise SystemExit('nao achei o cabecalho do roster')
+
+
+def col(celulas, titulo, padrao=''):
+    i = COL.get(titulo)
+    return celulas[i].strip() if i is not None and i < len(celulas) else padrao
+
+
+for ln in roster.split('\n'):
+    if not ln.startswith('|') or '---' in ln or ln.startswith('| Criatura |'):
         continue
     c = [x.strip() for x in ln.strip('|').split('|')]
-    if len(c) < 9 or not (c[3].isdigit() and c[4].isdigit()):
+    if len(c) < 9 or not (col(c, 'CP').isdigit() and col(c, 'JP').isdigit()):
         continue
 
-    bruto = c[0]
+    bruto = col(c, 'Criatura')
     nome = re.sub(r'\*+', '', bruto)
     apelido = None
     m = re.search(r'\((.+?)\)', nome)
@@ -46,32 +63,34 @@ for ln in roster.split('\n'):
 
     # Tam./Afil.  ->  "Gd / R"
     tam, afil = None, None
-    mt = re.match(r'([^/]+)/\s*([ANR])\s*$', c[1].strip())
+    mt = re.match(r'([^/]+)/\s*([ANR])\s*$', col(c, 'Tam./Afil.'))
     if mt:
         tam = TAM.get(mt.group(1).strip(), mt.group(1).strip().lower())
         afil = AFIL[mt.group(2)]
 
     # movimento: "9", "6, voo 4", "10, escala 6", "6 (escava)"
     mov = {}
-    mm = re.match(r'(\d+)', c[2])
+    mov_txt = col(c, 'Mov.')
+    mm = re.match(r'(\d+)', mov_txt)
     if mm:
         mov['base'] = int(mm.group(1))
-    elif u'imóvel' in c[2].lower():
+    elif u'imóvel' in mov_txt.lower():
         # o livro escreve "MOVIMENTO -" para quem nao se locomove
         mov['base'] = 0
         mov['imovel'] = True
     else:
-        raise SystemExit("movimento nao reconhecido em %r: %r" % (c[0], c[2]))
+        raise SystemExit("movimento nao reconhecido em %r: %r" % (bruto, mov_txt))
     for chave, rot in ((u'nada', 'nadando'), (u'voo', 'voando'),
                        (u'escala', 'escalando'), (u'escava', 'escavando')):
-        me = re.search(chave + r'\s*(\d+)', c[2])
+        me = re.search(chave + r'\s*(\d+)', mov_txt)
         if me:
             mov[rot] = int(me.group(1))
-        elif chave in c[2]:
+        elif chave in mov_txt:
             mov[rot] = mov.get('base')
 
-    mdv = re.match(r'([0-9]+)(?:\+([0-9]+))?\s*\((\d[\d.]*)\)', c[5])
-    mfixo = re.match(r'^(\d+)\s*PV$', c[5])
+    dv_txt = col(c, 'DV (PV)')
+    mdv = re.match(r'([0-9]+)(?:\+([0-9]+))?\s*\((\d[\d.]*)\)', dv_txt)
+    mfixo = re.match(r'^(\d+)\s*PV$', dv_txt)
     pvFixo = False
     if mdv:
         dv = int(mdv.group(1))
@@ -81,9 +100,9 @@ for ln in roster.split('\n'):
         # o livro escreve "DV 1 PV": pontos de vida fixos, sem rolar dado
         dv, dvb, pv, pvFixo = None, 0, int(mfixo.group(1)), True
     else:
-        raise SystemExit("DV nao reconhecido em %r: %r" % (c[0], c[5]))
+        raise SystemExit("DV nao reconhecido em %r: %r" % (bruto, dv_txt))
 
-    ataques = c[7]
+    ataques = col(c, 'Ataques')
     rm = re.search(r'RM\s*(\d{1,3})\s*%', ataques)
     rd = re.search(r'RD\s*(\d+)\s*/\s*([^;*]+)', ataques)
 
@@ -93,17 +112,19 @@ for ln in roster.split('\n'):
         'tamanho': tam,
         'afiliacao': afil,
         'movimento': mov,
-        'cp': int(c[3]),
-        'jp': int(c[4]),
+        'cp': int(col(c, 'CP')),
+        'jp': int(col(c, 'JP')),
         'dv': dv,
         'dvBonus': dvb,
         'pv': pv,
         'pvFixo': pvFixo,
-        'moral': int(re.sub(r'\D', '', c[6]) or 0),
+        'moral': int(re.sub(r'\D', '', col(c, 'Moral')) or 0),
         'ataques': ataques,
         'rm': int(rm.group(1)) if rm else None,
         'rd': (int(rd.group(1)), rd.group(2).strip().rstrip('*')) if rd else None,
-        'xp': int(re.sub(r'\D', '', c[8]) or 0),
+        'xp': int(re.sub(r'\D', '', col(c, 'XP')) or 0),
+        # O ofensiva, D defensiva, U utilitaria (SD, Cap. 11)
+        'reliquias': [x for x in col(c, 'Relíquias').replace(' ', '').split(',') if x in ('O', 'D', 'U')],
         'atributos': atributos.get(nome),
     })
 
@@ -120,6 +141,8 @@ for cr in criaturas:
         linhas.append('    %s: %s,' % (k, json.dumps(cr[k])))
     if cr['pvFixo']:
         linhas.append('    pvFixo: true,  // o livro escreve "DV 1 PV": nao se rola dado')
+    if cr.get('reliquias'):
+        linhas.append('    reliquias: %s,' % json.dumps(cr['reliquias']))
     if cr.get('atributos'):
         a = cr['atributos']
         linhas.append('    atributos: { %s },'

@@ -28,6 +28,7 @@
       "cr_rd": 0,
       "cr_rd_excecao": "",
       "cr_xp": 100,
+      "cr_premios": "",
       "cr_ataques": "mordida +3 (1d6+1); 2 garras +1 (1d4); **caça em grupo** (+1/aliado)",
       "cr_descricao": ""
     }

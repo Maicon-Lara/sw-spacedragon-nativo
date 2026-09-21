@@ -28,6 +28,7 @@
       "cr_rd": 0,
       "cr_rd_excecao": "",
       "cr_xp": 280,
+      "cr_premios": "",
       "cr_ataques": "toque +4 (**dreno: −1d4 DV**, curam a criatura)",
       "cr_descricao": ""
     }

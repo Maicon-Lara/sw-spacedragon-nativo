@@ -28,6 +28,7 @@
       "cr_rd": 6,
       "cr_rd_excecao": "físico",
       "cr_xp": 945,
+      "cr_premios": "",
       "cr_ataques": "pancada +7 (1d10+6); **RD 6/físico**; reflete energia em falha crít.",
       "cr_descricao": ""
     }

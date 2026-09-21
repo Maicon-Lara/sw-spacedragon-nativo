@@ -109,6 +109,8 @@ function criaturaDoc(c) {
         cr_rd: c.rd ? c.rd.valor : 0,
         cr_rd_excecao: c.rd ? c.rd.excecao : '',
         cr_xp: c.xp,
+        // as letras da linha de premios: O ofensiva, D defensiva, U utilitaria
+        cr_premios: (c.reliquias ?? []).join(', '),
         cr_ataques: c.ataques,
         cr_descricao: '',
       },
