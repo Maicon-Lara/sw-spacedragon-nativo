@@ -1,3 +1,18 @@
+> ## ⚠️ Projeto arquivado — use o outro módulo
+>
+> Em 25/09/2026 este projeto foi encerrado. A adaptação de **Star Wars para
+> Space Dragon** passou a ter um caminho único:
+>
+> - **sistema:** [space-dragon-foundryvtt](https://github.com/Maicon-Lara/space-dragon-foundryvtt)
+> - **módulo de conteúdo:** [starwars-spacedragon-foundryvtt](https://github.com/Maicon-Lara/starwars-spacedragon-foundryvtt)
+>
+> Aquele par cobre muito mais — classes, espécies, poderes, naves, equipamento,
+> macros e a Referência do Mestre — e não depende do Custom System Builder.
+> Tudo o que existia aqui está lá, e é lá que as mudanças continuam.
+>
+> Este repositório fica de pé só como histórico. A v0.9.1 continua instalável,
+> mas não recebe mais correções.
+
 # Star Wars — Space Dragon (Nativo) · Foundry VTT
 
 Conteúdo e ficha da adaptação de **Star Wars para o Space Dragon nativo**, sobre o
