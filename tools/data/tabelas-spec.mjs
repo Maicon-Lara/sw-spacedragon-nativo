@@ -65,10 +65,10 @@ export const TABELAS_SPEC = {
     // progressao continua, mas em Aparatos e maquinas.
     congela: { desarmar: 5 },
     novas: {
-      'Aparatos e máquinas': (n, b) => `${b.desarmar} + CT`,
+      'Aparatos e máquinas': (n, b) => `${b.desarmar} + AT`,
       'Ataques no turno': (n) => (n >= 20 ? '3, sempre' : n >= 10 ? '3, com teste' : '—'),
     },
-    nota: 'A coluna Desarmar congela no 5º — e é com esse número que se rola o ataque extra do 10º. A progressão segue em Aparatos e máquinas, somada ao Crédito Tecnológico (CT) da sua Ciência. No teste do ataque extra, a falha tira o resto do turno.',
+    nota: 'A coluna Desarmar congela no 5º — e é com esse número que se rola o ataque extra do 10º. A progressão segue em Aparatos e máquinas, somada ao Aptidão Tecnológica (AT) da sua Ciência. No teste do ataque extra, a falha tira o resto do turno.',
   },
   'Emissário': {
     base: 'Veterano',
@@ -132,7 +132,7 @@ export const TABELAS_SPEC = {
       'Crédito Tec. (extra)': (n) => (n >= 20 ? '100% (total)' : `+${n}%`),
       'NT máx. que cria': (n) => (n < 10 ? `${ntEm(n)}º` : `${Math.min(8, ntEm(n))}º`),
     },
-    nota: 'A coluna é o que ele SOMA ao Crédito Tecnológico que já vem da Ciência. Do 10º em diante os aparatos dele contam 2 NT acima, o que o limita a criar até o 8º NT. No 20º o livro fixa o Crédito em 100%.',
+    nota: 'A coluna é o que ele SOMA à Aptidão Tecnológica que já vem da Ciência. Do 10º em diante os aparatos dele contam 2 NT acima, o que o limita a criar até o 8º NT. No 20º o livro fixa o Crédito em 100%.',
   },
   'Engenheiro': {
     base: 'Técnico',
@@ -143,7 +143,7 @@ export const TABELAS_SPEC = {
     novas: {
       'Custo de inventar': (n) => (n >= 10 ? 'dobrado' : 'acrescido'),
     },
-    nota: 'Salta para o 4º NT no 5º nível e ganha +1 a cada 2 níveis, chegando ao 10º NT no 17º. O Crédito Tecnológico vira custo: inventar sai mais caro que comprar.',
+    nota: 'Salta para o 4º NT no 5º nível e ganha +1 a cada 2 níveis, chegando ao 10º NT no 17º. A Aptidão Tecnológica vira custo: inventar sai mais caro que comprar.',
   },
   'Slicer': {
     base: 'Técnico',
@@ -258,9 +258,9 @@ Object.assign(TABELAS_SPEC, {
     base: 'Técnico',
     congela: {},
     novas: {
-      'Crédito Tecnológico': () => 'perdido',
+      'Aptidão Tecnológica': () => 'perdido',
     },
-    nota: 'Perde o <strong>Crédito Tecnológico</strong> — o dever de clã rouba o tempo de barganha. Mantém aparatos e feitos: o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.',
+    nota: 'Perde o <strong>Aptidão Tecnológica</strong> — o dever de clã rouba o tempo de barganha. Mantém aparatos e feitos: o <strong>Armeiro</strong> de um clã é, em regra, um Técnico.',
   },
   'Mandaloriano Sensível': {
     base: 'Sensível à Força',

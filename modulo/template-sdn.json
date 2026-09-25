@@ -1039,7 +1039,7 @@
                               "defaultValue": null,
                               "size": "medium",
                               "icon": "",
-                              "value": "Crédito Tecnológico:",
+                              "value": "Aptidão Tecnológica:",
                               "prefix": "",
                               "suffix": "",
                               "rollMessage": "",
@@ -1048,7 +1048,7 @@
                               "type": "label"
                             },
                             {
-                              "key": "der_credito_tec",
+                              "key": "der_aptidao_tec",
                               "cssClass": "",
                               "role": "0",
                               "permission": "0",
@@ -1204,7 +1204,7 @@
                           "defaultValue": null,
                           "size": "full-size",
                           "icon": "",
-                          "value": "O Crédito Tecnológico é um número só: chance de sabotar máquinas, uso de aparatos ofensivos pelo Caçador e desconto do Técnico em qualquer compra.",
+                          "value": "A Aptidão Tecnológica é um número só: chance de sabotar máquinas, uso de aparatos ofensivos pelo Caçador e desconto do Técnico em qualquer compra.",
                           "prefix": "",
                           "suffix": "",
                           "rollMessage": "",
@@ -2275,7 +2275,7 @@
                               "defaultValue": null,
                               "size": "full-size",
                               "icon": "",
-                              "value": "Sabotagem é a ÚNICA % que o Crédito Tecnológico modifica. Não existem talentos separados de \"Arrombar\" nem de \"Esconder\".",
+                              "value": "Sabotagem é a ÚNICA % que a Aptidão Tecnológica modifica. Não existem talentos separados de \"Arrombar\" nem de \"Esconder\".",
                               "prefix": "",
                               "suffix": "",
                               "rollMessage": "",
@@ -2681,7 +2681,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1790009776696"
+        "templateSystemUniqueVersion": "1790349111345"
       }
     },
     {
@@ -3526,7 +3526,7 @@
           }
         },
         "activeEffects": {},
-        "templateSystemUniqueVersion": "1790009776698"
+        "templateSystemUniqueVersion": "1790349111346"
       }
     }
   ],

@@ -15,7 +15,7 @@
 export const TALENTOS_BASE = {
   Veterano: ['Pilotar Naves', 'Desarmar e Subjugar', 'Dano Crítico', 'Ataques Múltiplos'],
   Operativo: ['Sabotagem', 'Escalar', 'Furtividade', 'Furtar', 'Percepção', 'Ataque Furtivo'],
-  'Técnico': ['Operar Máquinas', 'Aparatos e Feitos', 'Desativar Robôs', 'Crédito Tecnológico'],
+  'Técnico': ['Operar Máquinas', 'Aparatos e Feitos', 'Desativar Robôs', 'Aptidão Tecnológica'],
   'Sensível à Força': ['Poderes da Força', 'Alcance da Força', 'Grandeza-Limite', 'Duelo da Força'],
 };
 
@@ -83,7 +83,7 @@ export const ESPECIALIZACOES = [
       {
         nivel: 5, congela: [],
         ganha: ['A <strong>Sabotagem sobe para a % de Furtividade</strong> e passa a progredir junto com ela.',
-                'O <strong>Crédito Tecnológico conta dobrado</strong>.',
+                'O <strong>Aptidão Tecnológica conta dobrada</strong>.',
                 'Usa a <strong>% de Furtar</strong> para passar-se por outra pessoa, somando o ajuste de reação.'],
       },
       { nivel: 10, ganha: ['Usa a <strong>% de Escalar</strong> como chance de já ter a informação relevante, por contatos ou registros.', 'Usa <strong>aparatos defensivos</strong> como um Técnico.'] },
@@ -138,7 +138,7 @@ export const ESPECIALIZACOES = [
         nivel: 5,
         congela: ['Sabotagem', 'Furtar'],
         anota: ['Sabotagem', 'Furtar'],
-        ganha: ['O <strong>Crédito Tecnológico</strong> vira desconto em <strong>qualquer</strong> negociação, e o <strong>dobro</strong> dele é a sua chance de extorquir.',
+        ganha: ['O <strong>Aptidão Tecnológica</strong> vira desconto em <strong>qualquer</strong> negociação, e o <strong>dobro</strong> dele é a sua chance de extorquir.',
                 'Proficiente em <strong>escudos de energia</strong>.'],
       },
       {
@@ -162,14 +162,14 @@ export const ESPECIALIZACOES = [
         nivel: 5,
         congela: ['Operar Máquinas', 'armas (exceto os artefatos que ele cria)'],
         anota: ['Operar Máquinas'],
-        ganha: ['O <strong>Crédito Tecnológico sobe +1% por nível</strong>.', 'A ciência dele passa a servir à carne viva.'],
+        ganha: ['O <strong>Aptidão Tecnológica sobe +1% por nível</strong>.', 'A ciência dele passa a servir à carne viva.'],
       },
       {
         nivel: 10, congela: [],
         ganha: ['Usa a % de Operar Máquinas como chance de ter à mão a informação ou o artefato médico relevante.',
                 '<em>Em troca:</em> os aparatos dele contam <strong>2 NT acima</strong>, o que o limita a criar até o 8º NT.'],
       },
-      { nivel: 20, ganha: ['Crédito Tecnológico de <strong>100%</strong>.', '<em>Código de ética:</em> proibido causar dano a seres vivos. Quebrar suspende as habilidades até uma reparação.'] },
+      { nivel: 20, ganha: ['Aptidão Tecnológica de <strong>100%</strong>.', '<em>Código de ética:</em> proibido causar dano a seres vivos. Quebrar suspende as habilidades até uma reparação.'] },
     ],
   },
   {
@@ -179,7 +179,7 @@ export const ESPECIALIZACOES = [
       {
         nivel: 5, congela: [],
         ganha: ['Salta direto para o <strong>4º Nível Tecnológico</strong> e ganha <strong>+1 NT a cada 2 níveis</strong>, chegando ao 10º NT no 17º.',
-                '<em>Em troca:</em> o Crédito Tecnológico vira <strong>custo adicional</strong> — inventar do zero sai mais caro que comprar pronto.'],
+                '<em>Em troca:</em> a Aptidão Tecnológica vira <strong>custo adicional</strong> — inventar do zero sai mais caro que comprar pronto.'],
       },
       { nivel: 10, ganha: ['O prejuízo <strong>dobra</strong>, mas ele passa a <strong>combinar até 3 aparatos</strong> num engenho só.'] },
       { nivel: 20, ganha: ['Cria <strong>qualquer</strong> máquina e realiza <strong>qualquer</strong> feito, a custo dobrado, independente das condições.'] },

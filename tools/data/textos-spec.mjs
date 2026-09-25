@@ -16,7 +16,7 @@ export const TEXTOS_SPEC = [
     "nome": "Caçador de Recompensas",
     "sabor": "o caçador (Rebelde)",
     "exemplo": "Boba Fett, Cad Bane, Bossk, Fennec. Casa com a [[SW-SDN-Senda-Mandaloriana|Senda Mandaloriana]].",
-    "texto": "Passa a **operar aparatos ofensivos** e a **operar e consertar máquinas**, usando como chance a **% de Desarmar/Subjugar** somada ao **Crédito Tecnológico** da sua Ciência. O talento **muda de ofício**: como manobra de desarmar e subjugar, ele **para de progredir no 5º**; a progressão da tabela continua, mas passa a valer só para aparatos e máquinas.\n- `10º` **Ataque extra:** logo depois do primeiro ataque do turno, pode rolar **Desarmar/Subjugar com a % do 5º nível**. Sucesso: faz **mais dois ataques** naquele turno, os dois com a **2ª BA** — três no total. Falha: **não faz mais nada** no turno. O ataque extra pode ser trocado por uma tentativa de desarmar ou subjugar.\n- `20º` usa **qualquer aparato** como um Técnico de igual nível e faz **sempre 3 ataques** por turno, sem rolar — o extra com a 2ª BA, e ainda podendo virar desarme ou submissão."
+    "texto": "Passa a **operar aparatos ofensivos** e a **operar e consertar máquinas**, usando como chance a **% de Desarmar/Subjugar** somada à **Aptidão Tecnológica** da sua Ciência. O talento **muda de ofício**: como manobra de desarmar e subjugar, ele **para de progredir no 5º**; a progressão da tabela continua, mas passa a valer só para aparatos e máquinas.\n- `10º` **Ataque extra:** logo depois do primeiro ataque do turno, pode rolar **Desarmar/Subjugar com a % do 5º nível**. Sucesso: faz **mais dois ataques** naquele turno, os dois com a **2ª BA** — três no total. Falha: **não faz mais nada** no turno. O ataque extra pode ser trocado por uma tentativa de desarmar ou subjugar.\n- `20º` usa **qualquer aparato** como um Técnico de igual nível e faz **sempre 3 ataques** por turno, sem rolar — o extra com a 2ª BA, e ainda podendo virar desarme ou submissão."
   },
   {
     "classe": "Veterano",
@@ -30,7 +30,7 @@ export const TEXTOS_SPEC = [
     "nome": "Espião",
     "sabor": "agente de inteligência (Leal)",
     "exemplo": "Cassian Andor, Fulcrum, agentes do ISB.",
-    "texto": "Sua **Sabotagem** sobe para a **% de Furtividade** e passa a progredir junto com ela. O **Crédito Tecnológico** (por Ciência) conta **dobrado**. Usa a **% de Furtar** para **passar-se por outra pessoa**, somando o ajuste de reação por Comunicação.\n- `10º` usa a **% de Escalar** como chance de **obter informação** relevante, por contatos ou registros; usa **aparatos defensivos** como um Técnico.\n- `20º` **Furtividade, Sabotagem e Furtar igualam os 99% de Escalar**."
+    "texto": "Sua **Sabotagem** sobe para a **% de Furtividade** e passa a progredir junto com ela. A **Aptidão Tecnológica** (por Ciência) conta **dobrado**. Usa a **% de Furtar** para **passar-se por outra pessoa**, somando o ajuste de reação por Comunicação.\n- `10º` usa a **% de Escalar** como chance de **obter informação** relevante, por contatos ou registros; usa **aparatos defensivos** como um Técnico.\n- `20º` **Furtividade, Sabotagem e Furtar igualam os 99% de Escalar**."
   },
   {
     "classe": "Operativo",
@@ -51,21 +51,21 @@ export const TEXTOS_SPEC = [
     "nome": "Contrabandista",
     "sabor": "o malandro espacial (Rebelde)",
     "exemplo": "Hondo Ohnaka, os capitães do Cartel, o próprio Han em modo pirataria.",
-    "texto": "Para de progredir em **Sabotagem** e **Furtar**. Usa o **Crédito Tecnológico** (por Ciência) como desconto em **qualquer negociação**, e o **dobro** dessa % para **extorsão**; é proficiente em **escudos de energia**.\n- `10º` para de progredir também em **Furtividade**, mas usa a **% de Furtividade** já alcançada como chance de um **ataque adicional** no turno (com a BA de 7 níveis abaixo); pilota e usa qualquer aparato como um Técnico de **metade** dos seus níveis; **tripulação fiel** = seu número máximo de seguidores (mínimo 2).\n- `20º` desfere **sempre 2 ataques** (o 2º com a BA de 5 níveis abaixo); **dobra/quadruplica** o Crédito; tripulação **triplica** (mínimo 4)."
+    "texto": "Para de progredir em **Sabotagem** e **Furtar**. Usa a **Aptidão Tecnológica** (por Ciência) como desconto em **qualquer negociação**, e o **dobro** dessa % para **extorsão**; é proficiente em **escudos de energia**.\n- `10º` para de progredir também em **Furtividade**, mas usa a **% de Furtividade** já alcançada como chance de um **ataque adicional** no turno (com a BA de 7 níveis abaixo); pilota e usa qualquer aparato como um Técnico de **metade** dos seus níveis; **tripulação fiel** = seu número máximo de seguidores (mínimo 2).\n- `20º` desfere **sempre 2 ataques** (o 2º com a BA de 5 níveis abaixo); **dobra/quadruplica** o Crédito; tripulação **triplica** (mínimo 4)."
   },
   {
     "classe": "Técnico",
     "nome": "Médico de Campo",
     "sabor": "o curandeiro (Leal)",
     "exemplo": "Médicos rebeldes, cirurgiões de bacta, os que remendam heróis entre uma batalha e outra.",
-    "texto": "Para de progredir em **Operar Máquinas**, mas o **Crédito Tecnológico sobe +1%/nível**; abre mão de armas, exceto os artefatos que ele mesmo cria. Dedica a ciência à carne viva — cirurgia, bacta, próteses, antídotos.\n- `10º` usa a **% de Operar Máquinas** como chance de ter à mão a informação ou o artefato médico relevante; em troca, seus aparatos contam **2 NT acima** (limitando-o a criar até o 8º NT).\n- `20º` Crédito Tecnológico de **100%**; submete-se a um código de ética: **proibido causar dano a seres vivos** — quebrar isso suspende as habilidades da especialização até uma reparação."
+    "texto": "Para de progredir em **Operar Máquinas**, mas a **Aptidão Tecnológica sobe +1%/nível**; abre mão de armas, exceto os artefatos que ele mesmo cria. Dedica a ciência à carne viva — cirurgia, bacta, próteses, antídotos.\n- `10º` usa a **% de Operar Máquinas** como chance de ter à mão a informação ou o artefato médico relevante; em troca, seus aparatos contam **2 NT acima** (limitando-o a criar até o 8º NT).\n- `20º` Aptidão Tecnológica de **100%**; submete-se a um código de ética: **proibido causar dano a seres vivos** — quebrar isso suspende as habilidades da especialização até uma reparação."
   },
   {
     "classe": "Técnico",
     "nome": "Engenheiro",
     "sabor": "o inventor (Neutro)",
     "exemplo": "Construtores de droides (um Anakin criança), os engenheiros de Mon Cala, o gênio que monta uma nave com sucata.",
-    "texto": "Salta para o **4º Nível Tecnológico** já no 5º nível e ganha **+1 NT a cada 2 níveis** (chega ao 10º NT no 17º). O Crédito Tecnológico vira **custo adicional** — inventar do zero sai mais caro que comprar pronto.\n- `10º` o prejuízo **dobra**, mas ele passa a **combinar até 3 aparatos** num só engenho.\n- `20º` cria **qualquer** máquina e realiza **qualquer** feito, a custo dobrado, independente das condições."
+    "texto": "Salta para o **4º Nível Tecnológico** já no 5º nível e ganha **+1 NT a cada 2 níveis** (chega ao 10º NT no 17º). A Aptidão Tecnológica vira **custo adicional** — inventar do zero sai mais caro que comprar pronto.\n- `10º` o prejuízo **dobra**, mas ele passa a **combinar até 3 aparatos** num só engenho.\n- `20º` cria **qualquer** máquina e realiza **qualquer** feito, a custo dobrado, independente das condições."
   },
   {
     "classe": "Técnico",

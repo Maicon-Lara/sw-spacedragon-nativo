@@ -119,7 +119,7 @@ const DERIVADOS = [
   ['der_int_alcance', 'Alcance adicional', T.T1_4, 2, 'pc_int', '%'],
   ['der_int_jpm', 'Ajuste de JPM', T.T1_4, 3, 'pc_int', ''],
   ['der_cie_robos', 'Robôs desativados/dia', T.T1_5, 1, 'pc_cie', ''],
-  ['der_credito_tec', 'Crédito Tecnológico', T.T1_5, 2, 'pc_cie', '%'],
+  ['der_aptidao_tec', 'Aptidão Tecnológica', T.T1_5, 2, 'pc_cie', '%'],
   ['der_com_seguidores', 'Máx. de seguidores', T.T1_6, 1, 'pc_com', ''],
   ['der_com_reacao', 'Ajuste de reação', T.T1_6, 2, 'pc_com', '%'],
   ['der_com_idiomas', 'Idiomas adicionais', T.T1_6, 3, 'pc_com', ''],
@@ -141,7 +141,7 @@ const abaAtributos = aba('tab_atributos', 'Atributos', [
     painel('pnl_derivados', DERIVADOS.flatMap(celulasDerivadas),
            { flow: 'grid-4', title: 'Derivados das tabelas do livro' }),
     rotulo(
-      'O Crédito Tecnológico é um número só: chance de sabotar máquinas, uso de ' +
+      'A Aptidão Tecnológica é um número só: chance de sabotar máquinas, uso de ' +
       'aparatos ofensivos pelo Caçador e desconto do Técnico em qualquer compra.',
       { size: 'full-size', style: 'label' }),
     painel('pnl_ler', [
@@ -294,7 +294,7 @@ const abaClasse = aba('tab_classe', 'Classe', [
           tooltip: 'Multiplicador de dano depois de uma Furtividade bem-sucedida',
         }),
       ], { flow: 'horizontal' }),
-      rotulo('Sabotagem é a ÚNICA % que o Crédito Tecnológico modifica. Não existem ' +
+      rotulo('Sabotagem é a ÚNICA % que a Aptidão Tecnológica modifica. Não existem ' +
              'talentos separados de "Arrombar" nem de "Esconder".',
              { size: 'full-size', style: 'label' }),
     ], { title: "Operativo — os seis talentos de Gatuno", collapsible: true, recolhido: true }),

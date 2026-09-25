@@ -43,7 +43,7 @@ export const CLASSES = [
     aparatos: 'só utilitários',
     talentos: 'Sabotagem · Escalar · Furtividade · Furtar · Percepção · Ataque Furtivo',
     poderes: [
-      ['Sabotagem', '1º', 'Destranca portas <em>e</em> avaria máquinas — é <strong>um talento só</strong>. Uma tentativa por objeto, e precisa dos instrumentos em mão. A coluna <em>Rodadas</em> diz quanto tempo leva. É a <strong>única</strong> % modificada pelo Crédito Tecnológico.'],
+      ['Sabotagem', '1º', 'Destranca portas <em>e</em> avaria máquinas — é <strong>um talento só</strong>. Uma tentativa por objeto, e precisa dos instrumentos em mão. A coluna <em>Rodadas</em> diz quanto tempo leva. É a <strong>única</strong> % modificada pela Aptidão Tecnológica.'],
       ['Escalar', '1º', 'Cada sucesso sobe 3 m. A falha derruba: 1d6 a cada 3 m já escalados — e nada se a falha for na primeira jogada.'],
       ['Furtividade', '1º', 'Esconder-se <em>e</em> mover-se em silêncio, também <strong>um talento só</strong>. O Mestre rola em segredo, porque você se julga bem-sucedido até algo provar o contrário. Atacar revela a posição.'],
       ['Furtar', '1º', 'Se a rolagem passar do <strong>dobro</strong> da dificuldade, todo mundo percebe — a vítima inclusive.'],
@@ -72,7 +72,7 @@ export const CLASSES = [
       ['Operar e Consertar Máquinas', '1º', 'Talento em d%. Opera e conserta qualquer máquina, e <strong>pilota naves</strong> — pior que o Veterano, mas pilota. Máquina avariada precisa de conserto antes de funcionar.'],
       ['Aparatos e Feitos Científicos', '1º', 'Constrói as engenhocas e realiza os feitos. O <strong>Nível Tecnológico</strong> limita o que você <strong>cria</strong>, nunca o que pode usar.'],
       ['Desativar Robôs', '1º', 'Com o disruptor, rola <strong>1d20</strong> contra a Tabela 3-2. São oito categorias de robô, e o alvo melhora conforme você sobe.'],
-      ['Crédito Tecnológico', '1º', 'Desconto em <strong>qualquer</strong> gasto com equipamento, pela sua Ciência. O mesmo número vale como chance de sabotar máquinas.'],
+      ['Aptidão Tecnológica', '1º', 'Desconto em <strong>qualquer</strong> gasto com equipamento, pela sua Ciência. O mesmo número vale como chance de sabotar máquinas.'],
     ],
     specs: [
       ['Médico de Campo', 'Leal', 'o curandeiro'],

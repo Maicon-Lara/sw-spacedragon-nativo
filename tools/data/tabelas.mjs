@@ -90,8 +90,8 @@ export const T1_4 = [
 ];
 
 // ── T1-5 Ciência ────────────────────────────────────────────────────────────
-// [robôs desativados por dia (expressão de dado), Crédito Tecnológico %]
-// O Crédito Tecnológico é UM número só: serve de chance de sabotar máquinas, de
+// [robôs desativados por dia (expressão de dado), Aptidão Tecnológica %]
+// A Aptidão Tecnológica é UM número só: serve de chance de sabotar máquinas, de
 // uso de aparatos ofensivos pelo Caçador e de desconto do Técnico.
 export const T1_5 = [
   [1, '0', -25],
