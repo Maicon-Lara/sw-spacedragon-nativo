@@ -3,6 +3,7 @@
 
 import { CLASSES, ESPECIES } from './data/resumo-jogador.mjs';
 import { paginaEspecs } from './journal-especs.mjs';
+import { paginaForca } from './journal-forca.mjs';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -171,6 +172,7 @@ export function journalCriacao() {
       pagina('3 · As quatro classes', paginaClasses(), 300),
       pagina('4 · As espécies', paginaEspecies(), 400),
       pagina('5 · Especializações', paginaEspecs(), 500),
+      pagina('6 · A Força — núcleo e módulos', paginaForca(), 600),
     ],
   };
 }
