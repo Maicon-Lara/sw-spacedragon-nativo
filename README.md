@@ -3,12 +3,20 @@
 > Em 25/09/2026 este projeto foi encerrado. A adaptação de **Star Wars para
 > Space Dragon** passou a ter um caminho único:
 >
-> - **sistema:** [space-dragon-foundryvtt](https://github.com/Maicon-Lara/space-dragon-foundryvtt)
+> - **sistema:** [`olddragon2e`](https://github.com/olddragoneditora/olddragon2e-foundryvtt), o oficial da Old Dragon Editora
+> - **módulo de regras:** [space-dragon-foundryvtt](https://github.com/Maicon-Lara/space-dragon-foundryvtt)
 > - **módulo de conteúdo:** [starwars-spacedragon-foundryvtt](https://github.com/Maicon-Lara/starwars-spacedragon-foundryvtt)
 >
-> Aquele par cobre muito mais — classes, espécies, poderes, naves, equipamento,
-> macros e a Referência do Mestre — e não depende do Custom System Builder.
-> Tudo o que existia aqui está lá, e é lá que as mudanças continuam.
+> Aquela pilha cobre muito mais — classes, espécies, poderes, naves, equipamento,
+> macros e a Referência do Mestre — e tudo o que existia aqui está lá. É lá que as
+> mudanças continuam.
+>
+> **A troca tem um preço, e vale saber qual:** lá a ficha é a do Old Dragon 2, e
+> ela calcula o modificador de atributo pela tabela *dela* — faixa neutra 9–12 e
+> teto 20, contra 10–11 e 29 do Space Dragon. Quem joga por lá consulta as tabelas
+> T1-1 a T1-6 no compêndio de Regras e ignora o modificador que a ficha mostra.
+> Este projeto não tinha esse problema, porque a ficha era feita sob medida no
+> Custom System Builder — foi o que se perdeu, e de propósito, em troca do acervo.
 >
 > Este repositório fica de pé só como histórico. A v0.9.1 continua instalável,
 > mas não recebe mais correções.
